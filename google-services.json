@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "288396335140",
+    "project_id": "nativephp-5a3af",
+    "storage_bucket": "nativephp-5a3af.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288396335140:android:cef979d5f52f5e579fa0b1",
+        "android_client_info": {
+          "package_name": "com.nativephp.kitchensink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBme9YNmIawj9Mx3iRG53aGlbRgqGn8F_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288396335140:android:1964818730adfef09fa0b1",
+        "android_client_info": {
+          "package_name": "com.nativephp.push"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBme9YNmIawj9Mx3iRG53aGlbRgqGn8F_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
