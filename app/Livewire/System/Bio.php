@@ -4,15 +4,17 @@ namespace App\Livewire\System;
 
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Events\Biometric\Completed;
 use Native\Mobile\Facades\System;
 
 class Bio extends Component
 {
     public $secure = false;
-    #[On('native:biometric-auth')]
-    public function handleBiometricAuth($payload)
+
+    #[On('native:' . Completed::class)]
+    public function handleBiometricAuth($success)
     {
-        $this->secure = $payload['success'];
+        $this->secure = $success;
     }
 
     public function promptForBiometricID(): void

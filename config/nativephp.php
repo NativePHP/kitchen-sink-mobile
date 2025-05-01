@@ -2,91 +2,176 @@
 
 return [
 
-    /**
-     * The version of your app.
-     * It is used to determine if the app needs to be updated.
-     * Increment this value every time you release a new version of your app.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | App Version Name
+    |--------------------------------------------------------------------------
+    |
+    | This is the human-readable version of your app (e.g. "1.0.0"). It is
+    | used as the versionName in Android builds and may be displayed in
+    | the app or console to determine the current app release version.
+    |
+    */
+
     'version' => env('NATIVEPHP_APP_VERSION', '1.0.0'),
 
-    /**
-     * The ID of your application. This should be a unique identifier
-     * usually in the form of a reverse domain name.
-     * For example: com.nativephp.app
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | App Version Code
+    |--------------------------------------------------------------------------
+    |
+    | This is the internal numeric version code used for Play Store builds.
+    | It must increase with every release. This is used as versionCode in
+    | Android builds and is required for publishing updates to the store.
+    |
+    */
+
+    'version_code' => env('NATIVEPHP_APP_VERSION_CODE', 1),
+
+    /*
+    |--------------------------------------------------------------------------
+    | App ID
+    |--------------------------------------------------------------------------
+    |
+    | This is the unique ID of your application used by Android to identify
+    | the app package. It is typically written in reverse domain format,
+    | such as "com.nativephp.kitchensink".
+    |
+    */
+
     'app_id' => env('NATIVEPHP_APP_ID', 'com.nativephp.app'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Deeplink Scheme
+    |--------------------------------------------------------------------------
+    |
+    | The deep link scheme to use for opening your app from URLs. For
+    | example, using the scheme "nativephp" allows links like:
+    | nativephp://some/path to open the app directly.
+    |
+    */
 
-    /**
-     * If your application allows deep linking, you can specify the scheme
-     * to use here. This is the scheme that will be used to open your
-     * application from within other applications.
-     * For example: "nativephp"
-     *
-     * This would allow you to open your application using a URL like:
-     * nativephp://some/path
-     */
     'deeplink_scheme' => env('NATIVEPHP_DEEPLINK_SCHEME'),
 
-    /**
-     * The author of your application.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | Deeplink Host
+    |--------------------------------------------------------------------------
+    |
+    | The domain name to associate with verified HTTPS links and NFC tags.
+    | This allows URLs like https://your-host.com/path to open your app
+    | when tapped from an NFC tag or clicked from the browser.
+    |
+    */
+    'deeplink_host' => env('NATIVEPHP_DEEPLINK_HOST'),
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | App Author
+    |--------------------------------------------------------------------------
+    |
+    | The author of the application. This is used only for display or
+    | packaging purposes and has no effect on runtime functionality.
+    |
+    */
+
     'author' => env('NATIVEPHP_APP_AUTHOR'),
 
-    /**
-     * The default service provider for your application. This provider
-     * takes care of bootstrapping your application and configuring
-     * any global hotkeys, menus, windows, etc.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | Default Native App Service Provider
+    |--------------------------------------------------------------------------
+    |
+    | This is the main service provider used to configure your native app.
+    | It is where you can define hotkeys, menus, native windows, and
+    | other boot logic that runs inside the NativePHP runtime.
+    |
+    */
+
     'provider' => \App\Providers\NativeAppServiceProvider::class,
 
-    /**
-     * A list of environment keys that should be removed from the
-     * .env file when the application is bundled for production.
-     * You may use wildcards to match multiple keys.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | Environment Keys to Clean Up
+    |--------------------------------------------------------------------------
+    |
+    | These are keys that will be removed from the .env file during app
+    | bundling to prevent secrets or development credentials from being
+    | leaked. Wildcards are supported (e.g. AWS_* or *_SECRET).
+    |
+    */
+
     'cleanup_env_keys' => [
+
         'AWS_*',
+
         'GITHUB_*',
+
         'DO_SPACES_*',
-        '*_SECRET',
+
         'NATIVEPHP_UPDATER_PATH',
+
         'NATIVEPHP_APPLE_ID',
+
         'NATIVEPHP_APPLE_ID_PASS',
+
         'NATIVEPHP_APPLE_TEAM_ID',
     ],
 
-    /**
-     * A list of files and folders that should be removed from the
-     * final app before it is bundled for production.
-     * You may use glob / wildcard patterns here.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | Files to Exclude Before Bundling
+    |--------------------------------------------------------------------------
+    |
+    | These files and folders will be removed before the final bundle is
+    | built for production. You may use glob/wildcard patterns here to
+    | skip unnecessary assets like logs, sessions, or temp data.
+    |
+    */
+
     'cleanup_exclude_files' => [
+
         'content',
+
         'storage/app/framework/{sessions,testing,cache}',
+
         'storage/logs/laravel.log',
     ],
 
     'android' => [
-        /**
-         * The path to the JDK that Gradle should use to build the app.
-         * On Windows this must be escaped properly. This path will be
-         * written into `gradle.properties` if configured.
-         */
+
         'gradle_jdk_path' => env('NATIVEPHP_GRADLE_PATH', ''),
 
-        /**
-         * The location of the Android SDK on the developer's machine.
-         * This will be written into local.properties to ensure builds
-         * run with the correct environment on Android Studio and CLI.
-         */
         'android_sdk_path' => env('NATIVEPHP_ANDROID_SDK_LOCATION', ''),
 
-        /**
-         * Optional override for the Android Emulator binary path.
-         * If not set, NativePHP will attempt to locate the emulator
-         * automatically based on common install locations for your OS.
-         */
         'emulator_path' => env('ANDROID_EMULATOR'),
+
+        '7zip-location' => env('NATIVEPHP_7ZIP_LOCATION', 'C:\\Program Files\\7-Zip\\7z.exe'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Permissions
+    |--------------------------------------------------------------------------
+    |
+    | Here you may enable or disable specific native features for your app.
+    | Setting a permission to true allows NativePHP to request the necessary
+    | access from the operating system at runtime (e.g., for NFC, biometrics,
+    | or push notifications). Enable any features you need, make
+    | sure you run `native:install --force` after changing.
+    |
+    */
+
+    'permissions' => [
+
+        'biometric' => true,
+
+        'camera' => true,
+
+        'nfc' => false,
+
+        'push_notifications' => true,
     ]
 ];

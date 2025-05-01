@@ -1,15 +1,12 @@
-<div>
-    <flux:callout >
-        <flux:callout.heading icon="camera">Lights, Camera, Action!</flux:callout.heading>
+<div class="space-y-6">
+    <x-layouts.app.callout title="Lights, Camera, Action!" icon="camera">
+        Press the button below to request permission to use the camera, press again to take a photo.
+    </x-layouts.app.callout>
 
-        <flux:callout.text>
-            Press the button below to request permission to use the camera, press again to take a photo.
+    <x-layouts.app.button title="Take a Photo" icon="camera" wire:click="camera"/>
 
-        </flux:callout.text>
-    </flux:callout>
 
-    <flux:button wire:click="camera" icon="camera" class="w-full mt-12">Take a Photo</flux:button>
     @if ($photoDataUrl)
-        <img src="{{ $photoDataUrl }}" class="rounded shadow max-w-sm size-64 mt-12 mx-auto" />
+        <img src="{{ $photoDataUrl }}" class="rounded shadow max-w-sm w-full h-auto mt-12 mx-auto" />
     @endif
 </div>

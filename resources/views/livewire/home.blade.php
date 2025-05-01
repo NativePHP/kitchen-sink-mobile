@@ -1,12 +1,35 @@
-<div>
-    <flux:callout >
-        <flux:callout.heading icon="sparkles">Welcome To NativePHP for Mobile!</flux:callout.heading>
+<div class="space-y-6">
+    <x-layouts.app.callout title="Welcome To NativePHP for Mobile!" icon="sparkles">
+        The goal for this app is to demo all of the native functionality we have to offer.
+        <br/><br/>
+        To start, let's begin with authentication and local database storage. Create an account or sign up below.
+    </x-layouts.app.callout>
 
-        <flux:callout.text>
-            NativePHP for Mobile is a native mobile app development framework that allows you to build native apps for iOS and Android using PHP. It is built on top of the NativePHP library, which provides a set of tools and libraries for building native apps using PHP.
-            <flux:callout.link href="https://nativephp.com/mobile">Learn more</flux:callout.link>
-
-
-        </flux:callout.text>
-    </flux:callout>
+    @if (!session()->has('token'))
+        @if ($mode === 'login')
+            <livewire:auth.login />
+            <div class="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-2">
+                {{ __('Don\'t have an account?') }}
+                <button
+                    wire:click="register"
+                    class="ml-1 text-violet-600 hover:underline font-medium">
+                    {{ __('Sign up') }}
+                </button>
+            </div>
+        @else
+            <livewire:auth.register />
+            <div class="text-center text-sm text-zinc-600 dark:text-zinc-400 my-2">
+                {{ __('Already have an account?') }}
+                <button
+                    wire:click="login"
+                    class="ml-1 text-violet-600 hover:underline font-medium mb-8">
+                    {{ __('Log in') }}
+                </button>
+            </div>
+        @endif
+    @else
+        <x-layouts.app.callout
+            icon="check-circle"
+            title="You're in 🎉! Now go and play 🔥" />
+    @endif
 </div>

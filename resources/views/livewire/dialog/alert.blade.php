@@ -1,11 +1,11 @@
-<div>
-    <flux:callout >
-        <flux:callout.heading icon="bell-alert">Alert!</flux:callout.heading>
+<div class="space-y-6">
+    <x-layouts.app.callout title="Alert!" icon="bell-alert">
+        Press the button below to show an alert dialog.
+    </x-layouts.app.callout>
 
-        <flux:callout.text>
-            Press the button below to show an alert dialog.
-        </flux:callout.text>
-    </flux:callout>
-
-    <flux:button wire:click="alert" icon="bell-alert" class="w-full mt-8">Show Alert</flux:button>
+    <x-layouts.app.button
+        title="Show Alert"
+        icon="bell-alert"
+        wire:click="alert"
+    />
 </div>

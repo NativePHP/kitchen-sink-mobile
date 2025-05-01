@@ -9,8 +9,7 @@ class Alert extends Component
 {
     public function alert()
     {
-        nativephp_alert('NativePHP', 'Test Message!');
-//        Dialog::alert('Alert', 'This is an alert dialog.', [], fn() => dd('Alert closed')); TODO
+        nativephp_alert('Alert', 'This is an alert dialog.');
     }
     public function render()
     {

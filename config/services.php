@@ -37,7 +37,6 @@ return [
 
     'api' => [
         'url' => env('KITCHEN_SINK_API_URL'),
-        'key' => env('KITCHEN_SINK_API_TOKEN'),
     ],
 
 ];

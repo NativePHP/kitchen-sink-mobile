@@ -1,11 +1,7 @@
-<div>
-    <flux:callout >
-        <flux:callout.heading icon="light-bulb">Flashlight!</flux:callout.heading>
+<div class="space-y-6">
+    <x-layouts.app.callout title="Flashlight!" icon="light-bulb">
+        Press the button below to toggle the flashlight.
+    </x-layouts.app.callout>
 
-        <flux:callout.text>
-            Press the button below to toggle the flashlight.
-        </flux:callout.text>
-    </flux:callout>
-
-    <flux:button wire:click="flashlight" icon="light-bulb" class="w-full mt-8">Toggle Flashlight</flux:button>
+    <x-layouts.app.button title="Toggle Flashlight" icon="light-bulb"  wire:click="flashlight"  />
 </div>

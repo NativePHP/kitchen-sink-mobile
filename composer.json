@@ -8,24 +8,20 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": {
-        "flux-pro": {
+    "repositories": [
+        {
             "type": "composer",
-            "url": "https://composer.fluxui.dev"
-        },
-        "0": {
-            "type": "path",
-            "url": "../mobile"
+            "url": "https://nativephp.composer.sh"
         }
-    },
+    ],
     "require": {
         "php": "^8.2",
+        "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
+        "laravel/reverb": "^1.5",
         "laravel/tinker": "^2.10.1",
-        "livewire/flux": "^2.1.1",
-        "livewire/flux-pro": "^2.1",
         "livewire/volt": "^1.7.0",
-        "nativephp/mobile": "*"
+        "nativephp/mobile": "^1.0.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -65,6 +61,9 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
+        "post-install-cmd": [
+            "@php artisan kitchensink:setup-env"
+        ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
@@ -84,6 +83,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

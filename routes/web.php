@@ -1,28 +1,45 @@
 <?php
 
 
+use App\Http\Controllers\Auth\Logout;
+use App\Http\Middleware\HasSessionToken;
+use App\Livewire\Dialog\Alert;
+use App\Livewire\Dialog\Share;
+use App\Livewire\Dialog\Toast;
+use App\Livewire\Home;
+use App\Livewire\Laravel\Reverb;
+use App\Livewire\System\Bio;
+use App\Livewire\System\Camera;
+use App\Livewire\System\Flashlight;
+use App\Livewire\System\PushNotification;
+use App\Livewire\System\Vibrate;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', \App\Livewire\Home::class)->name('home');
 
+Route::get('/', Home::class)->name('home');
+Route::get('/logout', Logout::class)->name('logout');
 
-Route::group(['prefix' => 'system'], function () {
-    Route::get('/camera', \App\Livewire\System\Camera::class)->name('system.camera');
-    Route::get('/push-notifications', \App\Livewire\System\PushNotification::class)->name('system.push-notifications');
-    Route::get('/biometric-scanner', \App\Livewire\System\Bio::class)->name('system.biometric-scanner');
-    Route::get('/vibrate', \App\Livewire\System\Vibrate::class)->name('system.vibrate');
-    Route::get('/flashlight', \App\Livewire\System\Flashlight::class)->name('system.flashlight');
+Route::view('/test', 'upstate');
+
+Route::group(['middleware' => HasSessionToken::class], function () {
+    Route::group(['prefix' => 'system'], function () {
+        Route::get('/camera', Camera::class)->name('system.camera');
+        Route::get('/push-notifications', PushNotification::class)->name('system.push-notifications');
+        Route::get('/biometric-scanner', Bio::class)->name('system.biometric-scanner');
+        Route::get('/vibrate', Vibrate::class)->name('system.vibrate');
+        Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
+    });
+
+    Route::group(['prefix' => 'dialog'], function () {
+        Route::get('/share', Share::class)->name('dialog.share');
+        Route::get('/alert', Alert::class)->name('dialog.alert');
+        Route::get('/toast', Toast::class)->name('dialog.toast');
+    });
+
+    Route::group(['prefix' => 'laravel'], function () {
+        Route::get('/reverb', Reverb::class)->name('laravel.reverb');
+    });
 });
 
-Route::group(['prefix' => 'dialog'], function () {
-    Route::get('/share', \App\Livewire\Dialog\Share::class)->name('dialog.share');
-    Route::get('/alert', \App\Livewire\Dialog\Alert::class)->name('dialog.alert');
-    Route::get('/toast', \App\Livewire\Dialog\Toast::class)->name('dialog.toast');
-});
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
 
 
-require __DIR__.'/auth.php';
