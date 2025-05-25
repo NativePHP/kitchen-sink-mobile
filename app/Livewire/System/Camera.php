@@ -5,6 +5,7 @@ namespace App\Livewire\System;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\Camera\PhotoTaken;
+use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\System;
 
 class Camera extends Component
@@ -16,8 +17,6 @@ class Camera extends Component
        System::camera();
     }
 
-
-
     #[On('native:'.PhotoTaken::class)]
     public function handleCamera($path)
     {
@@ -26,6 +25,7 @@ class Camera extends Component
 
         $this->photoDataUrl = "data:$mime;base64,$data";
     }
+
 
     public function render()
     {

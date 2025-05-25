@@ -1,11 +1,13 @@
 <div class="space-y-6">
-    <x-layouts.app.callout title="Push Notifications!" icon="bell">
-        Press the button below to request permission to send push notifications.
-    </x-layouts.app.callout>
+    <flux:card>
+        <flux:heading size="lg" class="flex space-x-2">
+            <flux:icon.bell variant="mini" class="mr-2"/>
+            Push Notifications!
+        </flux:heading>
 
-    <x-layouts.app.button
-        title="Request Push Notifications"
-        icon="bell"
-        wire:click="promptForPushNotifications"
-    />
+        <flux:subheading >
+            <p>Press the button below to request permission to send push notifications.</p>
+        </flux:subheading>
+    </flux:card>
+    <flux:button variant="filled" icon="bell" wire:click="promptForPushNotifications" class="w-full"> Request Push Notifications</flux:button>
 </div>

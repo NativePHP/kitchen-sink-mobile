@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 use Native\Mobile\Facades\Dialog;
+use Native\Mobile\Facades\System;
 
 class HttpClientMacroServiceProvider extends ServiceProvider
 {
@@ -32,15 +33,15 @@ class HttpClientMacroServiceProvider extends ServiceProvider
                 ])
                 ->timeout(30)
                 ->throw(function ($response, $e) {
-                    session()->forget('token');
+                    System::secureSet('token', null);
                     session()->forget('user');
                     throw new ApiAuthenticationException($response->json('message'));
                 });
             if ($useToken) {
-                if (!session('token')) {
+                if (is_null(System::secureGet('token'))) {
                     throw new ApiAuthenticationException();
                 }
-                $request->withToken(session('token'));
+                $request->withToken(System::secureGet('token'));
             }
 
             return $request;

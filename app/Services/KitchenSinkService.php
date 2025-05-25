@@ -7,6 +7,7 @@ use App\Exceptions\ApiAuthenticationException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 use Native\Mobile\Facades\Dialog;
+use Native\Mobile\Facades\System;
 
 class KitchenSinkService
 {
@@ -22,7 +23,7 @@ class KitchenSinkService
             ]);
 
             if ($response->json('status') === true) {
-                session()->put('token', Arr::get($response->json('data'), 'token'));
+                System::secureSet('token', Arr::get($response->json('data'), 'token'));
                 session()->put('user', Arr::get($response->json('data'), 'user'));
                 return true;
             } else {
@@ -41,7 +42,7 @@ class KitchenSinkService
                 'password' => $password,
             ]);
             if ($response->json('token')) {
-                session()->put('token', $response->json('token'));
+                System::secureSet('token', $response->json('token'));
                 session()->put('user', $response->json('user'));
             }
 
@@ -62,9 +63,7 @@ class KitchenSinkService
 
     public function logout()
     {
-        session()->forget('token');
+        System::secureSet('token', null);
         session()->forget('user');
     }
-
-
 }

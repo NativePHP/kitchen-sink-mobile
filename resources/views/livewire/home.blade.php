@@ -1,23 +1,22 @@
 <div class="space-y-6">
-    <x-layouts.app.callout title="Welcome To NativePHP for Mobile!" icon="sparkles">
-        The goal for this app is to demo all of the native functionality we have to offer.
-        <br/><br/>
-        To start, let's begin with authentication and local database storage. Create an account or sign up below.
-    </x-layouts.app.callout>
+    <flux:card>
+        <flux:heading size="lg" class="flex space-x-2">
+            <x-heroicon-m-sparkles class="size-5 mr-2" />
+            Welcome To NativePHP for Mobile!
+        </flux:heading>
 
-    @if (!session()->has('token'))
+        <flux:subheading >
+            <p>The goal for this app is to demo all of the native functionality we have to offer.</p>
+            <br/>
+            <p>To start, let's begin with authentication and local database storage. Create an account or sign up below.</p>
+        </flux:subheading>
+    </flux:card>
+
+    @if (!$this->alreadySecure)
         @if ($mode === 'login')
-            <livewire:auth.login />
-            <div class="text-center text-sm text-zinc-600 dark:text-zinc-400 mt-2">
-                {{ __('Don\'t have an account?') }}
-                <button
-                    wire:click="register"
-                    class="ml-1 text-violet-600 hover:underline font-medium">
-                    {{ __('Sign up') }}
-                </button>
-            </div>
+            <livewire:auth.login/>
         @else
-            <livewire:auth.register />
+            <livewire:auth.register/>
             <div class="text-center text-sm text-zinc-600 dark:text-zinc-400 my-2">
                 {{ __('Already have an account?') }}
                 <button
@@ -28,8 +27,11 @@
             </div>
         @endif
     @else
-        <x-layouts.app.callout
-            icon="check-circle"
-            title="You're in 🎉! Now go and play 🔥" />
+{{--        <flux:card>--}}
+{{--            <flux:heading size="lg" class="flex space-x-2">--}}
+
+{{--                You're in 🎉<br/> Now go and play 🔥--}}
+{{--            </flux:heading>--}}
+{{--        </flux:card>--}}
     @endif
 </div>

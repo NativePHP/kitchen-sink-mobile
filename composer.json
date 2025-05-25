@@ -8,20 +8,25 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": [
-        {
+    "repositories": {
+        "flux-pro": {
             "type": "composer",
-            "url": "https://nativephp.composer.sh"
+            "url": "https://composer.fluxui.dev"
+        },
+        "0": {
+            "type": "path",
+            "url": "../mobile"
         }
-    ],
+    },
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
         "laravel/reverb": "^1.5",
         "laravel/tinker": "^2.10.1",
+        "livewire/flux-pro": "^1.0",
         "livewire/volt": "^1.7.0",
-        "nativephp/mobile": "^1.0.0"
+        "nativephp/mobile": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -83,6 +88,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

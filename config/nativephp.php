@@ -135,7 +135,11 @@ return [
 
         'content',
 
-        'storage/app/framework/{sessions,testing,cache}',
+        'storage/framework/sessions',
+
+        'storage/framework/testing',
+
+        'storage/framework/cache',
 
         'storage/logs/laravel.log',
     ],
@@ -149,6 +153,34 @@ return [
         'emulator_path' => env('ANDROID_EMULATOR'),
 
         '7zip-location' => env('NATIVEPHP_7ZIP_LOCATION', 'C:\\Program Files\\7-Zip\\7z.exe'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Hot Reload Configuration
+    |--------------------------------------------------------------------------
+    */
+    'hot_reload' => [
+        'watch_paths' => [
+            'app',
+            'resources',
+            'routes',
+            'config',
+            'database',
+            'public',
+        ],
+
+        'exclude_patterns' => [
+            '\.git',
+            'storage/logs',
+            'storage/framework',
+            'vendor',
+            'node_modules',
+            '\.swp',
+            '\.tmp',
+            '~',
+            '\.log'
+        ],
     ],
 
     /*
@@ -170,7 +202,7 @@ return [
 
         'camera' => true,
 
-        'nfc' => false,
+        'nfc' => true,
 
         'push_notifications' => true,
     ]

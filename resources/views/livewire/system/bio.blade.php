@@ -1,9 +1,15 @@
 <div class="space-y-6">
-    <x-layouts.app.callout title="Biometric Scanner!" icon="finger-print">
-        Press the button below to request permission to use the biometric scanner.
-    </x-layouts.app.callout>
+    <flux:card>
+        <flux:heading size="lg" class="flex space-x-2">
+            <flux:icon.finger-print variant="mini" class="mr-2"/>
+            Biometric Scanner!
+        </flux:heading>
 
-    <x-layouts.app.button title="Request Biometric ID" icon="finger-print" wire:click="promptForBiometricID" />
+        <flux:subheading >
+            <p>Press the button below to request permission to use the biometric scanner.</p>
+        </flux:subheading>
+    </flux:card>
+    <flux:button variant="filled" icon="finger-print" wire:click="promptForBiometricID" class="w-full">Request Biometric Access</flux:button>
 
     <div class="w-full mt-8">
         @if ($secure)

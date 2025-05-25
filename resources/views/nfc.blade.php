@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>🚀 Hello PHP Upstate!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -40,7 +41,6 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            background-image: url('https://i.pinimg.com/originals/e5/83/3e/e5833e1bea7d379f0f4e4ae250b7cf81.gif');
             background-size: cover;
             opacity: 1;
             z-index: -1;
@@ -48,10 +48,29 @@
     </style>
 </head>
 <body>
-<div class="confetti"></div>
-<div class="rocket">🚀</div>
-<h1>Hello PHP Upstate!</h1>
-<img style="width:30%;" src="https://upstatephp.com/logo.svg" />
-<p>Laravel is ALIIIIVE inside your app 🎉</p>
+<img style="width:80%;" src="https://2025.phptek.io/assets/images/phptek-2025.svg" />
+<p style="color:white;font-size: 4rem">Thanks for having me!</p>
+<script>
+    var duration = 100 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    var interval = setInterval(function() {
+        var timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(interval);
+        }
+
+        var particleCount = 50 * (timeLeft / duration);
+        // since particles fall down, start a bit higher than random
+        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+        confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+</script>
 </body>
 </html>

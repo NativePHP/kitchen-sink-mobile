@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Native\Mobile\Facades\System;
 use Symfony\Component\HttpFoundation\Response;
 
 class HasSessionToken
@@ -15,9 +16,9 @@ class HasSessionToken
      */
     public function handle(Request $request, Closure $next): Response
     {
-       if(!session()->has('token')){
-           return redirect()->route('home');
-       }
+//       if(is_null(System::secureGet('token'))) {
+//           return redirect()->route('home');
+//       }
 
         return $next($request);
     }

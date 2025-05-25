@@ -19,8 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home::class)->name('home');
 Route::get('/logout', Logout::class)->name('logout');
 
-Route::view('/test', 'upstate');
-
 Route::group(['middleware' => HasSessionToken::class], function () {
     Route::group(['prefix' => 'system'], function () {
         Route::get('/camera', Camera::class)->name('system.camera');
@@ -41,5 +39,6 @@ Route::group(['middleware' => HasSessionToken::class], function () {
     });
 });
 
+Route::view('/nfc', 'nfc');
 
 

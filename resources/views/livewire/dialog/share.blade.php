@@ -1,11 +1,13 @@
 <div class="space-y-6">
-    <x-layouts.app.callout title="Share!" icon="share">
-        Press the button below to show a share dialog.
-    </x-layouts.app.callout>
+    <flux:card>
+        <flux:heading size="lg" class="flex space-x-2">
+            <flux:icon.share variant="mini" class="mr-2"/>
+            Sharing is Caring!
+        </flux:heading>
 
-    <x-layouts.app.button
-        title="Show Share"
-        icon="share"
-        wire:click="share"
-    />
+        <flux:subheading >
+            <p>Press the button below to show a share dialog.</p>
+        </flux:subheading>
+    </flux:card>
+    <flux:button variant="filled" icon="share" wire:click="share" class="w-full">Share this!</flux:button>
 </div>

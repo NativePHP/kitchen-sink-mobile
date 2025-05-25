@@ -1,7 +1,13 @@
 <div class="space-y-6">
-    <x-layouts.app.callout title="Vibrate!" icon="fire">
-        Press the button below to vibrate the device.
-    </x-layouts.app.callout>
+    <flux:card>
+        <flux:heading size="lg" class="flex space-x-2">
+            <flux:icon.fire variant="mini" class="mr-2"/>
+            Vibrate!
+        </flux:heading>
 
-    <x-layouts.app.button title="Vibrate" icon="fire" wire:click="vibrate" />
+        <flux:subheading >
+            <p>Press the button below to vibrate the device.</p>
+        </flux:subheading>
+    </flux:card>
+    <flux:button variant="filled" icon="fire" wire:click="vibrate" class="w-full">Vibrate</flux:button>
 </div>
