@@ -16,9 +16,9 @@ class HasSessionToken
      */
     public function handle(Request $request, Closure $next): Response
     {
-//       if(is_null(System::secureGet('token'))) {
-//           return redirect()->route('home');
-//       }
+       if(is_null(System::secureGet('token'))) {
+           return redirect()->route('home');
+       }
 
         return $next($request);
     }

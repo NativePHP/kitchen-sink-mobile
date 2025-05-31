@@ -15,7 +15,7 @@ class Home extends Component
     #[Computed]
     public function alreadySecure()
     {
-        return System::secureGet('token') !== '';
+        return System::secureGet('token') === '';
     }
 
     public function register()

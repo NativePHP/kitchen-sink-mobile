@@ -41,14 +41,14 @@
         <flux:navlist.item icon="information-circle" href="https://nativephp.com/mobile">Learn More</flux:navlist.item>
     </flux:navlist>
 </flux:sidebar>
-<flux:header class="lg:hidden">
-    <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
+<flux:header>
+    <flux:sidebar.toggle icon="bars-2" inset="left" />
     <flux:spacer />
     @if (\Native\Mobile\Facades\System::secureGet('token'))
         <flux:dropdown position="top" align="start">
             <flux:profile avatar="{{ asset('usericon.webp') }}" />
             <flux:menu>
-                <flux:navlist.item icon="book-open" href=" {{route('logout')}}">Logout</flux:navlist.item>
+                <flux:navlist.item icon="arrow-right-start-on-rectangle" href=" {{route('logout')}}">Logout</flux:navlist.item>
             </flux:menu>
         </flux:dropdown>
     @endif

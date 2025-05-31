@@ -13,9 +13,9 @@
             "type": "composer",
             "url": "https://composer.fluxui.dev"
         },
-        "0": {
-            "type": "path",
-            "url": "../mobile"
+        "nativephp": {
+            "type": "composer",
+            "url": "https://nativephp.composer.sh"
         }
     },
     "require": {

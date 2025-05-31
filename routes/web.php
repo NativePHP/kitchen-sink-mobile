@@ -40,5 +40,6 @@ Route::group(['middleware' => HasSessionToken::class], function () {
 });
 
 Route::view('/nfc', 'nfc');
+Route::view('/morocco', 'morocco');
 
 
