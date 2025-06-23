@@ -20,8 +20,8 @@ class Camera extends Component
     #[On('native:'.PhotoTaken::class)]
     public function handleCamera($path)
     {
-        $data   = base64_encode(file_get_contents($path));
-        $mime   = mime_content_type($path);
+        $data = base64_encode(file_get_contents($path));
+        $mime = mime_content_type($path);
 
         $this->photoDataUrl = "data:$mime;base64,$data";
     }
