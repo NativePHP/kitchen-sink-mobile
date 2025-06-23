@@ -25,6 +25,7 @@
             <flux:navlist.item icon="finger-print" href="{{route('system.biometric-scanner')}}">Biometric Scanner</flux:navlist.item>
             <flux:navlist.item icon="bell" href="{{route('system.push-notifications')}}">Push Notifications</flux:navlist.item>
             <flux:navlist.item icon="fire" href="{{route('system.vibrate')}}">Vibrate</flux:navlist.item>
+            <flux:navlist.item icon="lock-closed" href="{{route('system.secure-storage')}}">Secure Storage</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="false" expandable heading="Dialog" >
             <flux:navlist.item icon="share" href="{{route('dialog.share')}}">Share</flux:navlist.item>

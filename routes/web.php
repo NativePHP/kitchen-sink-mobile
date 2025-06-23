@@ -13,6 +13,7 @@ use App\Livewire\System\Camera;
 use App\Livewire\System\Flashlight;
 use App\Livewire\System\PushNotification;
 use App\Livewire\System\Vibrate;
+use App\Livewire\System\SecureStorage;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,6 +27,7 @@ Route::group(['middleware' => HasSessionToken::class], function () {
         Route::get('/biometric-scanner', Bio::class)->name('system.biometric-scanner');
         Route::get('/vibrate', Vibrate::class)->name('system.vibrate');
         Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
+        Route::get('/secure-storage', SecureStorage::class)->name('system.secure-storage');
     });
 
     Route::group(['prefix' => 'dialog'], function () {
