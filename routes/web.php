@@ -8,13 +8,14 @@ use App\Livewire\Dialog\Share;
 use App\Livewire\Dialog\Toast;
 use App\Livewire\Home;
 use App\Livewire\Laravel\Reverb;
-use App\Livewire\System\Bio;
-use App\Livewire\System\Camera;
+use App\Livewire\Camera\GetPhoto;
 use App\Livewire\System\Flashlight;
-use App\Livewire\System\PushNotification;
-use App\Livewire\System\Vibrate;
+use App\Livewire\Camera\PickImages;
+use App\Livewire\PushNotification\Demo;
+use App\Livewire\Biometrics\Demo as BiometricsDemo;
 use App\Livewire\System\SecureStorage;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Haptics\Vibrate;
 
 
 Route::get('/', Home::class)->name('home');
@@ -22,12 +23,22 @@ Route::get('/logout', Logout::class)->name('logout');
 
 Route::group(['middleware' => HasSessionToken::class], function () {
     Route::group(['prefix' => 'system'], function () {
-        Route::get('/camera', Camera::class)->name('system.camera');
-        Route::get('/push-notifications', PushNotification::class)->name('system.push-notifications');
-        Route::get('/biometric-scanner', Bio::class)->name('system.biometric-scanner');
-        Route::get('/vibrate', Vibrate::class)->name('system.vibrate');
         Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
         Route::get('/secure-storage', SecureStorage::class)->name('system.secure-storage');
+    });
+    Route::group(['prefix' => 'push-notifications'], function () {
+        Route::get('/demo', Demo::class)->name('push-notifications.demo');
+    });
+    Route::group(['prefix' => 'biometrics'], function () {
+        Route::get('/demo', BiometricsDemo::class)->name('biometrics.demo');
+    });
+    Route::group(['prefix' => 'camera'], function () {
+        Route::get('/gallery', PickImages::class)->name('camera.pickImages');
+        Route::get('/camera', GetPhoto::class)->name('camera.getPhoto');
+    });
+
+    Route::group(['prefix' => 'haptics'], function () {
+        Route::get('/vibrate', Vibrate::class)->name('haptics.vibrate');
     });
 
     Route::group(['prefix' => 'dialog'], function () {
@@ -43,5 +54,6 @@ Route::group(['middleware' => HasSessionToken::class], function () {
 
 Route::view('/nfc', 'nfc');
 Route::view('/morocco', 'morocco');
+
 
 

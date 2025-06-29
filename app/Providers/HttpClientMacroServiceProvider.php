@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 use Native\Mobile\Facades\Dialog;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\SecureStorage;
 
 class HttpClientMacroServiceProvider extends ServiceProvider
 {
@@ -33,15 +33,15 @@ class HttpClientMacroServiceProvider extends ServiceProvider
                 ])
                 ->timeout(30)
                 ->throw(function ($response, $e) {
-                    System::secureSet('token', null);
+                    SecureStorage::set('token', null);
                     session()->forget('user');
                     throw new ApiAuthenticationException($response->json('message'));
                 });
             if ($useToken) {
-                if (is_null(System::secureGet('token'))) {
+                if (is_null(SecureStorage::get('token'))) {
                     throw new ApiAuthenticationException();
                 }
-                $request->withToken(System::secureGet('token'));
+                $request->withToken(SecureStorage::get('token'));
             }
 
             return $request;

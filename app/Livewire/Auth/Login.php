@@ -9,6 +9,7 @@ use Livewire\Component;
 use Native\Mobile\Events\Biometric\Completed;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\SecureStorage;
 
 class Login extends Component
 {
@@ -20,7 +21,7 @@ class Login extends Component
 
     public function mount()
     {
-        if(System::secureGet('token')){
+        if(SecureStorage::get('token')){
             System::promptForBiometricID();
         }
     }
@@ -29,7 +30,7 @@ class Login extends Component
     public function handleBiometricAuth(bool $success)
     {
         if ($success) {
-            return redirect()->route('system.camera');
+            return redirect()->route('camera.getPhoto');
         }else{
             Dialog::toast('Could not authenticate');;
         }
@@ -41,7 +42,7 @@ class Login extends Component
 
         $service->login($this->email, $this->password);
 
-        return redirect()->route('system.camera');
+        return redirect()->route('camera.getPhoto');
     }
 
     public function render()

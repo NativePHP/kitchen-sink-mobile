@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 use Native\Mobile\Events\Camera\PhotoTaken;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\SecureStorage;
 
 class Home extends Component
 {
@@ -15,7 +15,7 @@ class Home extends Component
     #[Computed]
     public function alreadySecure()
     {
-        return System::secureGet('token') === '';
+        return !blank(SecureStorage::get('token'));
     }
 
     public function register()

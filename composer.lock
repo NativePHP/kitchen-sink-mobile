@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "afca9e9085465630b8b90bf28a3de871",
+    "content-hash": "43a75faa6ca6a2d54b426072354483d2",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2788,14 +2788,16 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "1.0.14",
+            "version": "1.0.16",
             "dist": {
                 "type": "zip",
-                "url": "https://nativephp.composer.sh/download/9f3401bd-9530-402f-9801-e96c5af0dc09/nativephp-1.0.14.zip",
-                "reference": "252dc0c98fd312c7b15ad317e6a226b97839de72",
-                "shasum": "d6a807067c5a92cac3adfce495e28dfc145ad11d"
+                "url": "https://nativephp.composer.sh/download/9f425c78-74bc-4d85-a13a-ce3d18811670/nativephp-1.0.16.zip",
+                "reference": "588442ed514655a9867e022c7d66eb5a1e6b6ac8",
+                "shasum": "a5bfe9abeb9babee7102d1b70235e771707d61f6"
             },
             "require": {
+                "ext-dom": "*",
+                "ext-simplexml": "*",
                 "illuminate/contracts": "^10.0|^11.0|^12.0",
                 "laravel/prompts": "^0.1.1|^0.2|^0.3",
                 "php": "^8.3",
@@ -2883,7 +2885,7 @@
                 "laravel",
                 "nativephp"
             ],
-            "time": "2025-06-20T22:06:03+00:00"
+            "time": "2025-06-28T01:21:22+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -10585,7 +10587,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors';
+
 export default {
     darkMode: 'selector',
     content: [
@@ -10,7 +12,11 @@ export default {
         "./vendor/livewire/flux/stubs/**/*.blade.php",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                zinc: colors.slate,
+            },
+        }
     },
     plugins: [],
 }

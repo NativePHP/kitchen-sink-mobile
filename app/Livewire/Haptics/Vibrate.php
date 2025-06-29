@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Livewire\System;
+namespace App\Livewire\Haptics;
 
 use Livewire\Component;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\Haptics;
 
 class Vibrate extends Component
 {
     public function vibrate()
     {
-        System::vibrate();
+        Haptics::vibrate();
     }
 
     public function render()
     {
-        return view('livewire.system.vibrate');
+        return view('livewire.haptics.vibrate');
     }
 }

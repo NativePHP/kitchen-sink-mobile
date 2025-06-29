@@ -19,15 +19,23 @@
     <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
     <flux:brand href="#" logo="{{asset('usericon.webp')}}" name="NativePHP" class="px-2 flex" />
     <flux:navlist variant="outline">
-        <flux:navlist.group :expanded="false" expandable heading="System" >
-            <flux:navlist.item icon="camera" href="{{route('system.camera')}}">Camera</flux:navlist.item>
-            <flux:navlist.item icon="light-bulb" href="{{route('system.flashlight')}}">Flashlight</flux:navlist.item>
-            <flux:navlist.item icon="finger-print" href="{{route('system.biometric-scanner')}}">Biometric Scanner</flux:navlist.item>
-            <flux:navlist.item icon="bell" href="{{route('system.push-notifications')}}">Push Notifications</flux:navlist.item>
-            <flux:navlist.item icon="fire" href="{{route('system.vibrate')}}">Vibrate</flux:navlist.item>
-            <flux:navlist.item icon="lock-closed" href="{{route('system.secure-storage')}}">Secure Storage</flux:navlist.item>
+        <flux:navlist.group :expanded="request()->routeIs('camera.*')" expandable heading="Camera" >
+            <flux:navlist.item icon="camera" href="{{route('camera.getPhoto')}}">Get Photo</flux:navlist.item>
+            <flux:navlist.item icon="image-plus" href="{{route('camera.pickImages')}}">Pick Images</flux:navlist.item>
         </flux:navlist.group>
-        <flux:navlist.group :expanded="false" expandable heading="Dialog" >
+        <flux:navlist.group :expanded="request()->routeIs('haptics.*')" expandable heading="Haptics">
+            <flux:navlist.item icon="vibrate" href="{{route('haptics.vibrate')}}">Vibrate</flux:navlist.item>
+        </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('push-notifications.*')" expandable heading="Push Notifications" >
+            <flux:navlist.item icon="bell" href="{{route('push-notifications.demo')}}">Demo Push Notifications</flux:navlist.item>
+        </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('biometrics.*')" expandable heading="Biometrics" >
+            <flux:navlist.item icon="bell" href="{{route('biometrics.demo')}}">Demo Biometrics Scanner</flux:navlist.item>
+        </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('system.*')" expandable heading="System" >
+            <flux:navlist.item icon="light-bulb" href="{{route('system.flashlight')}}">Flashlight</flux:navlist.item>
+        </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('dialog.*')" expandable heading="Dialog" >
             <flux:navlist.item icon="share" href="{{route('dialog.share')}}">Share</flux:navlist.item>
             <flux:navlist.item icon="bell" href="{{route('dialog.alert')}}">Alert</flux:navlist.item>
             <flux:navlist.item icon="bolt" href="{{route('dialog.toast')}}">Toast</flux:navlist.item>
@@ -45,7 +53,7 @@
 <flux:header>
     <flux:sidebar.toggle icon="bars-2" inset="left" />
     <flux:spacer />
-    @if (\Native\Mobile\Facades\System::secureGet('token'))
+    @if (\Native\Mobile\Facades\SecureStorage::get('token'))
         <flux:dropdown position="top" align="start">
             <flux:profile avatar="{{ asset('usericon.webp') }}" />
             <flux:menu>

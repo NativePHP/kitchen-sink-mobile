@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Livewire\System;
+namespace App\Livewire\Camera;
 
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\Camera\PhotoTaken;
-use Native\Mobile\Facades\Dialog;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\Camera as CameraFacade;
 
-class Camera extends Component
+class GetPhoto extends Component
 {
     public string $photoDataUrl = '';
 
     public function camera()
     {
-       System::camera();
+        CameraFacade::getPhoto();
     }
 
-    #[On('native:'.PhotoTaken::class)]
+    #[On('native:' . PhotoTaken::class)]
     public function handleCamera($path)
     {
         $data = base64_encode(file_get_contents($path));
@@ -29,6 +28,6 @@ class Camera extends Component
 
     public function render()
     {
-        return view('livewire.system.camera');
+        return view('livewire.camera.get-photo');
     }
 }

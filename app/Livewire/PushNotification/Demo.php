@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Livewire\System;
+namespace App\Livewire\PushNotification;
 
 use App\Services\KitchenSinkService;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\PushNotification\TokenGenerated;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\PushNotifications;
 
-class PushNotification extends Component
+class Demo extends Component
 {
     public function promptForPushNotifications()
     {
-        System::getPushNotificationsToken();
+        PushNotifications::getPushNotificationsToken();
     }
 
     #[On('native:'. TokenGenerated::class)]
@@ -28,6 +28,6 @@ class PushNotification extends Component
 
     public function render()
     {
-        return view('livewire.system.push-notification');
+        return view('livewire.push-notification.demo');
     }
 }

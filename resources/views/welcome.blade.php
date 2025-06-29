@@ -24,10 +24,10 @@
 {{--    <flux:input as="button" variant="filled" placeholder="Search..." icon="magnifying-glass"/>--}}
     <flux:navlist variant="outline">
         <flux:navlist.group expandable :expanded="false" heading="System" class=" lg:grid">
-            <flux:navlist.item href="{{route('system.camera')}}">Camera</flux:navlist.item>
+            <flux:navlist.item href="{{route('camera.getPhoto')}}">Camera</flux:navlist.item>
             <flux:navlist.item href="{{route('system.push-notifications')}}">Push Notifications</flux:navlist.item>
             <flux:navlist.item href="{{route('system.biometric-scanner')}}">Biometric Scanner</flux:navlist.item>
-            <flux:navlist.item href="{{route('system.vibrate')}}">Vibrate</flux:navlist.item>
+            <flux:navlist.item href="{{route('haptics.vibrate')}}">Vibrate</flux:navlist.item>
             <flux:navlist.item href="{{route('system.flashlight')}}">Flashlight</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group expandable :expanded="false" heading="Dialog" class=" lg:grid">

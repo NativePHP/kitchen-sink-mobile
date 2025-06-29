@@ -26,7 +26,7 @@
         "laravel/tinker": "^2.10.1",
         "livewire/flux-pro": "^1.0",
         "livewire/volt": "^1.7.0",
-        "nativephp/mobile": "*"
+        "nativephp/mobile": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -88,6 +88,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

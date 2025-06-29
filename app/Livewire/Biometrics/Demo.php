@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire\System;
+namespace App\Livewire\Biometrics;
 
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\Biometric\Completed;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\Biometrics;
 
-class Bio extends Component
+class Demo extends Component
 {
     public $secure = false;
 
@@ -19,11 +19,11 @@ class Bio extends Component
 
     public function promptForBiometricID(): void
     {
-        System::promptForBiometricID();
+        Biometrics::promptForBiometricID();
     }
 
     public function render()
     {
-        return view('livewire.system.bio');
+        return view('livewire.biometrics.demo');
     }
 }
