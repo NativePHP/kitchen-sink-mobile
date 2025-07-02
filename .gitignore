@@ -25,3 +25,7 @@ yarn-error.log
 NUL
 .DS_Store
 google-services.json
+*.jks
+*.apk
+*.aab
+output
