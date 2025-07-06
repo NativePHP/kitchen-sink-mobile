@@ -6,6 +6,8 @@ use App\Http\Middleware\HasSessionToken;
 use App\Livewire\Dialog\Alert;
 use App\Livewire\Dialog\Share;
 use App\Livewire\Dialog\Toast;
+use App\Livewire\Geolocatioin\Location;
+use App\Livewire\Geolocation\GetCurrent;
 use App\Livewire\Home;
 use App\Livewire\Laravel\Reverb;
 use App\Livewire\Camera\GetPhoto;
@@ -46,6 +48,9 @@ Route::group(['middleware' => HasSessionToken::class], function () {
         Route::get('/alert', Alert::class)->name('dialog.alert');
         Route::get('/toast', Toast::class)->name('dialog.toast');
     });
+    Route::group(['prefix' => 'geolocation'], function () {
+        Route::get('/location', Location::class)->name('geolocation.getCurrent');
+    });
 
     Route::group(['prefix' => 'laravel'], function () {
         Route::get('/reverb', Reverb::class)->name('laravel.reverb');
@@ -53,7 +58,6 @@ Route::group(['middleware' => HasSessionToken::class], function () {
 });
 
 Route::view('/nfc', 'nfc');
-Route::view('/morocco', 'morocco');
 
 
 

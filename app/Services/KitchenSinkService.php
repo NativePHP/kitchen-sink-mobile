@@ -41,6 +41,7 @@ class KitchenSinkService
                 'email' => $email,
                 'password' => $password,
             ]);
+
             if ($response->json('token')) {
                 SecureStorage::set('token', $response->json('token'));
                 session()->put('user', $response->json('user'));

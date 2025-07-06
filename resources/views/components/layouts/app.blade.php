@@ -27,13 +27,16 @@
             <flux:navlist.item icon="vibrate" href="{{route('haptics.vibrate')}}">Vibrate</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('push-notifications.*')" expandable heading="Push Notifications" >
-            <flux:navlist.item icon="bell" href="{{route('push-notifications.demo')}}">Demo Push Notifications</flux:navlist.item>
+            <flux:navlist.item icon="bell" href="{{route('push-notifications.demo')}}">Demo</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('biometrics.*')" expandable heading="Biometrics" >
-            <flux:navlist.item icon="bell" href="{{route('biometrics.demo')}}">Demo Biometrics Scanner</flux:navlist.item>
+            <flux:navlist.item icon="bell" href="{{route('biometrics.demo')}}">Demo</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('system.*')" expandable heading="System" >
             <flux:navlist.item icon="light-bulb" href="{{route('system.flashlight')}}">Flashlight</flux:navlist.item>
+        </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('geolocation.*')" expandable heading="Geolocation" >
+            <flux:navlist.item icon="map" href="{{route('geolocation.getCurrent')}}">Current Location</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('dialog.*')" expandable heading="Dialog" >
             <flux:navlist.item icon="share" href="{{route('dialog.share')}}">Share</flux:navlist.item>

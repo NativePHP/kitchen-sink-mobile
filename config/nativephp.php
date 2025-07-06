@@ -205,5 +205,7 @@ return [
         'nfc' => true,
 
         'push_notifications' => true,
+
+        'location' => true,
     ]
 ];
