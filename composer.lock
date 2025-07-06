@@ -2788,11 +2788,11 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-v1.1-refactor",
+            "version": "dev-android-splash",
             "dist": {
                 "type": "path",
                 "url": "../mobile",
-                "reference": "2c55fd4a6fa75253882e27e95db34fa436fa91b6"
+                "reference": "e32ada612db9ca667248ea5ffdfd428c00e1be1b"
             },
             "require": {
                 "ext-dom": "*",
