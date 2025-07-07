@@ -15,15 +15,15 @@
     @if (!$this->alreadySecure)
         @if ($mode === 'login')
             <livewire:auth.login/>
+            <flux:button variant="ghost" class="w-full" wire:click="register">Sign up for a new account</flux:button>
         @else
             <livewire:auth.register/>
             <div class="text-center text-sm text-zinc-600 dark:text-zinc-400 my-2">
                 {{ __('Already have an account?') }}
-                <button
-                    wire:click="login"
-                    class="ml-1 text-violet-600 hover:underline font-medium mb-8">
+                <flux:button
+                    wire:click="login">
                     {{ __('Log in') }}
-                </button>
+                </flux:button>
             </div>
         @endif
     @else

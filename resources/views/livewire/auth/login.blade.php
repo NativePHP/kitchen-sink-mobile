@@ -23,8 +23,6 @@
 
             <div class="space-y-2">
                 <flux:button type="submit" variant="primary" class="w-full">Log in</flux:button>
-
-                <flux:button variant="ghost" class="w-full">Sign up for a new account</flux:button>
             </div>
         </flux:card>
     </form>
