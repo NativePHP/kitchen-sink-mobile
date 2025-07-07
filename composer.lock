@@ -2792,7 +2792,7 @@
             "dist": {
                 "type": "path",
                 "url": "../mobile",
-                "reference": "e32ada612db9ca667248ea5ffdfd428c00e1be1b"
+                "reference": "d1e232bdb91745612cc836859a0c8ccd8a02ba55"
             },
             "require": {
                 "ext-dom": "*",
