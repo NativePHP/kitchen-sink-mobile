@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire\System;
+namespace App\Livewire\SecureStorage;
 
 use Livewire\Component;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\SecureStorage;
 
-class SecureStorage extends Component
+class Demo extends Component
 {
     public $key = '';
     public $value = '';
@@ -22,7 +22,7 @@ class SecureStorage extends Component
         }
 
         try {
-            System::secureSet($this->key, $this->value);
+            SecureStorage::set($this->key, $this->value);
             $this->message = "Successfully stored value for key: {$this->key}";
             $this->reset(['key', 'value']);
         } catch (\Exception $e) {
@@ -38,8 +38,8 @@ class SecureStorage extends Component
         }
 
         try {
-            $this->retrievedValue = System::secureGet($this->retrieveKey);
-            $this->message = $this->retrievedValue 
+            $this->retrievedValue = SecureStorage::get($this->retrieveKey);
+            $this->message = $this->retrievedValue
                 ? "Successfully retrieved value for key: {$this->retrieveKey}"
                 : "No value found for key: {$this->retrieveKey}";
         } catch (\Exception $e) {
@@ -56,7 +56,7 @@ class SecureStorage extends Component
         }
 
         try {
-            System::secureSet($this->deleteKey, null);
+            SecureStorage::set($this->deleteKey, null);
             $this->message = "Successfully deleted value for key: {$this->deleteKey}";
             $this->reset(['deleteKey']);
         } catch (\Exception $e) {
@@ -71,6 +71,6 @@ class SecureStorage extends Component
 
     public function render()
     {
-        return view('livewire.system.secure-storage');
+        return view('livewire.secure-storage.demo');
     }
 }

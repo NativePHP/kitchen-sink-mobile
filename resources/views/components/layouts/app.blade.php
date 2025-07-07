@@ -38,6 +38,10 @@
         <flux:navlist.group :expanded="request()->routeIs('geolocation.*')" expandable heading="Geolocation" >
             <flux:navlist.item icon="map" href="{{route('geolocation.getCurrent')}}">Current Location</flux:navlist.item>
         </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('secure-storage.*')" expandable heading="Secure Storage" >
+            <flux:navlist.item icon="folder-lock" href="{{route('secure-storage.demo')}}">Demo</flux:navlist.item>
+        </flux:navlist.group>
+
         <flux:navlist.group :expanded="request()->routeIs('dialog.*')" expandable heading="Dialog" >
             <flux:navlist.item icon="share" href="{{route('dialog.share')}}">Share</flux:navlist.item>
             <flux:navlist.item icon="bell" href="{{route('dialog.alert')}}">Alert</flux:navlist.item>

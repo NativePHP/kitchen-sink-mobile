@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43a75faa6ca6a2d54b426072354483d2",
+    "content-hash": "d8bdef65fe97689b144f500ed1f0ba56",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2788,23 +2788,22 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "1.0.18",
+            "version": "dev-android-splash",
             "dist": {
-                "type": "zip",
-                "url": "https://nativephp.composer.sh/download/9f4c40b6-a378-48ef-9a08-9e8dc34324cc/nativephp-1.0.18.zip",
-                "reference": "bf6194e05a4924105a3ca2aa66c98a1cdd63787b",
-                "shasum": "40fbb7fca484577398214f1039982f0e35e13dd1"
+                "type": "path",
+                "url": "../mobile",
+                "reference": "94e349382049af97ad088786bff270f48bebd2c7"
             },
             "require": {
                 "ext-dom": "*",
                 "ext-simplexml": "*",
+                "guzzlehttp/guzzle": "^7.9",
                 "illuminate/contracts": "^10.0|^11.0|^12.0",
                 "laravel/prompts": "^0.1.1|^0.2|^0.3",
                 "php": "^8.3",
                 "spatie/laravel-package-tools": "^1.14.0"
             },
             "require-dev": {
-                "guzzlehttp/guzzle": "^7.9",
                 "laravel/pint": "^1.0",
                 "nunomaduro/collision": "^7.9",
                 "nunomaduro/larastan": "^2.0.1",
@@ -2841,20 +2840,20 @@
                     "@composer analyse",
                     "@composer test"
                 ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "format": [
-                    "vendor/bin/pint"
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
                 ],
                 "analyse": [
                     "vendor/bin/phpstan analyse"
                 ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
                 "test-coverage": [
                     "vendor/bin/pest --coverage"
                 ],
-                "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
+                "format": [
+                    "vendor/bin/pint"
                 ]
             },
             "license": [
@@ -2863,18 +2862,18 @@
             "authors": [
                 {
                     "name": "Simon Hamp",
-                    "role": "Developer",
-                    "email": "simon.hamp@me.com"
+                    "email": "simon.hamp@me.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Shane Rosenthal",
-                    "role": "Developer",
-                    "email": "srosenthal@gmail.com"
+                    "email": "srosenthal@gmail.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Marcel Pociot",
-                    "role": "Developer",
-                    "email": "marcel@beyondco.de"
+                    "email": "marcel@beyondco.de",
+                    "role": "Developer"
                 }
             ],
             "description": "NativePHP for Mobile",
@@ -2885,7 +2884,9 @@
                 "laravel",
                 "nativephp"
             ],
-            "time": "2025-07-02T23:22:01+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nesbot/carbon",
@@ -10587,7 +10588,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,

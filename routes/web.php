@@ -15,7 +15,7 @@ use App\Livewire\System\Flashlight;
 use App\Livewire\Camera\PickImages;
 use App\Livewire\PushNotification\Demo;
 use App\Livewire\Biometrics\Demo as BiometricsDemo;
-use App\Livewire\System\SecureStorage;
+use App\Livewire\SecureStorage\Demo as SecureStorageDemo;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Haptics\Vibrate;
 
@@ -26,10 +26,12 @@ Route::get('/logout', Logout::class)->name('logout');
 Route::group(['middleware' => HasSessionToken::class], function () {
     Route::group(['prefix' => 'system'], function () {
         Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
-        Route::get('/secure-storage', SecureStorage::class)->name('system.secure-storage');
     });
     Route::group(['prefix' => 'push-notifications'], function () {
         Route::get('/demo', Demo::class)->name('push-notifications.demo');
+    });
+    Route::group(['prefix' => 'secure-storage'], function () {
+        Route::get('/demo', SecureStorageDemo::class)->name('secure-storage.demo');
     });
     Route::group(['prefix' => 'biometrics'], function () {
         Route::get('/demo', BiometricsDemo::class)->name('biometrics.demo');
