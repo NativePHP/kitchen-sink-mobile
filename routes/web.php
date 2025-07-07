@@ -74,6 +74,7 @@ Route::get('.well-known/assetlinks.json', function(){
             ]
         ]
     ];
+    return response()->json($array);
 });
 
 
