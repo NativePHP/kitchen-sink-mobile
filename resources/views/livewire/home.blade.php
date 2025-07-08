@@ -2,7 +2,7 @@
     <flux:card>
         <flux:heading size="lg" class="flex space-x-2">
             <x-heroicon-m-sparkles class="size-5 mr-2" />
-            Welcome To NativePHP for Mobile!
+            Welcome To NativePHP for Mobile!!
         </flux:heading>
 
         <flux:subheading >
