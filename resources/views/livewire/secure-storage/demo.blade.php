@@ -10,10 +10,6 @@
         </flux:subheading>
     </flux:card>
 
-    @if($message)
-        <flux:badge :color="\Illuminate\Support\Str::contains(strtolower($message), 'success') ? 'emerald':'red'">{{ $message }}</flux:badge>
-        <flux:button variant="ghost" size="sm" wire:click="clearMessage" class="mt-2">Clear</flux:button>
-    @endif
 
     <flux:card>
         <flux:heading>Store Secure Value</flux:heading>
@@ -37,7 +33,7 @@
                 variant="filled"
                 icon="lock-closed"
                 wire:click="setSecureValue"
-                class="w-full mt-2"
+                class="w-full"
             >
                 Store Secure Value
             </flux:button>
@@ -59,14 +55,10 @@
                 variant="filled"
                 icon="key"
                 wire:click="getSecureValue"
-                class="w-full mt-2"
+                class="w-full"
             >
                 Retrieve Secure Value
             </flux:button>
-
-            @if($retrievedValue)
-                <flux:badge color="emerald">Retrieved Value: {{ $retrievedValue }}</flux:badge>
-            @endif
         </div>
     </flux:card>
 
@@ -85,7 +77,7 @@
                 variant="danger"
                 icon="trash"
                 wire:click="deleteSecureValue"
-                class="w-full mt-2"
+                class="w-full"
             >
                 Delete Secure Value
             </flux:button>

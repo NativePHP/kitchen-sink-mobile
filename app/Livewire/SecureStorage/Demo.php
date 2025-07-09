@@ -4,6 +4,7 @@ namespace App\Livewire\SecureStorage;
 
 use Livewire\Component;
 use Native\Mobile\Facades\SecureStorage;
+use Native\Mobile\Facades\Dialog;
 
 class Demo extends Component
 {
@@ -12,38 +13,37 @@ class Demo extends Component
     public $retrieveKey = '';
     public $retrievedValue = '';
     public $deleteKey = '';
-    public $message = '';
 
     public function setSecureValue()
     {
         if (empty($this->key) || empty($this->value)) {
-            $this->message = 'Please provide both key and value';
+            Dialog::alert('Attention!', 'Please provide both key and value');
             return;
         }
 
         try {
             SecureStorage::set($this->key, $this->value);
-            $this->message = "Successfully stored value for key: {$this->key}";
+            Dialog::alert('Stored!', "Successfully stored value for key: {$this->key}");
             $this->reset(['key', 'value']);
         } catch (\Exception $e) {
-            $this->message = "Error storing value: {$e->getMessage()}";
+            Dialog::alert('Error', "Error storing value: {$e->getMessage()}");
         }
     }
 
     public function getSecureValue()
     {
         if (empty($this->retrieveKey)) {
-            $this->message = 'Please provide a key to retrieve';
+            Dialog::alert('Attention!', 'Please provide a key to retrieve');
             return;
         }
 
         try {
             $this->retrievedValue = SecureStorage::get($this->retrieveKey);
-            $this->message = $this->retrievedValue
-                ? "Successfully retrieved value for key: {$this->retrieveKey}"
-                : "No value found for key: {$this->retrieveKey}";
+            $this->retrievedValue
+                ? Dialog::alert('Decrypted', "Successfully retrieved value for {$this->retrieveKey}: {$this->retrievedValue}")
+                : Dialog::alert("Error retrieving '{$this->retrieveKey}'", 'No value found.');
         } catch (\Exception $e) {
-            $this->message = "Error retrieving value: {$e->getMessage()}";
+            Dialog::alert('Error', "Error retrieving value: {$e->getMessage()}");
             $this->retrievedValue = '';
         }
     }
@@ -51,22 +51,17 @@ class Demo extends Component
     public function deleteSecureValue()
     {
         if (empty($this->deleteKey)) {
-            $this->message = 'Please provide a key to delete';
+            Dialog::alert('Attention!', 'Please provide a key to delete');
             return;
         }
 
         try {
-            SecureStorage::set($this->deleteKey, null);
-            $this->message = "Successfully deleted value for key: {$this->deleteKey}";
+            SecureStorage::Set($this->deleteKey, null);
+            Dialog::alert('Success', "Successfully deleted value for key: {$this->deleteKey}");
             $this->reset(['deleteKey']);
         } catch (\Exception $e) {
-            $this->message = "Error deleting value: {$e->getMessage()}";
+            Dialog::alert('Error', "Error deleting value: {$e->getMessage()}");
         }
-    }
-
-    public function clearMessage()
-    {
-        $this->message = '';
     }
 
     public function render()
