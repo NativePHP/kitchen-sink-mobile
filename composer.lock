@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43a75faa6ca6a2d54b426072354483d2",
+    "content-hash": "d8bdef65fe97689b144f500ed1f0ba56",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2788,12 +2788,11 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "1.0.20",
+            "version": "dev-keyboard-optimization",
             "dist": {
-                "type": "zip",
-                "url": "https://nativephp.composer.sh/download/9f569748-cd77-4fc1-9334-be4a13be81ba/nativephp-1.0.20.zip",
-                "reference": "e3fba2bffac6e8207a2ebc93113830714cbf1f02",
-                "shasum": "acd70f307802027dc402feba0f480710246e995e"
+                "type": "path",
+                "url": "../mobile",
+                "reference": "a6694805e37db9f92e406fb8fef7b32f34e39503"
             },
             "require": {
                 "ext-dom": "*",
@@ -2841,20 +2840,20 @@
                     "@composer analyse",
                     "@composer test"
                 ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "format": [
-                    "vendor/bin/pint"
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
                 ],
                 "analyse": [
                     "vendor/bin/phpstan analyse"
                 ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
                 "test-coverage": [
                     "vendor/bin/pest --coverage"
                 ],
-                "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
+                "format": [
+                    "vendor/bin/pint"
                 ]
             },
             "license": [
@@ -2863,18 +2862,18 @@
             "authors": [
                 {
                     "name": "Simon Hamp",
-                    "role": "Developer",
-                    "email": "simon.hamp@me.com"
+                    "email": "simon.hamp@me.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Shane Rosenthal",
-                    "role": "Developer",
-                    "email": "srosenthal@gmail.com"
+                    "email": "srosenthal@gmail.com",
+                    "role": "Developer"
                 },
                 {
                     "name": "Marcel Pociot",
-                    "role": "Developer",
-                    "email": "marcel@beyondco.de"
+                    "email": "marcel@beyondco.de",
+                    "role": "Developer"
                 }
             ],
             "description": "NativePHP for Mobile",
@@ -2885,7 +2884,9 @@
                 "laravel",
                 "nativephp"
             ],
-            "time": "2025-07-08T02:42:23+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nesbot/carbon",
@@ -7895,16 +7896,16 @@
         },
         {
             "name": "laravel/pint",
-            "version": "v1.22.1",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "941d1927c5ca420c22710e98420287169c7bcaf7"
+                "reference": "9ab851dba4faa51a3c3223dd3d07044129021024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/941d1927c5ca420c22710e98420287169c7bcaf7",
-                "reference": "941d1927c5ca420c22710e98420287169c7bcaf7",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/9ab851dba4faa51a3c3223dd3d07044129021024",
+                "reference": "9ab851dba4faa51a3c3223dd3d07044129021024",
                 "shasum": ""
             },
             "require": {
@@ -7915,10 +7916,10 @@
                 "php": "^8.2.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.75.0",
-                "illuminate/view": "^11.44.7",
-                "larastan/larastan": "^3.4.0",
-                "laravel-zero/framework": "^11.36.1",
+                "friendsofphp/php-cs-fixer": "^3.76.0",
+                "illuminate/view": "^11.45.1",
+                "larastan/larastan": "^3.5.0",
+                "laravel-zero/framework": "^11.45.0",
                 "mockery/mockery": "^1.6.12",
                 "nunomaduro/termwind": "^2.3.1",
                 "pestphp/pest": "^2.36.0"
@@ -7928,6 +7929,9 @@
             ],
             "type": "project",
             "autoload": {
+                "files": [
+                    "overrides/Runner/Parallel/ProcessFactory.php"
+                ],
                 "psr-4": {
                     "App\\": "app/",
                     "Database\\Seeders\\": "database/seeders/",
@@ -7957,7 +7961,7 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2025-05-08T08:38:12+00:00"
+            "time": "2025-07-03T10:37:47+00:00"
         },
         {
             "name": "laravel/sail",
@@ -10587,7 +10591,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,

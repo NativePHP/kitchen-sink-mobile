@@ -26,11 +26,14 @@
         <flux:navlist.group :expanded="request()->routeIs('haptics.*')" expandable heading="Haptics">
             <flux:navlist.item icon="vibrate" href="{{route('haptics.vibrate')}}">Vibrate</flux:navlist.item>
         </flux:navlist.group>
+        <flux:navlist.group :expanded="request()->routeIs('browser.*')" expandable heading="Browser">
+            <flux:navlist.item icon="globe-alt" href="{{route('browser.in-app')}}">In App</flux:navlist.item>
+        </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('push-notifications.*')" expandable heading="Push Notifications" >
             <flux:navlist.item icon="bell" href="{{route('push-notifications.demo')}}">Demo</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('biometrics.*')" expandable heading="Biometrics" >
-            <flux:navlist.item icon="bell" href="{{route('biometrics.demo')}}">Demo</flux:navlist.item>
+            <flux:navlist.item icon="finger-print" href="{{route('biometrics.demo')}}">Demo</flux:navlist.item>
         </flux:navlist.group>
         <flux:navlist.group :expanded="request()->routeIs('system.*')" expandable heading="System" >
             <flux:navlist.item icon="light-bulb" href="{{route('system.flashlight')}}">Flashlight</flux:navlist.item>
