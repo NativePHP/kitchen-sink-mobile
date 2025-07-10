@@ -79,5 +79,16 @@ Route::get('.well-known/assetlinks.json', function(){
     return response()->json($array, headers: ['Content-Type' => 'application/json']);
 });
 
-
+Route::get('.well-known/apple-app-site-association', function(){
+    return response()->json([
+        'applinks' => [
+            'details' => [
+                [
+                    'appID' => 'J68WFCX458.com.nativephp.kitchensink',
+                    'paths' => ['*'],
+                ]
+            ]
+        ],
+    ]);
+});
 
