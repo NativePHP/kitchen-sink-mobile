@@ -17,7 +17,6 @@ class Demo extends Component
         Browser::open('https://nativephp.com');
     }
 
-
     public function render()
     {
         return view('livewire.browser.demo');

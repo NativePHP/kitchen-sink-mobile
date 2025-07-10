@@ -11,10 +11,9 @@ use Livewire\Component;
 use Native\Mobile\Events\Biometric\Completed;
 use Native\Mobile\Facades\Browser;
 use Native\Mobile\Facades\Dialog;
-use Native\Mobile\Facades\System;
 use Native\Mobile\Facades\SecureStorage;
+use Native\Mobile\Facades\System;
 use WorkOS\UserManagement;
-
 
 class Login extends Component
 {
@@ -31,13 +30,13 @@ class Login extends Component
         }
     }
 
-    #[On('native:' . Completed::class)]
+    #[On('native:'.Completed::class)]
     public function handleBiometricAuth(bool $success)
     {
         if ($success) {
             return redirect()->route('camera.getPhoto');
-        }else{
-            Dialog::toast('Could not authenticate');;
+        } else {
+            Dialog::toast('Could not authenticate');
         }
     }
 

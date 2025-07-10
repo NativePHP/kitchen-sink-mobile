@@ -2,10 +2,8 @@
 
 namespace App\Livewire;
 
-use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
-use Native\Mobile\Events\Camera\PhotoTaken;
 use Native\Mobile\Facades\SecureStorage;
 
 class Home extends Component
@@ -15,7 +13,7 @@ class Home extends Component
     #[Computed]
     public function alreadySecure()
     {
-        return !blank(SecureStorage::get('token'));
+        return ! blank(SecureStorage::get('token'));
     }
 
     public function register()
@@ -27,7 +25,6 @@ class Home extends Component
     {
         $this->mode = 'login';
     }
-
 
     public function render()
     {

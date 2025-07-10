@@ -27,9 +27,9 @@ class Register extends Component
 
         $response = $service->register($this->name, str($this->email)->lower(), $this->password);
 
-        if($response === true){
+        if ($response === true) {
             $this->redirectRoute('camera.getPhoto');
-        }else{
+        } else {
             Dialog::toast($response);
         }
     }

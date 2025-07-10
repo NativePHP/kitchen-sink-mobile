@@ -14,8 +14,8 @@
             "url": "https://composer.fluxui.dev"
         },
         "nativephp": {
-            "type": "path",
-            "url": "../mobile"
+            "type": "composer",
+            "url": "https://nativephp.composer.sh"
         }
     },
     "require": {
@@ -89,6 +89,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
