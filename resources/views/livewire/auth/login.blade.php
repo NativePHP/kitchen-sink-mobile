@@ -23,6 +23,16 @@
 
             <div class="space-y-2">
                 <flux:button type="submit" variant="primary" class="w-full">Log in</flux:button>
+                
+                <div class="flex items-center">
+                    <div class="flex-1 border-t border-gray-300"></div>
+                    <div class="px-3 text-sm text-gray-500">or</div>
+                    <div class="flex-1 border-t border-gray-300"></div>
+                </div>
+                
+                <flux:button wire:click="loginWithWorkOS" variant="outline" class="w-full">
+                    Sign in with WorkOS
+                </flux:button>
             </div>
         </flux:card>
     </form>

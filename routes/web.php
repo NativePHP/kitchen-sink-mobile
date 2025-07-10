@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Auth\Logout;
+use App\Http\Controllers\Auth\WorkOSController;
 use App\Http\Middleware\HasSessionToken;
 use App\Livewire\Browser\Inapp;
 use App\Livewire\Dialog\Alert;
@@ -17,12 +18,14 @@ use App\Livewire\Camera\PickImages;
 use App\Livewire\PushNotification\Demo;
 use App\Livewire\Biometrics\Demo as BiometricsDemo;
 use App\Livewire\SecureStorage\Demo as SecureStorageDemo;
-use Illuminate\Support\Facades\Route;
 use App\Livewire\Haptics\Vibrate;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', Home::class)->name('home');
 Route::get('/logout', Logout::class)->name('logout');
+
+Route::get('/auth/workos/callback', [WorkOSController::class, 'callback'])->name('auth.workos.callback');
 
 Route::group(['middleware' => HasSessionToken::class], function () {
     Route::group(['prefix' => 'system'], function () {
