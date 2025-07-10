@@ -59,6 +59,6 @@ class Location extends Component
 
     public function render()
     {
-        return view('livewire.geolocatioin.location');
+        return view('livewire.geolocation.location');
     }
 }
