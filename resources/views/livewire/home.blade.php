@@ -21,6 +21,7 @@
             <div class="text-center text-sm text-zinc-600 dark:text-zinc-400 my-2">
                 {{ __('Already have an account?') }}
                 <flux:button
+                    variant="ghost"
                     wire:click="login">
                     {{ __('Log in') }}
                 </flux:button>

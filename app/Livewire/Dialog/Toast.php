@@ -11,7 +11,7 @@ class Toast extends Component
 
     public function toast()
     {
-        Dialog::toast($this->message);
+        Dialog::toast('hi ' . $this->message);
     }
 
     public function render()
