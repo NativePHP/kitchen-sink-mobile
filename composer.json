@@ -26,8 +26,8 @@
         "laravel/tinker": "^2.10.1",
         "livewire/flux-pro": "^1.0",
         "livewire/volt": "^1.7.0",
-        "nativephp/mobile": "*"
-        "workos/workos-php": "^4.26"
+        "nativephp/mobile": "*",
+        "workos/workos-php-laravel": "^4.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

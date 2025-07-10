@@ -2,7 +2,9 @@
 
 namespace App\Livewire\Auth;
 
+use App\Http\Requests\WorkOS;
 use App\Services\KitchenSinkService;
+use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -12,6 +14,7 @@ use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\System;
 use Native\Mobile\Facades\SecureStorage;
 use WorkOS\UserManagement;
+
 
 class Login extends Component
 {
@@ -49,12 +52,15 @@ class Login extends Component
 
     public function loginWithWorkOS()
     {
-        $authorizationUrl = new UserManagement()->getAuthorizationUrl(
-            redirectUri: config('services.workos.redirect_uri'),
-            organizationId: 'org_01JYGHTX2DARBAR1JNPSK6MFMV',
+        WorkOS::configure();
+
+        $url = (new UserManagement)->getAuthorizationUrl(
+            config('services.workos.redirect_uri'),
+            ['state' => $state = Str::random(20)],
+            'authkit',
         );
 
-        Browser::openAuth($authorizationUrl);
+        Browser::auth($url);
     }
 
     public function render()

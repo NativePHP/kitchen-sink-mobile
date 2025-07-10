@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8bdef65fe97689b144f500ed1f0ba56",
+    "content-hash": "15c24d664c9275775d30633c3ab0b71a",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2788,11 +2788,11 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-keyboard-optimization",
+            "version": "dev-browser-features-android",
             "dist": {
                 "type": "path",
                 "url": "../mobile",
-                "reference": "a6694805e37db9f92e406fb8fef7b32f34e39503"
+                "reference": "0e147035f397e3bf2684bfaa585d8ac922426860"
             },
             "require": {
                 "ext-dom": "*",
@@ -7366,6 +7366,119 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "workos/workos-php",
+            "version": "v4.26.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/workos/workos-php.git",
+                "reference": "bb7b8233eb9fedd1d11365d2f1e51ec8a232620d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/workos/workos-php/zipball/bb7b8233eb9fedd1d11365d2f1e51ec8a232620d",
+                "reference": "bb7b8233eb9fedd1d11365d2f1e51ec8a232620d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=7.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.15|^3.6",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WorkOS\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WorkOS",
+                    "email": "eng@workos.com"
+                }
+            ],
+            "description": "WorkOS PHP Library",
+            "homepage": "https://workos.com",
+            "support": {
+                "issues": "https://github.com/workos/workos-php/issues",
+                "source": "https://github.com/workos/workos-php/tree/v4.26.0"
+            },
+            "time": "2025-06-23T20:37:16+00:00"
+        },
+        {
+            "name": "workos/workos-php-laravel",
+            "version": "v4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/workos/workos-php-laravel.git",
+                "reference": "1d28b60ece4bae5c5530782a941a86525c28adef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/workos/workos-php-laravel/zipball/1d28b60ece4bae5c5530782a941a86525c28adef",
+                "reference": "1d28b60ece4bae5c5530782a941a86525c28adef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "workos/workos-php": "^v4.26.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.15 || ^3.6",
+                "phpunit/phpunit": "^5.7 || ^10.1"
+            },
+            "suggest": {
+                "laravel/framework": "For testing"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "WorkOS\\Laravel\\WorkOSServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WorkOS\\Laravel\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WorkOS",
+                    "email": "support@workos.com"
+                }
+            ],
+            "description": "WorkOS PHP Library for Laravel",
+            "keywords": [
+                "SSO",
+                "laravel",
+                "laravel 10",
+                "laravel 5",
+                "laravel 6",
+                "laravel 7",
+                "laravel 8",
+                "laravel 9",
+                "sdk",
+                "workos"
+            ],
+            "support": {
+                "issues": "https://github.com/workos/workos-php-laravel/issues",
+                "source": "https://github.com/workos/workos-php-laravel/tree/v4.3.0"
+            },
+            "time": "2025-06-23T20:58:53+00:00"
         }
     ],
     "packages-dev": [

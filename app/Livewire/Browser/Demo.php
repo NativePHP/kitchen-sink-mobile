@@ -5,15 +5,21 @@ namespace App\Livewire\Browser;
 use Livewire\Component;
 use Native\Mobile\Facades\Browser;
 
-class Inapp extends Component
+class Demo extends Component
 {
-    public function openUrl()
+    public function openInApp()
     {
         Browser::inApp('https://nativephp.com/mobile');
     }
 
+    public function openSystem()
+    {
+        Browser::open('https://nativephp.com');
+    }
+
+
     public function render()
     {
-        return view('livewire.browser.inapp');
+        return view('livewire.browser.demo');
     }
 }

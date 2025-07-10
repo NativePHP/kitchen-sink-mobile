@@ -4,7 +4,7 @@
 use App\Http\Controllers\Auth\Logout;
 use App\Http\Controllers\Auth\WorkOSController;
 use App\Http\Middleware\HasSessionToken;
-use App\Livewire\Browser\Inapp;
+use App\Livewire\Browser\Demo as BrowserDemo;
 use App\Livewire\Dialog\Alert;
 use App\Livewire\Dialog\Share;
 use App\Livewire\Dialog\Toast;
@@ -35,7 +35,7 @@ Route::group(['middleware' => HasSessionToken::class], function () {
         Route::get('/demo', Demo::class)->name('push-notifications.demo');
     });
     Route::group(['prefix' => 'browser'], function () {
-        Route::get('/in-app', Inapp::class)->name('browser.in-app');
+        Route::get('/demo', BrowserDemo::class)->name('browser.demo');
     });
     Route::group(['prefix' => 'secure-storage'], function () {
         Route::get('/demo', SecureStorageDemo::class)->name('secure-storage.demo');
