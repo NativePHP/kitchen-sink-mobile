@@ -8,12 +8,13 @@ use Livewire\Component;
 use Native\Mobile\Events\PushNotification\TokenGenerated;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\PushNotifications;
+use Native\Mobile\Facades\System;
 
 class Demo extends Component
 {
     public function promptForPushNotifications()
     {
-        if (PHP_OS === 'Darwin') {
+        if (System::isIos()) {
             PushNotifications::enrollForPushNotifications();
         } else {
             PushNotifications::getPushNotificationsToken();
