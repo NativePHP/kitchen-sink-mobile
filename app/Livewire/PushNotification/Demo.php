@@ -12,7 +12,7 @@ class Demo extends Component
 {
     public function promptForPushNotifications()
     {
-        if (PHP_OS === 'Darwin') {
+        if (System::isIos()) {
             PushNotifications::enrollForPushNotifications();
         } else {
             PushNotifications::getPushNotificationsToken();
