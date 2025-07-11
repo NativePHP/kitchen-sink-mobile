@@ -70,12 +70,7 @@
     <flux:spacer/>
     @if (\Native\Mobile\Facades\SecureStorage::get('token'))
         <flux:dropdown position="top" align="start">
-            @if(session()->get('user'))
-                <flux:profile avatar="{{ session()->get('user')->profilePictureUrl }}"/>
-            @else
-                <flux:profile avatar="{{ asset('usericon.webp') }}"/>
-
-            @endif
+            <flux:profile avatar="{{ asset('usericon.webp') }}"/>
             <flux:menu>
                 <flux:navlist.item icon="arrow-right-start-on-rectangle" href=" {{route('logout')}}">
                     Logout

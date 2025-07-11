@@ -55,7 +55,7 @@ class KitchenSinkService
 
     public function sendForPushNotification($token)
     {
-        $response = Http::kitchenSink()
+        $response = Http::kitchenSink(false)
             ->post('send-push-notification', [
                 'token' => $token,
             ]);
