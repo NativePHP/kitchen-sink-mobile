@@ -12,7 +12,11 @@ class Demo extends Component
 {
     public function promptForPushNotifications()
     {
-        PushNotifications::getPushNotificationsToken();
+        if (PHP_OS === 'Darwin') {
+            PushNotifications::enrollForPushNotifications();
+        } else {
+            PushNotifications::getPushNotificationsToken();
+        }
     }
 
     #[On('native:'.TokenGenerated::class)]
