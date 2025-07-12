@@ -9,5 +9,18 @@
             <p>Press the button below to request permission to send push notifications.</p>
         </flux:subheading>
     </flux:card>
-    <flux:button variant="filled" icon="bell" wire:click="promptForPushNotifications" class="w-full"> Request Push Notifications</flux:button>
+
+    <flux:button variant="filled" icon="lock-open" wire:click="promptForPushNotifications" class="w-full">
+        Request Push Notifications
+    </flux:button>
+
+    @if($token)
+        <flux:card>
+            {{ $token }}
+        </flux:card>
+
+        <flux:button variant="filled" icon="bell" wire:click="sendNotification" class="w-full">
+            Send Test Notification
+        </flux:button>
+    @endif
 </div>
