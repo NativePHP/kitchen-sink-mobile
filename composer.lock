@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c536823a25ed674693a17a1641817fbe",
+    "content-hash": "428c5ce111f5b3f5aa9af250b322e990",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2650,11 +2650,12 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-main",
+            "version": "1.0.20",
             "dist": {
-                "type": "path",
-                "url": "../mobile",
-                "reference": "d3809b0f8e395b3068cfe2001909117ebd38ade4"
+                "type": "zip",
+                "url": "https://nativephp.composer.sh/download/9f569748-cd77-4fc1-9334-be4a13be81ba/nativephp-1.0.20.zip",
+                "reference": "e3fba2bffac6e8207a2ebc93113830714cbf1f02",
+                "shasum": "acd70f307802027dc402feba0f480710246e995e"
             },
             "require": {
                 "ext-dom": "*",
@@ -2702,20 +2703,20 @@
                     "@composer analyse",
                     "@composer test"
                 ],
-                "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "format": [
+                    "vendor/bin/pint"
                 ],
                 "analyse": [
                     "vendor/bin/phpstan analyse"
                 ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
                 "test-coverage": [
                     "vendor/bin/pest --coverage"
                 ],
-                "format": [
-                    "vendor/bin/pint"
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
                 ]
             },
             "license": [
@@ -2724,18 +2725,18 @@
             "authors": [
                 {
                     "name": "Simon Hamp",
-                    "email": "simon.hamp@me.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "simon.hamp@me.com"
                 },
                 {
                     "name": "Shane Rosenthal",
-                    "email": "srosenthal@gmail.com",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "srosenthal@gmail.com"
                 },
                 {
                     "name": "Marcel Pociot",
-                    "email": "marcel@beyondco.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "marcel@beyondco.de"
                 }
             ],
             "description": "NativePHP for Mobile",
@@ -2746,9 +2747,7 @@
                 "laravel",
                 "nativephp"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2025-07-08T02:42:23+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -10487,7 +10486,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
