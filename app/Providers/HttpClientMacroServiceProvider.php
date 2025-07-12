@@ -3,11 +3,8 @@
 namespace App\Providers;
 
 use App\Exceptions\ApiAuthenticationException;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
-use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\SecureStorage;
 
 class HttpClientMacroServiceProvider extends ServiceProvider
@@ -39,7 +36,7 @@ class HttpClientMacroServiceProvider extends ServiceProvider
                 });
             if ($useToken) {
                 if (is_null(SecureStorage::get('token'))) {
-                    throw new ApiAuthenticationException();
+                    throw new ApiAuthenticationException;
                 }
                 $request->withToken(SecureStorage::get('token'));
             }

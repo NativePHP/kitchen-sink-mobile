@@ -14,11 +14,11 @@ class BiometricMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-   {
-       if (! session('biometric_passed')) {
-           abort(403, 'Biometric authentication required.');
-       }
+    {
+        if (! session('biometric_passed')) {
+            abort(403, 'Biometric authentication required.');
+        }
 
-       return $next($request);
-   }
+        return $next($request);
+    }
 }

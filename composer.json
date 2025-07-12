@@ -14,8 +14,8 @@
             "url": "https://composer.fluxui.dev"
         },
         "nativephp": {
-            "type": "path",
-            "url": "../mobile"
+            "type": "composer",
+            "url": "https://nativephp.composer.sh"
         }
     },
     "require": {
@@ -23,10 +23,9 @@
         "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
         "laravel/reverb": "^1.5",
-        "laravel/tinker": "^2.10.1",
         "livewire/flux-pro": "^1.0",
-        "livewire/volt": "^1.7.0",
-        "nativephp/mobile": "*"
+        "nativephp/mobile": "*",
+        "workos/workos-php-laravel": "^4.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -88,6 +87,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

@@ -15,7 +15,7 @@ class SetupKitchenSinkEnv extends Command
     {
         $this->info('🔧 Setting up .env file…');
 
-        if (!File::exists(base_path('.env'))) {
+        if (! File::exists(base_path('.env'))) {
             File::copy(base_path('.env.example'), base_path('.env'));
             $this->info('✅ Copied .env.example to .env');
         }
@@ -32,7 +32,7 @@ class SetupKitchenSinkEnv extends Command
         $envContent = File::get(base_path('.env'));
         foreach ($envVars as $line) {
             if (! str_contains($envContent, explode('=', $line)[0])) {
-                File::append(base_path('.env'), PHP_EOL . $line);
+                File::append(base_path('.env'), PHP_EOL.$line);
             }
         }
 

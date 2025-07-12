@@ -3,21 +3,26 @@
 namespace App\Livewire\SecureStorage;
 
 use Livewire\Component;
-use Native\Mobile\Facades\SecureStorage;
 use Native\Mobile\Facades\Dialog;
+use Native\Mobile\Facades\SecureStorage;
 
 class Demo extends Component
 {
     public $key = '';
+
     public $value = '';
+
     public $retrieveKey = '';
+
     public $retrievedValue = '';
+
     public $deleteKey = '';
 
     public function setSecureValue()
     {
         if (empty($this->key) || empty($this->value)) {
             Dialog::alert('Attention!', 'Please provide both key and value');
+
             return;
         }
 
@@ -34,6 +39,7 @@ class Demo extends Component
     {
         if (empty($this->retrieveKey)) {
             Dialog::alert('Attention!', 'Please provide a key to retrieve');
+
             return;
         }
 
@@ -52,6 +58,7 @@ class Demo extends Component
     {
         if (empty($this->deleteKey)) {
             Dialog::alert('Attention!', 'Please provide a key to delete');
+
             return;
         }
 

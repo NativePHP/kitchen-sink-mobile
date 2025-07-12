@@ -66,7 +66,6 @@ return [
     */
     'deeplink_host' => env('NATIVEPHP_DEEPLINK_HOST'),
 
-
     /*
     |--------------------------------------------------------------------------
     | App Author
@@ -210,7 +209,7 @@ return [
             '\.swp',
             '\.tmp',
             '~',
-            '\.log'
+            '\.log',
         ],
     ],
 
@@ -238,5 +237,5 @@ return [
         'push_notifications' => true,
 
         'location' => true,
-    ]
+    ],
 ];

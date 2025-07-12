@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-
 use App\Exceptions\ApiAuthenticationException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
@@ -19,12 +18,13 @@ class KitchenSinkService
                 'email' => $email,
                 'password' => $password,
                 'password_confirmation' => $password,
-                'device_id' => uniqid()
+                'device_id' => uniqid(),
             ]);
 
             if ($response->json('status') === true) {
                 SecureStorage::set('token', Arr::get($response->json('data'), 'token'));
                 session()->put('user', Arr::get($response->json('data'), 'user'));
+
                 return true;
             } else {
                 return $response->json();
@@ -55,10 +55,11 @@ class KitchenSinkService
 
     public function sendForPushNotification($token)
     {
-        $response = Http::kitchenSink()
+        $response = Http::kitchenSink(false)
             ->post('send-push-notification', [
-                'token' => $token
+                'token' => $token,
             ]);
+
         return $response;
     }
 

@@ -16,7 +16,7 @@ class GetPhoto extends Component
         CameraFacade::getPhoto();
     }
 
-    #[On('native:' . PhotoTaken::class)]
+    #[On('native:'.PhotoTaken::class)]
     public function handleCamera($path)
     {
         $data = base64_encode(file_get_contents($path));
@@ -24,7 +24,6 @@ class GetPhoto extends Component
 
         $this->photoDataUrl = "data:$mime;base64,$data";
     }
-
 
     public function render()
     {
