@@ -21,13 +21,13 @@ class Demo extends Component
         }
     }
 
-    #[On('native:' . TokenGenerated::class)]
+    #[On('native:'.TokenGenerated::class)]
     public function handlePushNotificationsToken(KitchenSinkService $service, $token)
     {
         $response = $service->sendForPushNotification($token);
 
         if ($response->successful()) {
-            Dialog::alert('Push Notification Sent!','Push notifications will not display while the app is open, close the app and wait one minute to see the notification.');
+            Dialog::alert('Push Notification Sent!', 'Push notifications will not display while the app is open, close the app and wait one minute to see the notification.');
         }
     }
 
