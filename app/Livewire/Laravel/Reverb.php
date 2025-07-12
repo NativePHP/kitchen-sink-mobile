@@ -10,6 +10,7 @@ use Native\Mobile\Facades\System;
 class Reverb extends Component
 {
     public array $messages = [];
+
     public string $message = '';
 
     public function send()

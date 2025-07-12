@@ -11,7 +11,7 @@ class Demo extends Component
 {
     public $secure = false;
 
-    #[On('native:' . Completed::class)]
+    #[On('native:'.Completed::class)]
     public function handleBiometricAuth($success)
     {
         $this->secure = $success;

@@ -18,19 +18,19 @@ class Alert extends Component
         ]);
     }
 
-
-    #[On('native:' . ButtonPressed::class)]
+    #[On('native:'.ButtonPressed::class)]
     public function handleAlert($index, $label)
     {
-        if($index == 1){
+        if ($index == 1) {
             Dialog::toast('I know you meant to say yes 🤘');
-            Dialog::toast('Index: ' . $index);
-        }else{
-            Dialog::toast('You pressed "' . $label . '" to be alerted.');
-            Dialog::toast('Index: ' . $index);
+            Dialog::toast('Index: '.$index);
+        } else {
+            Dialog::toast('You pressed "'.$label.'" to be alerted.');
+            Dialog::toast('Index: '.$index);
         }
 
     }
+
     public function render()
     {
         return view('livewire.dialog.alert');

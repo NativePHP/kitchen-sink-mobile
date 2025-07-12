@@ -18,7 +18,7 @@ class Demo extends Component
     {
         if (System::isIos()) {
             if (! PushNotifications::getPushNotificationsToken()) {
-                PushNotifications::enrollForPushNotifications();
+            PushNotifications::enrollForPushNotifications();
             }
         } else {
             PushNotifications::getPushNotificationsToken();
@@ -36,7 +36,7 @@ class Demo extends Component
         $response = $service->sendForPushNotification($this->token);
 
         if ($response->successful()) {
-            Dialog::alert('Push Notification Sent!','Push notifications will not display while the app is open, close the app and wait one minute to see the notification.');
+            Dialog::alert('Push Notification Sent!', 'Push notifications will not display while the app is open, close the app and wait one minute to see the notification.');
         }
     }
 
