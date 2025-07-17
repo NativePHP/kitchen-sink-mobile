@@ -18,7 +18,7 @@ class Demo extends Component
     {
         if (System::isIos()) {
             if (! PushNotifications::getPushNotificationsToken()) {
-            PushNotifications::enrollForPushNotifications();
+                PushNotifications::enrollForPushNotifications();
             }
         } else {
             PushNotifications::getPushNotificationsToken();

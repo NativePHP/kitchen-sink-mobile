@@ -15,10 +15,6 @@
     </flux:button>
 
     @if($token)
-        <flux:card>
-            {{ $token }}
-        </flux:card>
-
         <flux:button variant="filled" icon="bell" wire:click="sendNotification" class="w-full">
             Send Test Notification
         </flux:button>
