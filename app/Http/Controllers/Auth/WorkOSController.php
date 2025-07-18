@@ -51,4 +51,34 @@ class WorkOSController extends Controller
             return redirect()->route('home');
         }
     }
+
+    public function deleteAccount()
+    {
+        try {
+            $workosProfile = SecureStorage::get('workos_profile');
+
+            if (!$workosProfile) {
+                return response()->json(['error' => 'No WorkOS profile found'], 400);
+            }
+
+            $profile = json_decode($workosProfile, true);
+            $userId = $profile['id'];
+
+            $userManagement = new UserManagement;
+            $userManagement->deleteUser($userId);
+
+            $this->clearWorkOSData();
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to delete WorkOS account'], 500);
+        }
+    }
+
+    protected function clearWorkOSData()
+    {
+        SecureStorage::delete('token');
+        SecureStorage::delete('workos_profile');
+        session()->forget('user');
+    }
 }

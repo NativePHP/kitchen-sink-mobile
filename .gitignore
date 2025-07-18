@@ -21,7 +21,6 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-/nativephp
 NUL
 .DS_Store
 google-services.json

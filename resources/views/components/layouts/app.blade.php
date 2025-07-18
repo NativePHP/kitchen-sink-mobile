@@ -75,6 +75,8 @@
                 <flux:navlist.item icon="arrow-right-start-on-rectangle" href=" {{route('logout')}}">
                     Logout
                 </flux:navlist.item>
+                <flux:menu.separator/>
+                <livewire:auth.delete-account/>
             </flux:menu>
         </flux:dropdown>
     @endif

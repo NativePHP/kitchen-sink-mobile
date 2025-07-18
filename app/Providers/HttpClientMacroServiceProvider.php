@@ -30,14 +30,14 @@ class HttpClientMacroServiceProvider extends ServiceProvider
                 ])
                 ->timeout(30)
                 ->throw(function ($response, $e) {
-                    SecureStorage::set('token', null);
-                    session()->forget('user');
                     throw new ApiAuthenticationException($response->json('message'));
                 });
+
             if ($useToken) {
                 if (is_null(SecureStorage::get('token'))) {
-                    throw new ApiAuthenticationException;
+                    throw new ApiAuthenticationException('No token');
                 }
+
                 $request->withToken(SecureStorage::get('token'));
             }
 

@@ -63,9 +63,27 @@ class KitchenSinkService
         return $response;
     }
 
+    public function deleteAccount()
+    {
+        try {
+            $response = Http::kitchenSink(true)->post('delete');
+
+            if ($response->successful()) {
+                $this->logout();
+                return true;
+            }
+
+            return false;
+        } catch (ApiAuthenticationException $e) {
+            Dialog::alert('API Error', $e->getMessage());
+            return false;
+        }
+    }
+
     public function logout()
     {
         SecureStorage::delete('token');
+        SecureStorage::delete('workos_profile');
         session()->forget('user');
     }
 }
