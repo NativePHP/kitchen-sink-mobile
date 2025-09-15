@@ -1,3 +1,5 @@
+<img width="1280" height="640" alt="Red and Black Retro Landscape YouTube Thumbnail background (1280 x 640 px) (1)" src="https://github.com/user-attachments/assets/28437f58-bce8-4857-b66b-d34bca9f181a" />
+
 # NativePHP for Mobile Kitchen Sink app
 
 A demo of many features of NativePHP for Mobile.
