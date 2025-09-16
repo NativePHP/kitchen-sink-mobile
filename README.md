@@ -8,6 +8,10 @@ What's NativePHP? [Read the docs](https://nativephp.com)
 
 ## Installation
 
+> [!NOTE]
+> You will need a [NativePHP for Mobile license](https://nativephp.com/mobile) and Flux UI Pro to install
+> the Composer dependencies.
+
 To use this app and check out NativePHP for Mobile, follow these steps:
 
 1. Clone this repo (`git clone git@github.com:NativePHP/kitchen-sink-mobile.git`)
@@ -15,10 +19,6 @@ To use this app and check out NativePHP for Mobile, follow these steps:
 3. Run `php artisan native:install` and follow the prompts
 4. Run `php artisan native:run` and follow the prompts
 5. The app should launch on your chosen device!
-
-> [!NOTE]
-> If you want to test this app on an emulated or real mobile device, you will need to purchase a
-> [NativePHP for mobile license](https://nativephp.com/mobile).
 
 ## License
 
