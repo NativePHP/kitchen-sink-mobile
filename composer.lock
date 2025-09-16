@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c16b538250695bc96b615dd399386055",
+    "content-hash": "01bd2d9c64184d72063ccb7d44157d42",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -1382,16 +1382,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.28.1",
+            "version": "v12.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "868c1f2d3dba4df6d21e3a8d818479f094cfd942"
+                "reference": "a9e4c73086f5ba38383e9c1d74b84fe46aac730b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/868c1f2d3dba4df6d21e3a8d818479f094cfd942",
-                "reference": "868c1f2d3dba4df6d21e3a8d818479f094cfd942",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a9e4c73086f5ba38383e9c1d74b84fe46aac730b",
+                "reference": "a9e4c73086f5ba38383e9c1d74b84fe46aac730b",
                 "shasum": ""
             },
             "require": {
@@ -1419,6 +1419,7 @@
                 "monolog/monolog": "^3.0",
                 "nesbot/carbon": "^3.8.4",
                 "nunomaduro/termwind": "^2.0",
+                "phiki/phiki": "v2.0.0",
                 "php": "^8.2",
                 "psr/container": "^1.1.1|^2.0.1",
                 "psr/log": "^1.0|^2.0|^3.0",
@@ -1528,7 +1529,7 @@
                 "ext-pdo": "Required to use all database features.",
                 "ext-posix": "Required to use all features of the queue worker.",
                 "ext-redis": "Required to use the Redis cache and queue drivers (^4.0|^5.0|^6.0).",
-                "fakerphp/faker": "Required to use the eloquent factory builder (^1.9.1).",
+                "fakerphp/faker": "Required to generate fake data using the fake() helper (^1.23).",
                 "filp/whoops": "Required for friendly error pages in development (^2.14.3).",
                 "laravel/tinker": "Required to use the tinker console command (^2.0).",
                 "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^3.25.1).",
@@ -1597,7 +1598,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-09-04T14:58:12+00:00"
+            "time": "2025-09-16T14:15:03+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2354,16 +2355,16 @@
         },
         {
             "name": "livewire/flux",
-            "version": "v2.3.2",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/flux.git",
-                "reference": "e0704b125d5f9544aa32e0cfccb11baaf44d77a0"
+                "reference": "8d83f34d64ab0542463e8e3feab4d166e1830ed9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/flux/zipball/e0704b125d5f9544aa32e0cfccb11baaf44d77a0",
-                "reference": "e0704b125d5f9544aa32e0cfccb11baaf44d77a0",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/8d83f34d64ab0542463e8e3feab4d166e1830ed9",
+                "reference": "8d83f34d64ab0542463e8e3feab4d166e1830ed9",
                 "shasum": ""
             },
             "require": {
@@ -2414,25 +2415,25 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
-                "source": "https://github.com/livewire/flux/tree/v2.3.2"
+                "source": "https://github.com/livewire/flux/tree/v2.4.0"
             },
-            "time": "2025-09-08T01:11:34+00:00"
+            "time": "2025-09-16T00:20:10+00:00"
         },
         {
             "name": "livewire/flux-pro",
-            "version": "2.3.2",
+            "version": "2.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.fluxui.dev/download/9fd33076-beb0-4f3b-a1c7-3dd5e606dfe2/flux-pro-2.3.2.zip",
-                "reference": "9a9d6fc027e1e34df9bfa32f105455dc641be585",
-                "shasum": "38da379ced75160a71612bd37bd707c8d2f0aaef"
+                "url": "https://composer.fluxui.dev/download/9fe336ed-832c-4a6a-97df-a308413a5420/flux-pro-2.4.0.zip",
+                "reference": "0c9737eb5c623c17cf88dad298ab57e2befcfbe1",
+                "shasum": "e6b1308d21725cc99821f545f488a567eb652eb3"
             },
             "require": {
                 "illuminate/console": "^10.0|^11.0|^12.0",
                 "illuminate/support": "^10.0|^11.0|^12.0",
                 "illuminate/view": "^10.0|^11.0|^12.0",
                 "laravel/prompts": "^0.1.24|^0.2|^0.3",
-                "livewire/flux": "2.3.2|dev-main",
+                "livewire/flux": "2.4.0|dev-main",
                 "livewire/livewire": "^3.6.2",
                 "php": "^8.1",
                 "symfony/console": "^6.0|^7.0"
@@ -2473,7 +2474,7 @@
                 "livewire",
                 "ui"
             ],
-            "time": "2025-09-08T01:13:22+00:00"
+            "time": "2025-09-16T00:24:40+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -2656,12 +2657,12 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "1.10.5",
+            "version": "1.11.1",
             "dist": {
                 "type": "zip",
-                "url": "https://nativephp.composer.sh/download/9fe2dd6a-570b-4557-8682-c21da31a47d9/nativephp-1.10.5.zip",
-                "reference": "c22d208427f2ef0b2810866f77498cf3e657f453",
-                "shasum": "02f209b6e8a25df100a11ca6364e6c0c2d639124"
+                "url": "https://nativephp.composer.sh/download/9fe4681a-4e0e-48b0-8295-3ffb72fe1555/nativephp-1.11.1.zip",
+                "reference": "ffe1af694f56a85049acb7c5185a0434acbd946c",
+                "shasum": "44022952687d5a1b3f57473feb3d68663d160da3"
             },
             "require": {
                 "ext-dom": "*",
@@ -2754,7 +2755,7 @@
                 "laravel",
                 "nativephp"
             ],
-            "time": "2025-09-15T20:14:22+00:00"
+            "time": "2025-09-16T14:38:00+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3189,6 +3190,77 @@
                 "source": "https://github.com/paragonie/sodium_compat/tree/v2.1.0"
             },
             "time": "2024-09-04T12:51:01+00:00"
+        },
+        {
+            "name": "phiki/phiki",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phikiphp/phiki.git",
+                "reference": "461f6dd7e91dc3a95463b42f549ac7d0aab4702f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phikiphp/phiki/zipball/461f6dd7e91dc3a95463b42f549ac7d0aab4702f",
+                "reference": "461f6dd7e91dc3a95463b42f549ac7d0aab4702f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "league/commonmark": "^2.5.3",
+                "php": "^8.2",
+                "psr/simple-cache": "^3.0"
+            },
+            "require-dev": {
+                "illuminate/support": "^11.45",
+                "laravel/pint": "^1.18.1",
+                "orchestra/testbench": "^9.15",
+                "pestphp/pest": "^3.5.1",
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan": "^2.0",
+                "symfony/var-dumper": "^7.1.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Phiki\\Adapters\\Laravel\\PhikiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phiki\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Chandler",
+                    "email": "support@ryangjchandler.co.uk",
+                    "homepage": "https://ryangjchandler.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Syntax highlighting using TextMate grammars in PHP.",
+            "support": {
+                "issues": "https://github.com/phikiphp/phiki/issues",
+                "source": "https://github.com/phikiphp/phiki/tree/v2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/ryangjchandler",
+                    "type": "github"
+                },
+                {
+                    "url": "https://buymeacoffee.com/ryangjchandler",
+                    "type": "other"
+                }
+            ],
+            "time": "2025-08-28T18:20:27+00:00"
         },
         {
             "name": "phpoption/phpoption",
