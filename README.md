@@ -19,3 +19,7 @@ To use this app and check out NativePHP for Mobile, follow these steps:
 > [!NOTE]
 > If you want to test this app on an emulated or real mobile device, you will need to purchase a
 > [NativePHP for mobile license](https://nativephp.com/mobile).
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
