@@ -1,3 +1,5 @@
+![](https://nativephp.com/storage/S9EP8pDnnTmf4p66rGYzVQpXH5rGXAlV2OB6kL7x.png)
+
 # NativePHP for Mobile Kitchen Sink app
 
 A demo of many features of NativePHP for Mobile.
