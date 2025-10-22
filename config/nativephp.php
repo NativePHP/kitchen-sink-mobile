@@ -181,6 +181,7 @@ return [
             'routes',
             'config',
             'database',
+            'public',
         ],
 
         'exclude_patterns' => [
@@ -259,10 +260,10 @@ return [
             'landscape_right' => false,
         ],
         'iPad' => [
-            'portrait' => false,
-            'upside_down' => false,
-            'landscape_left' => false,
-            'landscape_right' => false,
+            'portrait' => true,
+            'upside_down' => true,
+            'landscape_left' => true,
+            'landscape_right' => true,
         ],
         'android' => [
             'portrait' => true,

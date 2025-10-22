@@ -26,47 +26,45 @@ Route::get('/logout', Logout::class)->name('logout');
 
 Route::get('/auth/workos/callback', [WorkOSController::class, 'callback'])->name('auth.workos.callback');
 
-Route::group(['middleware' => HasSessionToken::class], function () {
-    Route::group(['prefix' => 'system'], function () {
-        Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
-    });
-    Route::group(['prefix' => 'push-notifications'], function () {
-        Route::get('/demo', Demo::class)->name('push-notifications.demo');
-    });
-    Route::group(['prefix' => 'browser'], function () {
-        Route::get('/demo', BrowserDemo::class)->name('browser.demo');
-    });
-    Route::group(['prefix' => 'secure-storage'], function () {
-        Route::get('/demo', SecureStorageDemo::class)->name('secure-storage.demo');
-    });
-    Route::group(['prefix' => 'biometrics'], function () {
-        Route::get('/demo', BiometricsDemo::class)->name('biometrics.demo');
-    });
-    Route::group(['prefix' => 'camera'], function () {
-        Route::get('/gallery', PickImages::class)->name('camera.pickImages');
-        Route::get('/camera', GetPhoto::class)->name('camera.getPhoto');
-    });
+Route::group(['prefix' => 'system'], function () {
+    Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
+});
+Route::group(['prefix' => 'push-notifications'], function () {
+    Route::get('/demo', Demo::class)->name('push-notifications.demo');
+});
+Route::group(['prefix' => 'browser'], function () {
+    Route::get('/demo', BrowserDemo::class)->name('browser.demo');
+});
+Route::group(['prefix' => 'secure-storage'], function () {
+    Route::get('/demo', SecureStorageDemo::class)->name('secure-storage.demo');
+});
+Route::group(['prefix' => 'biometrics'], function () {
+    Route::get('/demo', BiometricsDemo::class)->name('biometrics.demo');
+});
+Route::group(['prefix' => 'camera'], function () {
+    Route::get('/gallery', PickImages::class)->name('camera.pickImages');
+    Route::get('/camera', GetPhoto::class)->name('camera.getPhoto');
+});
 
-    Route::group(['prefix' => 'haptics'], function () {
-        Route::get('/vibrate', Vibrate::class)->name('haptics.vibrate');
-    });
+Route::group(['prefix' => 'haptics'], function () {
+    Route::get('/vibrate', Vibrate::class)->name('haptics.vibrate');
+});
 
-    Route::group(['prefix' => 'dialog'], function () {
-        Route::get('/share', Share::class)->name('dialog.share');
-        Route::get('/alert', Alert::class)->name('dialog.alert');
-        Route::get('/toast', Toast::class)->name('dialog.toast');
-    });
-    Route::group(['prefix' => 'geolocation'], function () {
-        Route::get('/location', Location::class)->name('geolocation.getCurrent');
-    });
+Route::group(['prefix' => 'dialog'], function () {
+    Route::get('/share', Share::class)->name('dialog.share');
+    Route::get('/alert', Alert::class)->name('dialog.alert');
+    Route::get('/toast', Toast::class)->name('dialog.toast');
+});
+Route::group(['prefix' => 'geolocation'], function () {
+    Route::get('/location', Location::class)->name('geolocation.getCurrent');
+});
 
-    Route::group(['prefix' => 'device'], function () {
-        Route::get('/demo', DeviceDemo::class)->name('device.demo');
-    });
+Route::group(['prefix' => 'device'], function () {
+    Route::get('/demo', DeviceDemo::class)->name('device.demo');
+});
 
-    Route::group(['prefix' => 'laravel'], function () {
-        Route::get('/reverb', Reverb::class)->name('laravel.reverb');
-    });
+Route::group(['prefix' => 'laravel'], function () {
+    Route::get('/reverb', Reverb::class)->name('laravel.reverb');
 });
 
 

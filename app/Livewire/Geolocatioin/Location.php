@@ -21,7 +21,6 @@ class Location extends Component
 
     public function requestPermission()
     {
-        // ok2asd 123as
         $this->result = 'Requesting permissions...';
         Geolocation::requestPermissions();
     }

@@ -10,21 +10,21 @@ class Home extends Component
 {
     public $mode = 'login';
 
-    #[Computed]
-    public function alreadySecure()
-    {
-        return ! blank(SecureStorage::get('token'));
-    }
+//    #[Computed]
+//    public function alreadySecure()
+//    {
+//        return ! blank(SecureStorage::get('token'));
+//    }
 
-    public function register()
-    {
-        $this->mode = 'register';
-    }
-
-    public function login()
-    {
-        $this->mode = 'login';
-    }
+//    public function register()
+//    {
+//        $this->mode = 'register';
+//    }
+//
+//    public function login()
+//    {
+//        $this->mode = 'login';
+//    }
 
     public function render()
     {

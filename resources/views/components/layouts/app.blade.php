@@ -15,77 +15,52 @@
     </style>
 </head>
 <body class="min-h-screen bg-zinc-200 dark:bg-zinc-900 pt-4">
-<flux:sidebar sticky stashable
-              class="bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 ">
-    <flux:sidebar.toggle class="lg:hidden" icon="x-mark"/>
-    <flux:brand href="#" logo="{{asset('usericon.webp')}}" name="NativePHP" class="px-2 flex"/>
-    <flux:navlist variant="outline">
-        <flux:navlist.group :expanded="request()->routeIs('camera.*')" expandable heading="Camera">
-            <flux:navlist.item icon="camera" href="{{route('camera.getPhoto')}}">Get Photo</flux:navlist.item>
-            <flux:navlist.item icon="image-plus" href="{{route('camera.pickImages')}}">Pick Images</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('device.demo')" expandable heading="Device Info">
-            <flux:navlist.item badge="New" badge:color="lime" icon="device-phone-mobile" href="{{route('device.demo')}}">Demo</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('haptics.*')" expandable heading="Haptics">
-            <flux:navlist.item icon="vibrate" href="{{route('haptics.vibrate')}}">Vibrate</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('browser.*')" expandable heading="Browser">
-            <flux:navlist.item icon="globe-alt" href="{{route('browser.demo')}}">Demo</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('push-notifications.*')" expandable
-                            heading="Push Notifications">
-            <flux:navlist.item icon="bell" href="{{route('push-notifications.demo')}}">Demo</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('biometrics.*')" expandable heading="Biometrics">
-            <flux:navlist.item icon="finger-print" href="{{route('biometrics.demo')}}">Demo</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('system.*')" expandable heading="System">
-            <flux:navlist.item icon="light-bulb" href="{{route('system.flashlight')}}">Flashlight</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('geolocation.*')" expandable heading="Geolocation">
-            <flux:navlist.item icon="map" href="{{route('geolocation.getCurrent')}}">Current Location
-            </flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('secure-storage.*')" expandable heading="Secure Storage">
-            <flux:navlist.item icon="folder-lock" href="{{route('secure-storage.demo')}}">Demo</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="request()->routeIs('dialog.*')" expandable heading="Dialog">
-            <flux:navlist.item icon="share" href="{{route('dialog.share')}}">Share</flux:navlist.item>
-            <flux:navlist.item icon="bell" href="{{route('dialog.alert')}}">Alert</flux:navlist.item>
-            <flux:navlist.item icon="bolt" href="{{route('dialog.toast')}}">Toast</flux:navlist.item>
-        </flux:navlist.group>
-        <flux:navlist.group :expanded="false" expandable heading="Laravel">
-            <flux:navlist.item icon="chat-bubble-left-right" href="{{route('laravel.reverb')}}">Reverb
-            </flux:navlist.item>
-        </flux:navlist.group>
-    </flux:navlist>
-    <flux:spacer/>
-    <flux:navlist variant="outline">
-        <flux:navlist.item icon="book-open" href="https://nativephp.com/docs/mobile/1/getting-started/introduction">
-            Docs
-        </flux:navlist.item>
-        <flux:navlist.item icon="information-circle" href="https://nativephp.com/mobile">Learn More</flux:navlist.item>
-    </flux:navlist>
-</flux:sidebar>
-<flux:header>
-    <flux:sidebar.toggle icon="bars-2" inset="left"/>
-    <flux:spacer/>
-    @if (\Native\Mobile\Facades\SecureStorage::get('token'))
-        <flux:dropdown position="top" align="start">
-            <flux:profile avatar="{{ asset('usericon.webp') }}"/>
-            <flux:menu>
-                <flux:navlist.item icon="arrow-right-start-on-rectangle" href=" {{route('logout')}}">
-                    Logout
-                </flux:navlist.item>
-            </flux:menu>
-        </flux:dropdown>
-    @endif
-</flux:header>
+<native:side-nav dark="true">
+    <native:side-nav-group heading="Camera" :expanded="request()->routeIs('camera.*')">
+        <native:side-nav-item active="{{request()->routeIs('camera.getPhoto')}}" id="camera-get-photo" icon="camera" url="{{route('camera.getPhoto')}}" label="Get Photo"/>
+        <native:side-nav-item active="{{request()->routeIs('camera.pickImages')}}" id="camera-pick-images" icon="image-plus" url="{{route('camera.pickImages')}}" label="Pick Images"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Device Info" :expanded="request()->routeIs('device.demo')">
+        <native:side-nav-item active="{{request()->routeIs('device.demo')}}" id="device-demo" icon="device-phone-mobile" url="{{route('device.demo')}}" label="Demo"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Haptics" :expanded="request()->routeIs('haptics.*')">
+        <native:side-nav-item active="{{request()->routeIs('haptics.vibrate')}}" id="haptics-vibrate" icon="vibrate" url="{{route('haptics.vibrate')}}" label="Vibrate"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Browser" :expanded="request()->routeIs('browser.*')">
+        <native:side-nav-item active="{{request()->routeIs('browser.demo')}}" id="browser-demo" icon="globe-alt" url="{{route('browser.demo')}}" label="Demo"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Push Notifications" :expanded="request()->routeIs('push-notifications.*')">
+        <native:side-nav-item active="{{request()->routeIs('push-notifications.demo')}}" id="push-notifications-demo" icon="bell" url="{{route('push-notifications.demo')}}" label="Demo"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Biometrics" :expanded="request()->routeIs('biometrics.*')">
+        <native:side-nav-item active="{{request()->routeIs('biometrics.demo')}}" id="biometrics-demo" icon="finger-print" url="{{route('biometrics.demo')}}" label="Demo"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="System" :expanded="request()->routeIs('system.*')">
+        <native:side-nav-item active="{{request()->routeIs('system.flashlight')}}" id="system-flashlight" icon="light-bulb" url="{{route('system.flashlight')}}" label="Flashlight"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Geolocation" :expanded="request()->routeIs('geolocation.*')">
+        <native:side-nav-item active="{{request()->routeIs('geolocation.getCurrent')}}" id="geolocation-get-current" icon="map" url="{{route('geolocation.getCurrent')}}" label="Current Location"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Secure Storage" :expanded="request()->routeIs('secure-storage.*')">
+        <native:side-nav-item active="{{request()->routeIs('secure-storage.demo')}}" id="secure-storage-demo" icon="folder-lock" url="{{route('secure-storage.demo')}}" label="Demo"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Dialog" :expanded="request()->routeIs('dialog.*')">
+        <native:side-nav-item active="{{request()->routeIs('dialog.share')}}" id="dialog-share" icon="share" url="{{route('dialog.share')}}" label="Share"/>
+        <native:side-nav-item active="{{request()->routeIs('dialog.alert')}}" id="dialog-alert" icon="bell" url="{{route('dialog.alert')}}" label="Alert"/>
+        <native:side-nav-item active="{{request()->routeIs('dialog.toast')}}" id="dialog-toast" icon="bolt" url="{{route('dialog.toast')}}" label="Toast"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Laravel" :expanded="false">
+        <native:side-nav-item active="{{request()->routeIs('laravel.reverb')}}" id="laravel-reverb" icon="chat-bubble-left-right" url="{{route('laravel.reverb')}}" label="Reverb"/>
+    </native:side-nav-group>
+    <native:side-nav-group heading="Resources" :expanded="false">
+        <native:side-nav-item id="docs" icon="book-open" url="https://nativephp.com/docs/mobile/1/getting-started/introduction" label="Docs"/>
+        <native:side-nav-item id="learn-more" icon="information-circle" url="https://nativephp.com/mobile" label="Learn More"/>
+    </native:side-nav-group>
+</native:side-nav>
+
 <flux:main>
     {{ $slot }}
 </flux:main>
-
 @vite('resources/js/app.js')
 @fluxScripts
 </body>
