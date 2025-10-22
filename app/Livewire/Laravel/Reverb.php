@@ -19,7 +19,7 @@ class Reverb extends Component
             'from' => 'self',
             'message' => $this->message,
         ];
-        broadcast(new MessageSent($this->message, session()->get('user.name')))->toOthers();
+        broadcast(new MessageSent($this->message, 'test'))->toOthers();
         $this->reset('message');
     }
 
@@ -29,7 +29,7 @@ class Reverb extends Component
         $this->messages[] = [
             'from' => 'other',
             'message' => $message['message'],
-            'user' => $message['user'],
+            'user' => 'test',
         ];
         System::vibrate();
     }
