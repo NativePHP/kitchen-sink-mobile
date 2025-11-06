@@ -16,6 +16,9 @@ class Toast extends Component
 
     public function render()
     {
-        return view('livewire.dialog.toast');
+        return view('livewire.dialog.toast')
+            ->layout('components.layouts.app', [
+                'title' => 'Toast Dialog'
+            ]);
     }
 }

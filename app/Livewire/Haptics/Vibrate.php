@@ -14,6 +14,9 @@ class Vibrate extends Component
 
     public function render()
     {
-        return view('livewire.haptics.vibrate');
+        return view('livewire.haptics.vibrate')
+            ->layout('components.layouts.app', [
+                'title' => 'Haptics'
+            ]);
     }
 }

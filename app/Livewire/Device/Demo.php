@@ -25,6 +25,9 @@ class Demo extends Component
 
     public function render()
     {
-        return view('livewire.device.demo');
+        return view('livewire.device.demo')
+            ->layout('components.layouts.app', [
+                'title' => 'Device Info'
+            ]);
     }
 }

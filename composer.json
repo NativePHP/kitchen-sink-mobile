@@ -14,8 +14,8 @@
             "url": "https://composer.fluxui.dev"
         },
         "nativephp": {
-            "type": "vcs",
-            "url": "git@github.com:NativePHP/mobile.git"
+            "type": "path",
+            "url": "../mobile"
         }
     },
     "require": {

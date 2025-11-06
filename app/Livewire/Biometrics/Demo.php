@@ -24,6 +24,9 @@ class Demo extends Component
 
     public function render()
     {
-        return view('livewire.biometrics.demo');
+        return view('livewire.biometrics.demo')
+            ->layout('components.layouts.app', [
+                'title' => 'Biometrics'
+            ]);
     }
 }

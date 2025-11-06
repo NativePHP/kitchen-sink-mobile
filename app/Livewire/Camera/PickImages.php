@@ -43,6 +43,9 @@ class PickImages extends Component
 
     public function render()
     {
-        return view('livewire.camera.pick-images');
+        return view('livewire.camera.pick-images')
+            ->layout('components.layouts.app', [
+                'title' => 'Camera'
+            ]);
     }
 }

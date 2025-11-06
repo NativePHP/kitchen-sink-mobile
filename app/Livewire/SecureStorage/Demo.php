@@ -73,6 +73,9 @@ class Demo extends Component
 
     public function render()
     {
-        return view('livewire.secure-storage.demo');
+        return view('livewire.secure-storage.demo')
+            ->layout('components.layouts.app', [
+                'title' => 'Secure Storage'
+            ]);
     }
 }

@@ -36,6 +36,9 @@ class Reverb extends Component
 
     public function render()
     {
-        return view('livewire.laravel.reverb');
+        return view('livewire.laravel.reverb')
+            ->layout('components.layouts.app', [
+                'title' => 'Laravel Reverb'
+            ]);
     }
 }

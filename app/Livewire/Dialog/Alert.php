@@ -33,6 +33,9 @@ class Alert extends Component
 
     public function render()
     {
-        return view('livewire.dialog.alert');
+        return view('livewire.dialog.alert')
+            ->layout('components.layouts.app', [
+                'title' => 'Alert Dialog'
+            ]);
     }
 }

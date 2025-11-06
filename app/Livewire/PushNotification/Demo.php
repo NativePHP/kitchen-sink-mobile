@@ -42,6 +42,9 @@ class Demo extends Component
 
     public function render()
     {
-        return view('livewire.push-notification.demo');
+        return view('livewire.push-notification.demo')
+            ->layout('components.layouts.app', [
+                'title' => 'Push Notifications'
+            ]);
     }
 }

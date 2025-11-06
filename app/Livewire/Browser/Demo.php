@@ -19,6 +19,9 @@ class Demo extends Component
 
     public function render()
     {
-        return view('livewire.browser.demo');
+        return view('livewire.browser.demo')
+            ->layout('components.layouts.app', [
+                'title' => 'Browser'
+            ]);
     }
 }

@@ -14,6 +14,9 @@ class Flashlight extends Component
 
     public function render()
     {
-        return view('livewire.system.flashlight');
+        return view('livewire.system.flashlight')
+            ->layout('components.layouts.app', [
+                'title' => 'Flashlight'
+            ]);
     }
 }

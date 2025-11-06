@@ -59,6 +59,9 @@ class Location extends Component
 
     public function render()
     {
-        return view('livewire.geolocation.location');
+        return view('livewire.geolocation.location')
+            ->layout('components.layouts.app', [
+                'title' => 'Geolocation'
+            ]);
     }
 }

@@ -14,6 +14,9 @@ class Share extends Component
 
     public function render()
     {
-        return view('livewire.dialog.share');
+        return view('livewire.dialog.share')
+            ->layout('components.layouts.app', [
+                'title' => 'Share Dialog'
+            ]);
     }
 }

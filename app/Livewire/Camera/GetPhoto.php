@@ -27,6 +27,9 @@ class GetPhoto extends Component
 
     public function render()
     {
-        return view('livewire.camera.get-photo');
+        return view('livewire.camera.get-photo')
+            ->layout('components.layouts.app', [
+                'title' => 'Camera'
+            ]);
     }
 }
