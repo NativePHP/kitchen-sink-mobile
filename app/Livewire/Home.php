@@ -8,6 +8,7 @@ use Native\Mobile\Facades\SecureStorage;
 
 class Home extends Component
 {
+    public $title = 'Home';
     public $mode = 'login';
 
 //    #[Computed]
@@ -28,9 +29,6 @@ class Home extends Component
 
     public function render()
     {
-        return view('livewire.home')
-            ->layout('components.layouts.app', [
-                'title' => 'Dashboard'
-            ]);
+        return view('livewire.home');
     }
 }

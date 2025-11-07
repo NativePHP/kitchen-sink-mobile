@@ -137,6 +137,20 @@ return [
         'android_sdk_path' => env('NATIVEPHP_ANDROID_SDK_LOCATION'),
         'emulator_path' => env('ANDROID_EMULATOR'),
         '7zip-location' => env('NATIVEPHP_7ZIP_LOCATION', 'C:\\Program Files\\7-Zip\\7z.exe'),
+
+        /*
+        |--------------------------------------------------------------------------
+        | Status Bar Style
+        |--------------------------------------------------------------------------
+        |
+        | Set the color of the status bar and navigation bar icons.
+        | Options: 'auto'  - Auto-detect from system theme (recommended)
+        |          'light' - Light/white icons
+        |          'dark'  - Dark icons
+        |
+        */
+        'status_bar_style' => env('NATIVEPHP_ANDROID_STATUS_BAR_STYLE', 'auto'),
+
         /*
         |--------------------------------------------------------------------------
         | Android Build Configuration
@@ -236,6 +250,7 @@ return [
         'vibrate' => true,
         'storage_read' => false,
         'storage_write' => false,
+        'qr-code' => true,
     ],
 
     /*

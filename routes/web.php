@@ -29,6 +29,10 @@ Route::get('/auth/workos/callback', [WorkOSController::class, 'callback'])->name
 Route::group(['prefix' => 'system'], function () {
     Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
 });
+
+Route::group(['prefix' => 'qrcode'], function () {
+    Route::get('/demo', \App\Livewire\QrCode\Demo::class)->name('qr.demo');
+});
 Route::group(['prefix' => 'push-notifications'], function () {
     Route::get('/demo', Demo::class)->name('push-notifications.demo');
 });

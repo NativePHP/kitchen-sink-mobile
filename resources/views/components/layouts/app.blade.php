@@ -15,22 +15,71 @@
     </style>
 </head>
 <body class="min-h-screen bg-zinc-200 dark:bg-zinc-900 pt-4 nativephp-safe-area">
+<native:bottom-nav label-visibility="labeled">
+    <native:bottom-nav-item
+        id="home"
+        label="Home"
+        url="{{ route('home') }}"
+        icon="home"
+        :active="request()->routeIs('home')"
+        news="true"
+    />
+    <native:bottom-nav-item
+        id="Torch"
+        label="Torch"
+        badge="12"
+        url="{{ route('system.flashlight') }}"
+        icon="flashlight"
+        :active="request()->routeIs('system.flashlight')"
+    />
+    <native:bottom-nav-item
+        id="Browser"
+        label="Browser"
+        url="{{ route('browser.demo') }}"
+        icon="user"
+        :active="request()->routeIs('browser.demo')"
+    />
+</native:bottom-nav>
 <native:top-bar
     :title="$title ?? 'Dashboard'"
     :show-navigation-icon="true"
-    elevation="10"
-    backgroundColor="#303032"
-    textColor="#fff"
-/>
+>
+    <native:top-bar-action
+        id="home"
+        icon="home"
+        label="Home"
+        url="{{route('home')}}"
+    />
 
+    <native:top-bar-action
+        id="torch"
+        icon="lightbulb"
+        label="Home"
+        url="{{route('system.flashlight')}}"
+    />
+    <native:top-bar-action
+        id="scanner"
+        icon="qrcode"
+        label="Scanner"
+        url="{{route('qr.demo')}}"
+    />
+
+    <native:top-bar-action
+        id="bio"
+        icon="fingerprint"
+        label="Biometrics"
+        url="{{route('biometrics.demo')}}"
+    />
+
+</native:top-bar>
 <native:side-nav
-    :dark="true"
     :gestures_enabled="false">
     <native:side-nav-header
         title="NativePHP"
         subtitle="Kitchen Sink App"
         icon="home"
         :show-close-button="true"
+        :pinned="true"
     />
 
     <native:side-nav-group heading="Camera" :expanded="request()->routeIs('camera.*')">
@@ -43,6 +92,7 @@
         <native:side-nav-item active="{{request()->routeIs('dialog.toast')}}" id="dialog-toast" icon="bolt" url="{{route('dialog.toast')}}" label="Toast"/>
     </native:side-nav-group>
     <native:side-nav-item active="{{request()->routeIs('device.demo')}}" id="device-demo" icon="device-phone-mobile" url="{{route('device.demo')}}" label="Device Info"/>
+    <native:side-nav-item active="{{request()->routeIs('qr.demo')}}" id="qr-demo" icon="qrcode" url="{{route('qr.demo')}}" label="QR Code Demo"/>
     <native:side-nav-item active="{{request()->routeIs('haptics.vibrate')}}" id="haptics-vibrate" icon="vibrate" url="{{route('haptics.vibrate')}}" label="Haptics"/>
     <native:side-nav-item active="{{request()->routeIs('browser.demo')}}" id="browser-demo" icon="globe-alt" url="{{route('browser.demo')}}" label="Browser"/>
     <native:side-nav-item active="{{request()->routeIs('push-notifications.demo')}}" id="push-notifications-demo" icon="bell" url="{{route('push-notifications.demo')}}" label="Push Notifications"/>
