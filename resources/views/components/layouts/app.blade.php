@@ -91,14 +91,17 @@
         <native:side-nav-item active="{{request()->routeIs('dialog.alert')}}" id="dialog-alert" icon="bell" url="{{route('dialog.alert')}}" label="Alert"/>
         <native:side-nav-item active="{{request()->routeIs('dialog.toast')}}" id="dialog-toast" icon="bolt" url="{{route('dialog.toast')}}" label="Toast"/>
     </native:side-nav-group>
+    <native:side-nav-group heading="System" :expanded="request()->routeIs('system.*')">
+        <native:side-nav-item active="{{request()->routeIs('system.flashlight')}}" id="system-flashlight" icon="lightbulb" url="{{route('system.flashlight')}}" label="Flashlight"/>
+        <native:side-nav-item active="{{request()->routeIs('system.network')}}" id="system-network" icon="globe" url="{{route('system.network')}}" label="Network" badge="New!" badge-color="blue"/>
+    </native:side-nav-group>
     <native:side-nav-item active="{{request()->routeIs('device.demo')}}" id="device-demo" icon="device-phone-mobile" url="{{route('device.demo')}}" label="Device Info"/>
-    <native:side-nav-item active="{{request()->routeIs('qr.demo')}}" id="qr-demo" icon="qrcode" url="{{route('qr.demo')}}" label="QR Code Demo"/>
+    <native:side-nav-item active="{{request()->routeIs('qr.demo')}}" id="qr-demo" icon="qrcode" url="{{route('qr.demo')}}" label="QR Code Demo" badge="New!" badge-color="blue"/>
     <native:side-nav-item active="{{request()->routeIs('haptics.vibrate')}}" id="haptics-vibrate" icon="vibrate" url="{{route('haptics.vibrate')}}" label="Haptics"/>
     <native:side-nav-item active="{{request()->routeIs('browser.demo')}}" id="browser-demo" icon="globe-alt" url="{{route('browser.demo')}}" label="Browser"/>
     <native:side-nav-item active="{{request()->routeIs('push-notifications.demo')}}" id="push-notifications-demo" icon="bell" url="{{route('push-notifications.demo')}}" label="Push Notifications"/>
     <native:side-nav-item active="{{request()->routeIs('biometrics.demo')}}" id="biometrics-demo" icon="finger-print" url="{{route('biometrics.demo')}}" label="Biometrics"/>
-    <native:side-nav-item active="{{request()->routeIs('system.flashlight')}}" id="system-flashlight" icon="light-bulb" url="{{route('system.flashlight')}}" label="Flashlight"/>
-    <native:side-nav-item badge="New!" badge-color="blue" active="{{request()->routeIs('geolocation.getCurrent')}}" id="geolocation-get-current" icon="map" url="{{route('geolocation.getCurrent')}}" label="Geolocation"/>
+    <native:side-nav-item active="{{request()->routeIs('geolocation.getCurrent')}}" id="geolocation-get-current" icon="map" url="{{route('geolocation.getCurrent')}}" label="Geolocation"/>
     <native:side-nav-item active="{{request()->routeIs('secure-storage.demo')}}" id="secure-storage-demo" icon="folder-lock" url="{{route('secure-storage.demo')}}" label="Secure Storage"/>
 {{--    <native:side-nav-item active="{{request()->routeIs('laravel.reverb')}}" id="laravel-reverb" icon="chat-bubble-left-right" url="{{route('laravel.reverb')}}" label="Laravel"/>--}}
 

@@ -2655,7 +2655,7 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-vika",
+            "version": "dev-network",
             "dist": {
                 "type": "path",
                 "url": "../mobile",

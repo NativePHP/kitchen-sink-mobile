@@ -251,6 +251,7 @@ return [
         'storage_read' => false,
         'storage_write' => false,
         'qr-code' => true,
+        'network_state' => true,
     ],
 
     /*

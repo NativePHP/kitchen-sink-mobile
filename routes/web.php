@@ -19,6 +19,7 @@ use App\Livewire\Laravel\Reverb;
 use App\Livewire\PushNotification\Demo;
 use App\Livewire\SecureStorage\Demo as SecureStorageDemo;
 use App\Livewire\System\Flashlight;
+use App\Livewire\System\Network;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
@@ -28,6 +29,7 @@ Route::get('/auth/workos/callback', [WorkOSController::class, 'callback'])->name
 
 Route::group(['prefix' => 'system'], function () {
     Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
+    Route::get('/network', Network::class)->name('system.network');
 });
 
 Route::group(['prefix' => 'qrcode'], function () {
