@@ -1,15 +1,18 @@
 <?php
 
-namespace App\Livewire\System;
+namespace App\Livewire\Network;
 
 use Livewire\Component;
-use Native\Mobile\Facades\System;
+use Native\Mobile\Facades\Network;
 
-class Network extends Component
+class Demo extends Component
 {
     public $status = '';
+
     public $connected = false;
+
     public $isExpensive = false;
+
     public $isConstrained = false;
 
     public function mount()
@@ -20,7 +23,7 @@ class Network extends Component
     public function getNetwork()
     {
         $this->reset();
-        $status = System::getNetworkStatus();
+        $status = Network::status();
 
         if ($status->connected) {
             $this->connected = true;
@@ -41,9 +44,9 @@ class Network extends Component
 
     public function render()
     {
-        return view('livewire.system.network')
+        return view('livewire.network.demo')
             ->layout('components.layouts.app', [
-                'title' => 'Network'
+                'title' => 'Network',
             ]);
     }
 }

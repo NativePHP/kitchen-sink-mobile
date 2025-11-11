@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\QrCode;
+namespace App\Livewire\Scanner;
 
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -10,13 +10,16 @@ use Native\Mobile\Facades\Scanner;
 class Demo extends Component
 {
     public $data;
+
     public $format;
+
+    public $requestedFormat = 'all';
 
     public function scan()
     {
-        Scanner::scan()
+        Scanner::make()
             ->prompt('Scan product barcode')
-            ->formats(['qr', 'ean13', 'upca'])
+            ->formats([$this->requestedFormat])
             ->continuous(false);
     }
 
@@ -29,9 +32,9 @@ class Demo extends Component
 
     public function render()
     {
-        return view('livewire.qr-code.demo')
+        return view('livewire.scanner.demo')
             ->layout('components.layouts.app', [
-                'title' => 'Scanner'
+                'title' => 'Scanner',
             ]);
     }
 }

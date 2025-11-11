@@ -3,12 +3,11 @@
 use App\Http\Controllers\ApplinksController;
 use App\Http\Controllers\Auth\Logout;
 use App\Http\Controllers\Auth\WorkOSController;
-use App\Http\Middleware\HasSessionToken;
 use App\Livewire\Biometrics\Demo as BiometricsDemo;
 use App\Livewire\Browser\Demo as BrowserDemo;
-use App\Livewire\Device\Demo as DeviceDemo;
 use App\Livewire\Camera\GetPhoto;
 use App\Livewire\Camera\PickImages;
+use App\Livewire\Device\Demo as DeviceDemo;
 use App\Livewire\Dialog\Alert;
 use App\Livewire\Dialog\Share;
 use App\Livewire\Dialog\Toast;
@@ -19,7 +18,6 @@ use App\Livewire\Laravel\Reverb;
 use App\Livewire\PushNotification\Demo;
 use App\Livewire\SecureStorage\Demo as SecureStorageDemo;
 use App\Livewire\System\Flashlight;
-use App\Livewire\System\Network;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
@@ -29,11 +27,12 @@ Route::get('/auth/workos/callback', [WorkOSController::class, 'callback'])->name
 
 Route::group(['prefix' => 'system'], function () {
     Route::get('/flashlight', Flashlight::class)->name('system.flashlight');
-    Route::get('/network', Network::class)->name('system.network');
 });
-
-Route::group(['prefix' => 'qrcode'], function () {
-    Route::get('/demo', \App\Livewire\QrCode\Demo::class)->name('qr.demo');
+Route::group(['prefix' => 'network'], function () {
+    Route::get('/demo', \App\Livewire\Network\Demo::class)->name('network.demo');
+});
+Route::group(['prefix' => 'scanner'], function () {
+    Route::get('/demo', \App\Livewire\Scanner\Demo::class)->name('scanner.demo');
 });
 Route::group(['prefix' => 'push-notifications'], function () {
     Route::get('/demo', Demo::class)->name('push-notifications.demo');
@@ -73,6 +72,9 @@ Route::group(['prefix' => 'laravel'], function () {
     Route::get('/reverb', Reverb::class)->name('laravel.reverb');
 });
 
+Route::group(['prefix' => 'audio'], function () {
+    Route::get('/demo', \App\Livewire\Audio\Demo::class)->name('audio.demo');
+});
 
 Route::get('.well-known/assetlinks.json', [ApplinksController::class, 'assetLinks']);
 

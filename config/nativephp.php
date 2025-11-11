@@ -92,7 +92,6 @@ return [
 
     'author' => env('NATIVEPHP_APP_AUTHOR'),
 
-
     /*
     |--------------------------------------------------------------------------
     | Environment Keys to Clean Up
@@ -252,6 +251,7 @@ return [
         'storage_write' => false,
         'qr-code' => true,
         'network_state' => true,
+        'microphone' => true,
     ],
 
     /*

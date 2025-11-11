@@ -2,33 +2,16 @@
 
 namespace App\Livewire;
 
-use Livewire\Attributes\Computed;
 use Livewire\Component;
-use Native\Mobile\Facades\SecureStorage;
 
 class Home extends Component
 {
-    public $title = 'Home';
-    public $mode = 'login';
 
-//    #[Computed]
-//    public function alreadySecure()
-//    {
-//        return ! blank(SecureStorage::get('token'));
-//    }
-
-//    public function register()
-//    {
-//        $this->mode = 'register';
-//    }
-//
-//    public function login()
-//    {
-//        $this->mode = 'login';
-//    }
-
-    public function render()
+    public function render(): \Illuminate\View\View
     {
-        return view('livewire.home');
+        return view('livewire.home')
+            ->layout('components.layouts.app', [
+                'title' => 'Home',
+            ]);
     }
 }
