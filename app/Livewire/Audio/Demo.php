@@ -17,7 +17,7 @@ class Demo extends Component
 
     public function recordAudio()
     {
-        Audio::start();
+        Audio::record();
         $this->recordingStartTime = time();
         $this->pausedElapsedTime = 0;
     }
