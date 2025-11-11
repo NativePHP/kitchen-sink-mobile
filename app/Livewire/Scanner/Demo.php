@@ -15,19 +15,38 @@ class Demo extends Component
 
     public $requestedFormat = 'all';
 
-    public function scan()
+    public $streaming = false;
+
+    public $scanned = [];
+
+    public function scan(): void
     {
         Scanner::make()
-            ->prompt('Scan product barcode')
+            ->prompt($this->streaming ? 'Scan codes continuously' : 'Scan a code')
             ->formats([$this->requestedFormat])
-            ->continuous(false);
+            ->continuous($this->streaming);
     }
 
     #[On('native:'.Scanned::class)]
-    public function handleScanned($data, $format)
+    public function handleScanned($data, $format): void
     {
-        $this->data = $data;
-        $this->format = $format;
+        if ($this->streaming) {
+            $this->scanned[] = [
+                'data' => $data,
+                'format' => $format,
+                'timestamp' => now()->format('H:i:s'),
+            ];
+        } else {
+            $this->data = $data;
+            $this->format = $format;
+        }
+    }
+
+    public function clearScans(): void
+    {
+        $this->scanned = [];
+        $this->data = null;
+        $this->format = null;
     }
 
     public function render()
