@@ -7,6 +7,7 @@ use App\Livewire\Biometrics\Demo as BiometricsDemo;
 use App\Livewire\Browser\Demo as BrowserDemo;
 use App\Livewire\Camera\GetPhoto;
 use App\Livewire\Camera\PickImages;
+use App\Livewire\Camera\Video;
 use App\Livewire\Device\Demo as DeviceDemo;
 use App\Livewire\Dialog\Alert;
 use App\Livewire\Dialog\Share;
@@ -49,6 +50,7 @@ Route::group(['prefix' => 'biometrics'], function () {
 Route::group(['prefix' => 'camera'], function () {
     Route::get('/gallery', PickImages::class)->name('camera.pickImages');
     Route::get('/camera', GetPhoto::class)->name('camera.getPhoto');
+    Route::get('/video', Video::class)->name('camera.video');
 });
 
 Route::group(['prefix' => 'haptics'], function () {

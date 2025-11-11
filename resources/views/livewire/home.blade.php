@@ -1,4 +1,4 @@
-<div class="space-y-6 pb-6">
+<div class="space-y-4 mt-2">
     <flux:card class="bg-gradient-to-br from-purple-500 to-pink-500 dark:from-purple-600 dark:to-pink-600 text-white">
         <div class="flex items-start gap-4">
             <flux:icon.sparkles class="size-10 mt-1 flex-shrink-0"/>
@@ -84,16 +84,17 @@
                 </flux:card>
             </a>
 
-            <a href="{{route('biometrics.demo')}}">
-                <flux:card class="hover:shadow-lg transition-shadow cursor-pointer">
+            <a href="{{route('camera.video')}}">
+                <flux:card class="relative hover:shadow-lg transition-shadow cursor-pointer">
                     <div class="flex flex-col items-center text-center gap-3 p-3">
                         <div
-                            class="size-14 rounded-full bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center">
-                            <flux:icon.finger-print class="size-7 text-amber-600 dark:text-amber-400"/>
+                            class="size-14 rounded-full bg-red-500/10 dark:bg-red-500/20 flex items-center justify-center">
+                            <flux:icon.video-camera class="size-7 text-red-600 dark:text-red-400"/>
                         </div>
                         <div>
-                            <flux:heading class="text-base">Biometrics</flux:heading>
+                            <flux:heading class="text-base">Video</flux:heading>
                         </div>
+                        <flux:badge class="absolute top-0 right-0" icon="sparkles" color="red">New</flux:badge>
                     </div>
                 </flux:card>
             </a>

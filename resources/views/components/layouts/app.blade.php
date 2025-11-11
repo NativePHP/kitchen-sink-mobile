@@ -14,7 +14,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-zinc-200 dark:bg-zinc-900 pt-4 nativephp-safe-area">
+<body class="min-h-screen bg-zinc-200 dark:bg-zinc-900  nativephp-safe-area">
 <native:bottom-nav label-visibility="labeled">
     <native:bottom-nav-item
         id="home"
@@ -84,6 +84,7 @@
     <native:side-nav-group heading="Camera" :expanded="request()->routeIs('camera.*')">
         <native:side-nav-item active="{{request()->routeIs('camera.getPhoto')}}" id="camera-get-photo" icon="camera" url="{{route('camera.getPhoto')}}" label="Get Photo"/>
         <native:side-nav-item active="{{request()->routeIs('camera.pickImages')}}" id="camera-pick-images" icon="image-plus" url="{{route('camera.pickImages')}}" label="Pick Images"/>
+        <native:side-nav-item active="{{request()->routeIs('camera.video')}}" id="camera-video" icon="video" url="{{route('camera.video')}}" label="Video Recorder" badge="New!" badge-color="blue"/>
     </native:side-nav-group>
     <native:side-nav-group heading="Dialog" :expanded="request()->routeIs('dialog.*')">
         <native:side-nav-item active="{{request()->routeIs('dialog.share')}}" id="dialog-share" icon="share" url="{{route('dialog.share')}}" label="Share"/>
@@ -109,7 +110,7 @@
     </native:side-nav-group>
 </native:side-nav>
 
-<flux:main>
+<flux:main class="!p-2">
     {{ $slot }}
 </flux:main>
 
