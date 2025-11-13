@@ -9,6 +9,7 @@ use Native\Mobile\Events\Camera\VideoCancelled;
 use Native\Mobile\Events\Camera\VideoRecorded;
 use Native\Mobile\Facades\Camera;
 use Native\Mobile\Facades\Dialog;
+use Native\Mobile\Facades\Share;
 
 class Video extends Component
 {
@@ -32,8 +33,8 @@ class Video extends Component
     #[On('native:'.VideoRecorded::class)]
     public function handleVideoRecorded($path, $mimeType = null, $id = null)
     {
-        $this->sharePath = $path;
         $filename = 'videos/video_'.time().'.mp4';
+        $this->sharePath = $filename;
 
         // Store video using Laravel Storage
         Storage::disk('public')->put($filename, file_get_contents($path));
@@ -47,7 +48,7 @@ class Video extends Component
 
     public function share()
     {
-        Dialog::shareFile('My Video Note', 'I shared this NATIVELY with PHP!', $this->sharePath);
+        Share::file('Check this out!', 'Check this out!', Storage::disk('public')->path($this->sharePath));
     }
 
     #[On('native:'.VideoCancelled::class)]
