@@ -13,19 +13,22 @@
     <flux:card>
         <div class="space-y-4">
             <div class="text-center">
-                <div class="text-4xl font-mono font-bold" @if($this->audioStatus === 'recording') wire:poll.100ms @endif>
-                    {{ $this->recordingDuration }}
+                <div class="text-4xl font-mono font-bold"
+                     @if($this->audioStatus === 'recording') wire:poll.1000ms @endif>
                 </div>
                 <div class="text-sm text-gray-500 mt-2">
                     @if($this->audioStatus === 'recording')
-                        <span class="inline-flex items-center">
-                            <span class="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse"></span>
-                            Recording
-                        </span>
+                        <div>
+                            <p class="text-4xl font-black text-red-600 animate-pulse" style="text-shadow:#FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px">ON-AIR</p>
+                        </div>
                     @elseif($this->audioStatus === 'paused')
-                        <span>Paused</span>
+                        <div>
+                            <p class="text-4xl font-black text-gray-800 dark:text-white" >PAUSED</p>
+                        </div>
                     @else
-                        <span>Ready to record</span>
+                        <div>
+                            <p class="text-4xl font-black text-gray-800 dark:text-white" >READY</p>
+                        </div>
                     @endif
                 </div>
             </div>
@@ -65,7 +68,12 @@
     @if($recording)
         <flux:card>
             <flux:subheading class="mb-4">Current Recording:</flux:subheading>
-            <audio src="{{ asset($recording) }}" controls class="w-full mb-4"/>
+            <div class="flex items-center justify-between">
+                <audio data-title="{{config('app.name')}}"
+                       data-artist="{{now()}}"
+                       src="{{ asset($recording) }}" controls></audio>
+                <flux:button wire:click="share" icon="share" variant="ghost"></flux:button>
+            </div>
         </flux:card>
     @endif
 </div>

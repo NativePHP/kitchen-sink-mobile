@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Camera;
 
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\Camera\PhotoTaken;
@@ -19,10 +20,11 @@ class GetPhoto extends Component
     #[On('native:'.PhotoTaken::class)]
     public function handleCamera($path)
     {
-        $data = base64_encode(file_get_contents($path));
-        $mime = mime_content_type($path);
+        $filename = 'photos/photo_'.time().'.jpg';
 
-        $this->photoDataUrl = "data:$mime;base64,$data";
+        Storage::disk('public')->put($filename, file_get_contents($path));
+
+        $this->photoDataUrl = Storage::disk('public')->url($filename);
     }
 
     public function render()

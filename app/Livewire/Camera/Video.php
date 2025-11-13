@@ -2,16 +2,19 @@
 
 namespace App\Livewire\Camera;
 
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\Camera\VideoCancelled;
 use Native\Mobile\Events\Camera\VideoRecorded;
-use Native\Mobile\Facades\Camera as CameraFacade;
+use Native\Mobile\Facades\Camera;
 use Native\Mobile\Facades\Dialog;
 
 class Video extends Component
 {
     public string $videoUrl = '';
+
+    public string $sharePath = '';
 
     public bool $showVideoModal = false;
 
@@ -19,31 +22,32 @@ class Video extends Component
 
     public function recordVideo()
     {
-        CameraFacade::recordVideo([
-            'maxDuration' => $this->maxDuration,
-        ]);
+        $recorder = Camera::recordVideo();
+
+        if ($this->maxDuration) {
+            $recorder->maxDuration($this->maxDuration);
+        }
     }
 
     #[On('native:'.VideoRecorded::class)]
-    public function handleVideoRecorded($path)
+    public function handleVideoRecorded($path, $mimeType = null, $id = null)
     {
-        // Copy video to public storage
-        $filename = 'video_'.time().'.mp4';
-        $publicPath = public_path('videos/'.$filename);
+        $this->sharePath = $path;
+        $filename = 'videos/video_'.time().'.mp4';
 
-        // Ensure videos directory exists
-        if (!file_exists(public_path('videos'))) {
-            mkdir(public_path('videos'), 0755, true);
-        }
+        // Store video using Laravel Storage
+        Storage::disk('public')->put($filename, file_get_contents($path));
 
-        // Copy the video file
-        copy($path, $publicPath);
-
-        // Set the URL using asset() helper
-        $this->videoUrl = asset('videos/'.$filename);
+        // Generate public URL and path
+        $this->videoUrl = Storage::disk('public')->url($filename);
 
         // Show the modal
         $this->showVideoModal = true;
+    }
+
+    public function share()
+    {
+        Dialog::shareFile('My Video Note', 'I shared this NATIVELY with PHP!', $this->sharePath);
     }
 
     #[On('native:'.VideoCancelled::class)]

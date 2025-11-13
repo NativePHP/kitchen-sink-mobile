@@ -4,12 +4,17 @@ namespace App\Livewire\Audio;
 
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Events\Audio\AudioRecorded;
 use Native\Mobile\Facades\Audio;
+use Native\Mobile\Facades\Dialog;
 
 class Demo extends Component
 {
     public $recording;
+
+    public $sharePath;
 
     public $recordingStartTime;
 
@@ -33,9 +38,18 @@ class Demo extends Component
 
     public function stopAudio()
     {
-        $this->recording = Audio::stop();
+        Audio::stop();
         $this->recordingStartTime = null;
         $this->pausedElapsedTime = 0;
+    }
+
+    #[On('native:'.AudioRecorded::class)]
+    public function handleAudioRecorded($path, $mimeType = null, $id = null)
+    {
+        $this->sharePath = $path;
+        $filename = 'audio/recording_'.time().'.m4a';
+        Storage::disk('public')->put($filename, file_get_contents($path));
+        $this->recording = Storage::disk('public')->url($filename);
     }
 
     public function resumeAudio()
@@ -45,10 +59,25 @@ class Demo extends Component
         $this->recordingStartTime = time() - $this->pausedElapsedTime;
     }
 
+    public function share()
+    {
+        Dialog::shareFile('My Voice Note', 'I shared this NATIVELY with PHP!', $this->sharePath);
+    }
+
     #[Computed]
     public function audioStatus()
     {
-        return Audio::getStatus();
+        try {
+            $status = Audio::getStatus();
+            \Log::debug('audioStatus()', ['status' => $status]);
+            return $status;
+        } catch (\Exception $e) {
+            \Log::error('audioStatus() exception', [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            return 'error: ' . $e->getMessage();
+        }
     }
 
     #[Computed]

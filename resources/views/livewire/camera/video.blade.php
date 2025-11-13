@@ -38,6 +38,7 @@
             </video>
 
             <div class="flex gap-2 justify-end">
+                <flux:button variant="ghost" wire:click="share" icon="share"></flux:button>
                 <flux:button variant="ghost" wire:click="$set('showVideoModal', false)">Close</flux:button>
             </div>
         </div>

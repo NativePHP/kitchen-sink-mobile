@@ -17,27 +17,34 @@
 <body class="min-h-screen bg-zinc-200 dark:bg-zinc-900  nativephp-safe-area">
 <native:bottom-nav label-visibility="labeled">
     <native:bottom-nav-item
-        id="home"
-        label="Home"
-        url="{{ route('home') }}"
-        icon="home"
-        :active="request()->routeIs('home')"
+        id="scanner"
+        label="Scanner"
+        url="{{ route('scanner.demo') }}"
+        icon="qrcode"
+        :active="request()->routeIs('scanner.demo')"
         news="true"
     />
     <native:bottom-nav-item
-        id="Torch"
-        label="Torch"
-        badge="12"
-        url="{{ route('system.flashlight') }}"
-        icon="flashlight"
-        :active="request()->routeIs('system.flashlight')"
+        id="camera"
+        label="Video"
+        badge="DEMO"
+        url="{{ route('camera.video') }}"
+        icon="video"
+        :active="request()->routeIs('camera.video')"
     />
     <native:bottom-nav-item
-        id="Browser"
-        label="Browser"
-        url="{{ route('browser.demo') }}"
-        icon="user"
-        :active="request()->routeIs('browser.demo')"
+        id="audio"
+        label="Recorder"
+        url="{{ route('audio.demo') }}"
+        icon="microphone"
+        :active="request()->routeIs('audio.demo')"
+    />
+    <native:bottom-nav-item
+        id="network"
+        label="Network"
+        url="{{ route('network.demo') }}"
+        icon="globe"
+        :active="request()->routeIs('network.demo')"
     />
 </native:bottom-nav>
 <native:top-bar
@@ -52,24 +59,12 @@
     />
 
     <native:top-bar-action
-        id="torch"
-        icon="lightbulb"
-        label="Home"
-        url="{{route('system.flashlight')}}"
-    />
-    <native:top-bar-action
-        id="scanner"
-        icon="qrcode"
-        label="Scanner"
-        url="{{route('scanner.demo')}}"
+        id="docs"
+        icon="book-open"
+        label="Docs"
+        url="https://nativephp.com/docs/mobile/2/getting-started/introduction"
     />
 
-    <native:top-bar-action
-        id="bio"
-        icon="fingerprint"
-        label="Biometrics"
-        url="{{route('biometrics.demo')}}"
-    />
 
 </native:top-bar>
 <native:side-nav

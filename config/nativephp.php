@@ -256,6 +256,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Plugins
+    |--------------------------------------------------------------------------
+    |
+    | Register custom NativePHP plugins here. Plugins allow you to extend
+    | native functionality by implementing the Plugin contract and handling
+    | god method calls within a specific namespace.
+    |
+    */
+    'plugins' => [
+        \App\Plugins\TestPlugin::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Device Orientation Support
     |--------------------------------------------------------------------------
     |
