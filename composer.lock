@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3690b848ddc117b969635c6d96d1b49",
+    "content-hash": "6ce4036cbaeeab99f0f01f2f54889bac",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2659,12 +2659,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:NativePHP/mobile.git",
-                "reference": "31ee2fddaa4b1de868029266275661f4dbb7e70b"
+                "reference": "04b775a1b9a27cdd48e26f44e335f68aab223b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/31ee2fddaa4b1de868029266275661f4dbb7e70b",
-                "reference": "31ee2fddaa4b1de868029266275661f4dbb7e70b",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/04b775a1b9a27cdd48e26f44e335f68aab223b19",
+                "reference": "04b775a1b9a27cdd48e26f44e335f68aab223b19",
                 "shasum": ""
             },
             "require": {
@@ -2757,7 +2757,7 @@
                 "source": "https://github.com/NativePHP/mobile/tree/vika",
                 "issues": "https://github.com/NativePHP/mobile/issues"
             },
-            "time": "2025-11-16T02:07:42+00:00"
+            "time": "2025-11-17T11:49:54+00:00"
         },
         {
             "name": "nesbot/carbon",
