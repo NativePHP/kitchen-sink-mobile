@@ -25,8 +25,7 @@
         "laravel/reverb": "^1.5",
         "livewire/flux": "^2.0",
         "livewire/flux-pro": "^2.0",
-        "nativephp/mobile": "dev-vika",
-        "workos/workos-php-laravel": "^4.3"
+        "nativephp/mobile": "dev-vika"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

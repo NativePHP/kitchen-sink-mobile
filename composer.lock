@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0077568cf78b468b0e15cfcd86091d23",
+    "content-hash": "d3690b848ddc117b969635c6d96d1b49",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -7298,119 +7298,6 @@
                 }
             ],
             "time": "2024-11-21T01:49:47+00:00"
-        },
-        {
-            "name": "workos/workos-php",
-            "version": "v4.27.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/workos/workos-php.git",
-                "reference": "5acee3790ac7566302849d07e3ccfc276e68bc71"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/workos/workos-php/zipball/5acee3790ac7566302849d07e3ccfc276e68bc71",
-                "reference": "5acee3790ac7566302849d07e3ccfc276e68bc71",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=7.3.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.15|^3.6",
-                "phpunit/phpunit": "^9"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "WorkOS\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "WorkOS",
-                    "email": "eng@workos.com"
-                }
-            ],
-            "description": "WorkOS PHP Library",
-            "homepage": "https://workos.com",
-            "support": {
-                "issues": "https://github.com/workos/workos-php/issues",
-                "source": "https://github.com/workos/workos-php/tree/v4.27.0"
-            },
-            "time": "2025-09-24T13:11:46+00:00"
-        },
-        {
-            "name": "workos/workos-php-laravel",
-            "version": "v4.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/workos/workos-php-laravel.git",
-                "reference": "5b21f0c387770265e785d3d6659757b9182fa987"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/workos/workos-php-laravel/zipball/5b21f0c387770265e785d3d6659757b9182fa987",
-                "reference": "5b21f0c387770265e785d3d6659757b9182fa987",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0",
-                "workos/workos-php": "^v4.27.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.15 || ^3.6",
-                "phpunit/phpunit": "^5.7 || ^10.1"
-            },
-            "suggest": {
-                "laravel/framework": "For testing"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "WorkOS\\Laravel\\WorkOSServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WorkOS\\Laravel\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "WorkOS",
-                    "email": "support@workos.com"
-                }
-            ],
-            "description": "WorkOS PHP Library for Laravel",
-            "keywords": [
-                "SSO",
-                "laravel",
-                "laravel 10",
-                "laravel 5",
-                "laravel 6",
-                "laravel 7",
-                "laravel 8",
-                "laravel 9",
-                "sdk",
-                "workos"
-            ],
-            "support": {
-                "issues": "https://github.com/workos/workos-php-laravel/issues",
-                "source": "https://github.com/workos/workos-php-laravel/tree/v4.4.0"
-            },
-            "time": "2025-10-07T19:19:20+00:00"
         }
     ],
     "packages-dev": [
