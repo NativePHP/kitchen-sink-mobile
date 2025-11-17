@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f92f4521f60f11b202b135195794586a",
+    "content-hash": "0077568cf78b468b0e15cfcd86091d23",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2655,11 +2655,17 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-audio-video-file-normalization",
+            "version": "dev-vika",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:NativePHP/mobile.git",
+                "reference": "31ee2fddaa4b1de868029266275661f4dbb7e70b"
+            },
             "dist": {
-                "type": "path",
-                "url": "../mobile",
-                "reference": "380134023a56f29f315edf8a62f6c13825a36eac"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/31ee2fddaa4b1de868029266275661f4dbb7e70b",
+                "reference": "31ee2fddaa4b1de868029266275661f4dbb7e70b",
+                "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
@@ -2747,9 +2753,11 @@
                 "laravel",
                 "nativephp"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/mobile/tree/vika",
+                "issues": "https://github.com/NativePHP/mobile/issues"
+            },
+            "time": "2025-11-16T02:07:42+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -10918,16 +10926,16 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "737eda637ed5e28c3413cb1ebe8bb52cbf1ca7a2"
+                "reference": "d74205c497bfbca49f34d4bc4c19c17e22db4ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/737eda637ed5e28c3413cb1ebe8bb52cbf1ca7a2",
-                "reference": "737eda637ed5e28c3413cb1ebe8bb52cbf1ca7a2",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/d74205c497bfbca49f34d4bc4c19c17e22db4ebb",
+                "reference": "d74205c497bfbca49f34d4bc4c19c17e22db4ebb",
                 "shasum": ""
             },
             "require": {
@@ -10956,7 +10964,7 @@
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "support": {
                 "issues": "https://github.com/theseer/tokenizer/issues",
-                "source": "https://github.com/theseer/tokenizer/tree/1.2.3"
+                "source": "https://github.com/theseer/tokenizer/tree/1.3.0"
             },
             "funding": [
                 {
@@ -10964,7 +10972,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-03T12:36:25+00:00"
+            "time": "2025-11-13T13:44:09+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -11027,7 +11035,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "nativephp/mobile": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

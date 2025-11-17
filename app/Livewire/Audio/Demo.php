@@ -2,24 +2,26 @@
 
 namespace App\Livewire\Audio;
 
+use App\Events\MyAudioRecordedEvent;
+use App\Livewire\NativeEdge;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
-use Native\Mobile\Events\Audio\AudioRecorded;
 use Native\Mobile\Facades\Audio;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\Share;
+use Native\Mobile\Facades\File;
 
 class Demo extends Component
 {
-    public $recording;
-
-    public $sharePath;
+    public string $currentlyPlayingPath = '';
 
     public function recordAudio()
     {
-        Audio::record();
+        Audio::record()
+            ->event(MyAudioRecordedEvent::class)
+            ->start();
     }
 
     public function pauseAudio()
@@ -37,18 +39,52 @@ class Demo extends Component
         Audio::resume();
     }
 
-    #[On('native:'.AudioRecorded::class)]
+    #[On('native:' . MyAudioRecordedEvent::class)]
     public function handleAudioRecorded($path, $mimeType = null, $id = null)
     {
-        $filename = 'audio/recording_'.time().'.m4a';
-        $this->sharePath = $filename;
-        Storage::disk('public')->put($filename, file_get_contents($path));
-        $this->recording = Storage::disk('public')->url($filename);
+        $filename = 'audio/recording_' . time() . '_' . uniqid() . '.m4a';
+        File::move($path, Storage::disk('public')->path($filename));
+        Dialog::toast('Audio recorded successfully!');
+        $this->dispatch('media-recorded')->to(NativeEdge::class);
     }
 
-    public function share()
+    #[Computed]
+    public function audioFiles()
     {
-        Share::file('Check this out!', 'Check this out!', Storage::disk('public')->path($this->sharePath));
+        $files = Storage::disk('public')->files('audio');
+
+        return collect($files)->map(function ($file) {
+            return [
+                'path' => $file,
+                'name' => basename($file),
+                'size' => Storage::disk('public')->size($file),
+                'url' => Storage::disk('public')->url($file),
+                'date' => Storage::disk('public')->lastModified($file),
+            ];
+        })->sortByDesc('date')->values();
+    }
+
+    #[On('media-play')]
+    public function playAudio(string $path): void
+    {
+        $this->currentlyPlayingPath = $path;
+    }
+
+    #[On('media-share')]
+    public function shareAudio(string $path): void
+    {
+        Share::file('@nativephp #forever', '@nativephp #forever', Storage::disk('public')->path($path));
+    }
+
+    #[On('media-delete')]
+    public function deleteAudio(string $path): void
+    {
+        if ($this->currentlyPlayingPath === $path) {
+            $this->currentlyPlayingPath = '';
+        }
+
+        Storage::disk('public')->delete($path);
+        Dialog::toast('Audio deleted successfully');
     }
 
     #[Computed]
@@ -56,12 +92,14 @@ class Demo extends Component
     {
         try {
             $status = Audio::getStatus();
+
             return $status;
         } catch (\Exception $e) {
             logger('audioStatus() exception', [
                 'message' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
+                'trace' => $e->getTraceAsString(),
             ]);
+
             return 'error: ' . $e->getMessage();
         }
     }

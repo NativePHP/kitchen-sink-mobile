@@ -33,46 +33,56 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-3 gap-4">
-                <flux:button
-                    wire:click="recordAudio"
-                    variant="filled"
-                    icon="microphone"
-                    class="w-full"
-                    :disabled="$this->audioStatus !== 'idle'"
-                >
-                    Record
-                </flux:button>
-
-                <flux:button
-                    wire:click="{{ $this->audioStatus === 'paused' ? 'resumeAudio' : 'pauseAudio' }}"
-                    variant="outline"
-                    icon="pause"
-                    class="w-full"
-                    :disabled="$this->audioStatus === 'idle'"
-                >
-                    {{ $this->audioStatus === 'paused' ? 'Resume' : 'Pause' }}
-                </flux:button>
-
-                <flux:button
-                    wire:click="stopAudio"
-                    variant="danger"
-                    icon="stop"
-                    class="w-full"
-                >
-                    Stop
-                </flux:button>
+            <div class="flex justify-center gap-4">
+                @if($this->audioStatus === 'idle')
+                <button wire:click="recordAudio" :disabled="$this->audioStatus !== 'idle'" class="bg-red-500 text-white flex items-center justify-center p-6 py-2 rounded-lg">
+                    <flux:icon.microphone class="size-10"></flux:icon.microphone>
+                </button>
+                @endif
+                @if($this->audioStatus !== 'idle')
+                    <button wire:click="{{ $this->audioStatus === 'paused' ? 'resumeAudio' : 'pauseAudio' }}" class="bg-gray-500 dark:bg-cyan-400 text-white flex items-center justify-center p-6 py-2 rounded-lg">
+                        <flux:icon.pause class="size-10"></flux:icon.pause>
+                    </button>
+                    <button wire:click="stopAudio" class="bg-gray-500 dark:bg-red-600 text-white flex items-center justify-center p-6 py-2 rounded-lg">
+                        <flux:icon.stop class="size-10"></flux:icon.stop>
+                    </button>
+                @endif
             </div>
         </div>
     </flux:card>
-    @if($recording)
+    @if($currentlyPlayingPath)
         <flux:card>
-            <flux:subheading class="mb-4">Current Recording:</flux:subheading>
-            <div class="flex items-center justify-between">
-                <audio data-title="{{config('app.name')}}"
-                       data-artist="{{now()}}"
-                       src="{{ asset($recording) }}" controls></audio>
-                <flux:button wire:click="share" icon="share" variant="ghost"></flux:button>
+            <div class="space-y-4">
+                <div>
+                    <flux:heading size="lg">Now Playing</flux:heading>
+                    <flux:subheading>{{ basename($currentlyPlayingPath) }}</flux:subheading>
+                </div>
+
+                <audio
+                    data-title="{{ config('app.name') }}"
+                    data-artist="{{ now() }}"
+                    src="{{ Storage::disk('public')->url($currentlyPlayingPath) }}"
+                    controls
+                    class="w-full flex-1"
+                >
+                    Your browser does not support the audio tag.
+                </audio>
+
+                <div class="flex gap-2 justify-end">
+                    <flux:button variant="ghost" wire:click="$set('currentlyPlayingPath', '')">Close</flux:button>
+                </div>
+            </div>
+        </flux:card>
+    @endif
+
+    @if($this->audioFiles->isNotEmpty())
+        <flux:card>
+            <flux:heading size="lg" class="mb-4">My Recordings ({{ $this->audioFiles->count() }})</flux:heading>
+
+            <div class="grid grid-cols-1 gap-3">
+                @foreach($this->audioFiles as $audio)
+                    <livewire:media-card :media="$audio" type="audio" :key="$audio['path']" />
+                @endforeach
             </div>
         </flux:card>
     @endif

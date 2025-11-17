@@ -2,24 +2,25 @@
 
 namespace App\Livewire\Camera;
 
+use App\Livewire\NativeEdge;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Native\Mobile\Events\Camera\VideoCancelled;
 use Native\Mobile\Events\Camera\VideoRecorded;
 use Native\Mobile\Facades\Camera;
 use Native\Mobile\Facades\Dialog;
+use Native\Mobile\Facades\File;
 use Native\Mobile\Facades\Share;
 
 class Video extends Component
 {
-    public string $videoUrl = '';
-
-    public string $sharePath = '';
-
-    public bool $showVideoModal = false;
+    public string $currentlyPlayingPath = '';
 
     public ?int $maxDuration = null;
+
+    public bool $processing = false;
 
     public function recordVideo()
     {
@@ -33,22 +34,49 @@ class Video extends Component
     #[On('native:'.VideoRecorded::class)]
     public function handleVideoRecorded($path, $mimeType = null, $id = null)
     {
-        $filename = 'videos/video_'.time().'.mp4';
-        $this->sharePath = $filename;
-
-        // Store video using Laravel Storage
-        Storage::disk('public')->put($filename, file_get_contents($path));
-
-        // Generate public URL and path
-        $this->videoUrl = Storage::disk('public')->url($filename);
-
-        // Show the modal
-        $this->showVideoModal = true;
+        $filename = 'videos/video_'.time().'_'.uniqid().'.mp4';
+        File::move($path, Storage::disk('public')->path($filename));
+        Dialog::toast('Video recorded successfully!');
+        $this->dispatch('media-recorded')->to(NativeEdge::class);
     }
 
-    public function share()
+    #[Computed]
+    public function videos()
     {
-        Share::file('Check this out!', 'Check this out!', Storage::disk('public')->path($this->sharePath));
+        $files = Storage::disk('public')->files('videos');
+
+        return collect($files)->map(function ($file) {
+            return [
+                'path' => $file,
+                'name' => basename($file),
+                'size' => Storage::disk('public')->size($file),
+                'url' => Storage::disk('public')->url($file),
+                'date' => Storage::disk('public')->lastModified($file),
+            ];
+        })->sortByDesc('date')->values();
+    }
+
+    #[On('media-play')]
+    public function playVideo(string $path): void
+    {
+        $this->currentlyPlayingPath = $path;
+    }
+
+    #[On('media-share')]
+    public function shareVideo(string $path): void
+    {
+        Share::file('Check this out!', 'Check this out!', Storage::disk('public')->path($path));
+    }
+
+    #[On('media-delete')]
+    public function deleteVideo(string $path): void
+    {
+        if ($this->currentlyPlayingPath === $path) {
+            $this->currentlyPlayingPath = '';
+        }
+
+        Storage::disk('public')->delete($path);
+        Dialog::toast('Video deleted successfully');
     }
 
     #[On('native:'.VideoCancelled::class)]

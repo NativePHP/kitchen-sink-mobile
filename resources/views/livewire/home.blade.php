@@ -17,13 +17,10 @@
     <flux:card class="bg-zinc-50 dark:bg-zinc-800/50">
         <div class="space-y-4">
             <div class="flex items-center gap-3">
-                <div class="size-12 rounded-lg bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center">
-                    <flux:icon.cube class="size-7 text-blue-600 dark:text-blue-400"/>
-                </div>
-                <flux:heading size="lg" class="text-xl">The Blade's EDGE</flux:heading>
+                <span  class="text-3xl font-black bg-gradient-to-b from-red-800 to-red-500 text-transparent bg-clip-text inline-block">The Blade's EDGE 🔥</span>
             </div>
 
-            <flux:subheading size="lg" class="font-semibold text-zinc-900 dark:text-zinc-100">
+            <flux:subheading size="xl" class="font-semibold text-zinc-900 dark:text-zinc-100">
                 Element Definition and Generation Engine
             </flux:subheading>
 
@@ -43,11 +40,11 @@
                 <flux:card class="bg-gradient-to-br from-blue-300 to-cyan-300 dark:from-blue-400 dark:to-cyan-400 hover:shadow-lg transition-shadow cursor-pointer">
                     <div class="flex flex-col items-center text-center gap-3 p-3">
                         <div
-                            class="size-14 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
-                            <flux:icon.qr-code class="size-7 text-white"/>
+                            class="size-18 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
+                            <flux:icon.qr-code class="size-12 text-white"/>
                         </div>
                         <div>
-                            <flux:heading class="text-base text-white">Scanner</flux:heading>
+                            <flux:heading class="text-xl text-white">Scanner</flux:heading>
                         </div>
                     </div>
                 </flux:card>
@@ -57,11 +54,11 @@
                 <flux:card class="bg-gradient-to-br from-green-300 to-emerald-300 dark:from-green-400 dark:to-emerald-400 hover:shadow-lg transition-shadow cursor-pointer">
                     <div class="flex flex-col items-center text-center gap-3 p-3">
                         <div
-                            class="size-14 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
-                            <flux:icon.globe-alt class="size-7 text-white"/>
+                            class="size-18 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
+                            <flux:icon.globe-alt class="size-12 text-white"/>
                         </div>
                         <div>
-                            <flux:heading class="text-white">Network</flux:heading>
+                            <flux:heading class="text-white text-xl">Network</flux:heading>
                         </div>
                     </div>
                 </flux:card>
@@ -71,11 +68,11 @@
                 <flux:card class="bg-gradient-to-br from-purple-300 to-violet-300 dark:from-purple-400 dark:to-violet-400 hover:shadow-lg transition-shadow cursor-pointer">
                     <div class="flex flex-col items-center text-center gap-3 p-3">
                         <div
-                            class="size-14 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
-                            <flux:icon.speaker-wave class="size-7 text-white"/>
+                            class="size-18 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
+                            <flux:icon.speaker-wave class="size-12 text-white"/>
                         </div>
                         <div>
-                            <flux:heading class="text-base text-white">Audio</flux:heading>
+                            <flux:heading class="text-xl text-white">Audio</flux:heading>
                         </div>
                     </div>
                 </flux:card>
@@ -85,11 +82,11 @@
                 <flux:card class="bg-gradient-to-br from-red-300 to-pink-300 dark:from-red-400 dark:to-pink-400 hover:shadow-lg transition-shadow cursor-pointer">
                     <div class="flex flex-col items-center text-center gap-3 p-3">
                         <div
-                            class="size-14 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
-                            <flux:icon.video-camera class="size-7 text-white"/>
+                            class="size-18 rounded-full bg-white/30 dark:bg-white/20 flex items-center justify-center">
+                            <flux:icon.video-camera class="size-12 text-white"/>
                         </div>
                         <div>
-                            <flux:heading class="text-base text-white">Video</flux:heading>
+                            <flux:heading class="text-xl text-white">Video</flux:heading>
                         </div>
                     </div>
                 </flux:card>
