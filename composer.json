@@ -22,10 +22,9 @@
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
-        "laravel/reverb": "^1.5",
         "livewire/flux": "^2.0",
         "livewire/flux-pro": "^2.0",
-        "nativephp/mobile": "dev-edge-refactor"
+        "nativephp/mobile": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

@@ -15,13 +15,13 @@ class Demo extends Component
 
     public function promptForPushNotifications()
     {
-        if (! PushNotifications::getToken()) {
-            PushNotifications::requestPermission();
-        }
+        // Simply enroll - the PendingPushNotificationEnrollment handles everything
+        // Token will be dispatched via TokenGenerated event when available
+        PushNotifications::enroll();
     }
 
     #[OnNative(TokenGenerated::class)]
-    public function handlePushNotificationsToken(KitchenSinkService $service, $token)
+    public function handlePushNotificationsToken($token)
     {
         $this->token = $token;
     }
