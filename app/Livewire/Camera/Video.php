@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Camera\VideoCancelled;
 use Native\Mobile\Events\Camera\VideoRecorded;
 use Native\Mobile\Facades\Camera;
@@ -31,7 +32,7 @@ class Video extends Component
         }
     }
 
-    #[On('native:'.VideoRecorded::class)]
+    #[OnNative(VideoRecorded::class)]
     public function handleVideoRecorded($path, $mimeType = null, $id = null)
     {
         $filename = 'videos/video_'.time().'_'.uniqid().'.mp4';
@@ -79,7 +80,7 @@ class Video extends Component
         Dialog::toast('Video deleted successfully');
     }
 
-    #[On('native:'.VideoCancelled::class)]
+    #[OnNative(VideoCancelled::class)]
     public function handleVideoCancelled()
     {
         Dialog::toast('Video recording cancelled');

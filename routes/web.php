@@ -74,8 +74,8 @@ Route::group(['prefix' => 'laravel'], function () {
     Route::get('/reverb', Reverb::class)->name('laravel.reverb');
 });
 
-Route::group(['prefix' => 'audio'], function () {
-    Route::get('/demo', \App\Livewire\Audio\Demo::class)->name('audio.demo');
+Route::group(['prefix' => 'microphone'], function () {
+    Route::get('/demo', \App\Livewire\Microphone\Demo::class)->name('microphone.demo');
 });
 
 Route::get('.well-known/assetlinks.json', [ApplinksController::class, 'assetLinks']);

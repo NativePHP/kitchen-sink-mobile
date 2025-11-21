@@ -1,12 +1,12 @@
 <div class="space-y-6">
     <flux:card>
         <flux:heading size="lg" class="flex space-x-2">
-            <flux:icon.speaker-wave variant="mini" class="mr-2"/>
-            Audio Demo
+            <flux:icon.microphone variant="mini" class="mr-2"/>
+            Microphone Demo
         </flux:heading>
 
         <flux:subheading>
-            <p>Audio API integration demo.</p>
+            <p>Microphone API integration demo.</p>
         </flux:subheading>
     </flux:card>
 

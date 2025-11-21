@@ -15,6 +15,7 @@
     </flux:button>
 
     @if($token)
+        {{$token}}
         <flux:button variant="filled" icon="bell" wire:click="sendNotification" class="w-full">
             Send Test Notification
         </flux:button>

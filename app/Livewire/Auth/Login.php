@@ -5,7 +5,6 @@ namespace App\Livewire\Auth;
 use App\Http\Requests\WorkOS;
 use App\Services\KitchenSinkService;
 use Illuminate\Support\Str;
-use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Native\Mobile\Events\Biometric\Completed;
@@ -25,20 +24,20 @@ class Login extends Component
 
     public function mount()
     {
-//        if (SecureStorage::get('token')) {
-//            System::promptForBiometricID();
-//        }
+        //        if (SecureStorage::get('token')) {
+        //            System::promptForBiometricID();
+        //        }
     }
 
-//    #[On('native:'.Completed::class)]
-//    public function handleBiometricAuth(bool $success)
-//    {
-//        if ($success) {
-//            return redirect()->route('camera.getPhoto');
-//        } else {
-//            Dialog::toast('Could not authenticate');
-//        }
-//    }
+    //    #[On(Completed::class)]
+    //    public function handleBiometricAuth(bool $success)
+    //    {
+    //        if ($success) {
+    //            return redirect()->route('camera.getPhoto');
+    //        } else {
+    //            Dialog::toast('Could not authenticate');
+    //        }
+    //    }
 
     public function login(KitchenSinkService $service)
     {

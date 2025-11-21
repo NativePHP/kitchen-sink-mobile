@@ -38,7 +38,7 @@
         </native:side-nav-group>
         <native:side-nav-item active="{{ request()->routeIs('network.demo') }}" id="network-demo" icon="globe" url="{{ route('network.demo') }}" label="Network" badge="New!" badge-color="blue"/>
         <native:side-nav-item active="{{ request()->routeIs('scanner.demo') }}" id="scanner-demo" icon="qrcode" url="{{ route('scanner.demo') }}" label="Scanner Demo" badge="New!" badge-color="blue"/>
-        <native:side-nav-item active="{{ request()->routeIs('audio.demo') }}" id="audio-demo" icon="speaker" url="{{ route('audio.demo') }}" label="Audio" badge="New!" badge-color="blue"/>
+        <native:side-nav-item active="{{ request()->routeIs('microphone.demo') }}" id="microphone-demo" icon="microphone" url="{{ route('microphone.demo') }}" label="Microphone" badge="New!" badge-color="blue"/>
         <native:side-nav-item active="{{ request()->routeIs('device.demo') }}" id="device-demo" icon="device-phone-mobile" url="{{ route('device.demo') }}" label="Device Info"/>
         <native:side-nav-item active="{{ request()->routeIs('haptics.vibrate') }}" id="haptics-vibrate" icon="vibrate" url="{{ route('haptics.vibrate') }}" label="Haptics"/>
         <native:side-nav-item active="{{ request()->routeIs('browser.demo') }}" id="browser-demo" icon="globe-alt" url="{{ route('browser.demo') }}" label="Browser"/>
@@ -71,12 +71,12 @@
             :active="request()->routeIs('camera.video')"
         />
         <native:bottom-nav-item
-            id="audio"
-            label="Recorder"
+            id="microphone"
+            label="Microphone"
             badge="{{ $audioCount }}"
-            url="{{ route('audio.demo') }}"
+            url="{{ route('microphone.demo') }}"
             icon="microphone"
-            :active="request()->routeIs('audio.demo')"
+            :active="request()->routeIs('microphone.demo')"
         />
         <native:bottom-nav-item
             id="network"

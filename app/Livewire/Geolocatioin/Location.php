@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Geolocatioin;
 
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Geolocation\LocationReceived;
 use Native\Mobile\Events\Geolocation\PermissionRequestResult;
 use Native\Mobile\Events\Geolocation\PermissionStatusReceived;
@@ -31,13 +31,13 @@ class Location extends Component
         Geolocation::getCurrentPosition(true);
     }
 
-    #[On('native:'.PermissionStatusReceived::class)]
+    #[OnNative(PermissionStatusReceived::class)]
     public function handlePermissionStatus($location, $coarseLocation, $fineLocation)
     {
         $this->result = 'Permission Status: Location='.$location.', Coarse='.$coarseLocation.', Fine='.$fineLocation;
     }
 
-    #[On('native:'.PermissionRequestResult::class)]
+    #[OnNative(PermissionRequestResult::class)]
     public function handlePermissionRequest($location, $coarseLocation, $fineLocation, $message = null, $needsSettings = null)
     {
         if ($location === 'permanently_denied') {
@@ -47,7 +47,7 @@ class Location extends Component
         }
     }
 
-    #[On('native:'.LocationReceived::class)]
+    #[OnNative(LocationReceived::class)]
     public function handleLocationReceived($success = null, $latitude = null, $longitude = null, $accuracy = null, $timestamp = null, $provider = null, $error = null)
     {
         if ($success) {
@@ -61,7 +61,7 @@ class Location extends Component
     {
         return view('livewire.geolocation.location')
             ->layout('components.layouts.app', [
-                'title' => 'Geolocation'
+                'title' => 'Geolocation',
             ]);
     }
 }

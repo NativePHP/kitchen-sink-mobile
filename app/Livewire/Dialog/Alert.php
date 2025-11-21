@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Dialog;
 
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Alert\ButtonPressed;
 use Native\Mobile\Facades\Dialog;
 
@@ -18,7 +18,7 @@ class Alert extends Component
         ]);
     }
 
-    #[On('native:'.ButtonPressed::class)]
+    #[OnNative(ButtonPressed::class)]
     public function handleAlert($index, $label)
     {
         if ($index == 1) {
@@ -35,7 +35,7 @@ class Alert extends Component
     {
         return view('livewire.dialog.alert')
             ->layout('components.layouts.app', [
-                'title' => 'Alert Dialog'
+                'title' => 'Alert Dialog',
             ]);
     }
 }

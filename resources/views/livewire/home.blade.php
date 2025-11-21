@@ -64,7 +64,7 @@
                 </flux:card>
             </a>
 
-            <a href="{{route('audio.demo')}}">
+            <a href="{{route('microphone.demo')}}">
                 <flux:card class="bg-gradient-to-br from-purple-300 to-violet-300 dark:from-purple-400 dark:to-violet-400 hover:shadow-lg transition-shadow cursor-pointer">
                     <div class="flex flex-col items-center text-center gap-3 p-3">
                         <div

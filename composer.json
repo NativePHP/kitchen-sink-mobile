@@ -14,8 +14,8 @@
             "url": "https://composer.fluxui.dev"
         },
         "nativephp": {
-            "type": "vcs",
-            "url": "https://github.com/NativePHP/mobile.git"
+            "type": "path",
+            "url": "../mobile"
         }
     },
     "require": {
@@ -25,7 +25,7 @@
         "laravel/reverb": "^1.5",
         "livewire/flux": "^2.0",
         "livewire/flux-pro": "^2.0",
-        "nativephp/mobile": "dev-vika"
+        "nativephp/mobile": "dev-edge-refactor"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

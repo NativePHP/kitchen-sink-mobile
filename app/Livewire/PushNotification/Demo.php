@@ -3,12 +3,11 @@
 namespace App\Livewire\PushNotification;
 
 use App\Services\KitchenSinkService;
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\PushNotification\TokenGenerated;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\PushNotifications;
-use Native\Mobile\Facades\System;
 
 class Demo extends Component
 {
@@ -16,16 +15,12 @@ class Demo extends Component
 
     public function promptForPushNotifications()
     {
-        if (System::isIos()) {
-            if (! PushNotifications::getPushNotificationsToken()) {
-                PushNotifications::enrollForPushNotifications();
-            }
-        } else {
-            PushNotifications::getPushNotificationsToken();
+        if (! PushNotifications::getToken()) {
+            PushNotifications::requestPermission();
         }
     }
 
-    #[On('native:'.TokenGenerated::class)]
+    #[OnNative(TokenGenerated::class)]
     public function handlePushNotificationsToken(KitchenSinkService $service, $token)
     {
         $this->token = $token;
@@ -44,7 +39,7 @@ class Demo extends Component
     {
         return view('livewire.push-notification.demo')
             ->layout('components.layouts.app', [
-                'title' => 'Push Notifications'
+                'title' => 'Push Notifications',
             ]);
     }
 }

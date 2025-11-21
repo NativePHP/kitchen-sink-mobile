@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Biometrics;
 
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Biometric\Completed;
 use Native\Mobile\Facades\Biometrics;
 
@@ -11,7 +11,7 @@ class Demo extends Component
 {
     public $secure = false;
 
-    #[On('native:'.Completed::class)]
+    #[OnNative(Completed::class)]
     public function handleBiometricAuth($success)
     {
         $this->secure = $success;
@@ -26,7 +26,7 @@ class Demo extends Component
     {
         return view('livewire.biometrics.demo')
             ->layout('components.layouts.app', [
-                'title' => 'Biometrics'
+                'title' => 'Biometrics',
             ]);
     }
 }

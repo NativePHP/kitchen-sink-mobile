@@ -3,10 +3,11 @@
 namespace App\Livewire\Camera;
 
 use Illuminate\Support\Facades\Storage;
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Camera\PhotoTaken;
 use Native\Mobile\Facades\Camera as CameraFacade;
+use Native\Mobile\Facades\File;
 
 class GetPhoto extends Component
 {
@@ -17,12 +18,12 @@ class GetPhoto extends Component
         CameraFacade::getPhoto();
     }
 
-    #[On('native:'.PhotoTaken::class)]
+    #[OnNative(PhotoTaken::class)]
     public function handleCamera($path)
     {
         $filename = 'photos/photo_'.time().'.jpg';
 
-        Storage::disk('public')->put($filename, file_get_contents($path));
+        File::move($path, Storage::disk('public')->path($filename));
 
         $this->photoDataUrl = Storage::disk('public')->url($filename);
     }
@@ -31,7 +32,7 @@ class GetPhoto extends Component
     {
         return view('livewire.camera.get-photo')
             ->layout('components.layouts.app', [
-                'title' => 'Camera'
+                'title' => 'Camera',
             ]);
     }
 }

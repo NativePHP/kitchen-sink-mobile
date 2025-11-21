@@ -3,8 +3,8 @@
 namespace App\Livewire\Laravel;
 
 use App\Events\MessageSent;
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Facades\System;
 
 class Reverb extends Component
@@ -23,7 +23,7 @@ class Reverb extends Component
         $this->reset('message');
     }
 
-    #[On('echo:android,MessageSent')]
+    #[OnNative('echo:android,MessageSent')]
     public function messageReceived($message)
     {
         $this->messages[] = [
@@ -38,7 +38,7 @@ class Reverb extends Component
     {
         return view('livewire.laravel.reverb')
             ->layout('components.layouts.app', [
-                'title' => 'Laravel Reverb'
+                'title' => 'Laravel Reverb',
             ]);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Scanner;
 
-use Livewire\Attributes\On;
 use Livewire\Component;
-use Native\Mobile\Events\QrCode\Scanned;
+use Native\Mobile\Attributes\OnNative;
+use Native\Mobile\Events\Scanner\CodeScanned;
 use Native\Mobile\Facades\Scanner;
 
 class Demo extends Component
@@ -27,7 +27,7 @@ class Demo extends Component
             ->continuous($this->streaming);
     }
 
-    #[On('native:'.Scanned::class)]
+    #[OnNative(CodeScanned::class)]
     public function handleScanned($data, $format): void
     {
         if ($this->streaming) {

@@ -3,8 +3,8 @@
 namespace App\Livewire\Camera;
 
 use Illuminate\Support\Facades\Storage;
-use Livewire\Attributes\On;
 use Livewire\Component;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Gallery\MediaSelected;
 use Native\Mobile\Facades\Camera;
 use Native\Mobile\Facades\Dialog;
@@ -21,7 +21,7 @@ class PickImages extends Component
         Camera::pickImages($media_type, $multiple, $max_items);
     }
 
-    #[On('native:'.MediaSelected::class)]
+    #[OnNative(MediaSelected::class)]
     public function handleGallery($success, $files, $count)
     {
         $this->photos = [];

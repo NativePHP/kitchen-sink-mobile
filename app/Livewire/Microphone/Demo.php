@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Audio;
+namespace App\Livewire\Microphone;
 
 use App\Events\MyAudioRecordedEvent;
 use App\Livewire\NativeEdge;
@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
-use Native\Mobile\Facades\Audio;
+use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Facades\Dialog;
-use Native\Mobile\Facades\Share;
 use Native\Mobile\Facades\File;
+use Native\Mobile\Facades\Microphone;
+use Native\Mobile\Facades\Share;
 
 class Demo extends Component
 {
@@ -19,30 +20,30 @@ class Demo extends Component
 
     public function recordAudio()
     {
-        Audio::record()
+        Microphone::record()
             ->event(MyAudioRecordedEvent::class)
             ->start();
     }
 
     public function pauseAudio()
     {
-        Audio::pause();
+        Microphone::pause();
     }
 
     public function stopAudio()
     {
-        Audio::stop();
+        Microphone::stop();
     }
 
     public function resumeAudio()
     {
-        Audio::resume();
+        Microphone::resume();
     }
 
-    #[On('native:' . MyAudioRecordedEvent::class)]
+    #[OnNative(MyAudioRecordedEvent::class)]
     public function handleAudioRecorded($path, $mimeType = null, $id = null)
     {
-        $filename = 'audio/recording_' . time() . '_' . uniqid() . '.m4a';
+        $filename = 'audio/recording_'.time().'_'.uniqid().'.m4a';
         File::move($path, Storage::disk('public')->path($filename));
         Dialog::toast('Audio recorded successfully!');
         $this->dispatch('media-recorded')->to(NativeEdge::class);
@@ -91,7 +92,7 @@ class Demo extends Component
     public function audioStatus()
     {
         try {
-            $status = Audio::getStatus();
+            $status = Microphone::getStatus();
 
             return $status;
         } catch (\Exception $e) {
@@ -100,15 +101,15 @@ class Demo extends Component
                 'trace' => $e->getTraceAsString(),
             ]);
 
-            return 'error: ' . $e->getMessage();
+            return 'error: '.$e->getMessage();
         }
     }
 
     public function render()
     {
-        return view('livewire.audio.demo')
+        return view('livewire.microphone.demo')
             ->layout('components.layouts.app', [
-                'title' => 'Audio',
+                'title' => 'Microphone',
             ]);
     }
 }
