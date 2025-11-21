@@ -82,15 +82,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | App Author
+    | Default Native App Service Provider
     |--------------------------------------------------------------------------
     |
-    | The author of the application. This is used only for display or
-    | packaging purposes and has no effect on runtime functionality.
+    | This is the main service provider used to configure your native app.
+    | It is where you can define hotkeys, menus, native windows, and
+    | other boot logic that runs inside the NativePHP runtime.
     |
     */
 
-    'author' => env('NATIVEPHP_APP_AUTHOR'),
+    'provider' => \App\Providers\NativeAppServiceProvider::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -107,10 +108,9 @@ return [
         'AWS_*',
         'GITHUB_*',
         'DO_SPACES_*',
-        'NATIVEPHP_UPDATER_PATH',
-        'NATIVEPHP_APPLE_ID',
-        'NATIVEPHP_APPLE_ID_PASS',
-        'NATIVEPHP_APPLE_TEAM_ID',
+        '*_SECRET',
+        'DB_PASSWORD',
+        'DB_USERNAME',
     ],
 
     /*
@@ -221,10 +221,15 @@ return [
     |
     */
     'app_store_connect' => [
+
         'api_key' => env('APP_STORE_API_KEY'),
+
         'api_key_id' => env('APP_STORE_API_KEY_ID'),
+
         'api_issuer_id' => env('APP_STORE_API_ISSUER_ID'),
+
         'app_name' => env('APP_STORE_APP_NAME'),
+
     ],
 
     /*
@@ -243,6 +248,7 @@ return [
     'permissions' => [
         'biometric' => true,
         'camera' => true,
+        'microphone' => true,
         'nfc' => false,
         'push_notifications' => true,
         'location' => true,
