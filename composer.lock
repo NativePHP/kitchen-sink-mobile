@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "107249b37bd6696404a0f62bdd04851e",
+    "content-hash": "3fb876ad0900752b4342701647aaa0dd",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -158,16 +158,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.14.0",
+            "version": "0.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "113a8ee2656b882d4c3164fa31aa6e12cbb7aaa2"
+                "reference": "f05858549e5f9d7bb45875a75583240a38a281d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/113a8ee2656b882d4c3164fa31aa6e12cbb7aaa2",
-                "reference": "113a8ee2656b882d4c3164fa31aa6e12cbb7aaa2",
+                "url": "https://api.github.com/repos/brick/math/zipball/f05858549e5f9d7bb45875a75583240a38a281d0",
+                "reference": "f05858549e5f9d7bb45875a75583240a38a281d0",
                 "shasum": ""
             },
             "require": {
@@ -206,7 +206,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.14.0"
+                "source": "https://github.com/brick/math/tree/0.14.1"
             },
             "funding": [
                 {
@@ -214,7 +214,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-29T12:40:03+00:00"
+            "time": "2025-11-24T14:40:29+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -2102,16 +2102,16 @@
         },
         {
             "name": "livewire/flux",
-            "version": "v2.6.2",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/flux.git",
-                "reference": "beff0f35bfe8c322198bec1968f0fcdddf4b4455"
+                "reference": "bf38c5002161034adaa4ec0c6cd1ca0ec61a2618"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/flux/zipball/beff0f35bfe8c322198bec1968f0fcdddf4b4455",
-                "reference": "beff0f35bfe8c322198bec1968f0fcdddf4b4455",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/bf38c5002161034adaa4ec0c6cd1ca0ec61a2618",
+                "reference": "bf38c5002161034adaa4ec0c6cd1ca0ec61a2618",
                 "shasum": ""
             },
             "require": {
@@ -2162,25 +2162,25 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
-                "source": "https://github.com/livewire/flux/tree/v2.6.2"
+                "source": "https://github.com/livewire/flux/tree/v2.7.1"
             },
-            "time": "2025-11-18T18:22:26+00:00"
+            "time": "2025-11-24T12:49:39+00:00"
         },
         {
             "name": "livewire/flux-pro",
-            "version": "2.6.2",
+            "version": "2.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.fluxui.dev/download/a068904a-46de-4b7f-a988-b7c75d2696db/flux-pro-2.6.2.zip",
-                "reference": "09ac3f40de28c281ead199e264fd8af752fb9cf5",
-                "shasum": "f418b153172a44316269d590974d4424c0855574"
+                "url": "https://composer.fluxui.dev/download/a06f1045-2dc3-4255-8fe0-885ce6106460/flux-pro-2.7.1.zip",
+                "reference": "cd1550cc9fc4e18054072755a63bd3904583ccf6",
+                "shasum": "f9540512b6b2939e3f273c20f94758278db74268"
             },
             "require": {
                 "illuminate/console": "^10.0|^11.0|^12.0",
                 "illuminate/support": "^10.0|^11.0|^12.0",
                 "illuminate/view": "^10.0|^11.0|^12.0",
                 "laravel/prompts": "^0.1.24|^0.2|^0.3",
-                "livewire/flux": "2.6.2|dev-main",
+                "livewire/flux": "2.7.1|dev-main",
                 "livewire/livewire": "^3.7.0|^4.0",
                 "php": "^8.1",
                 "symfony/console": "^6.0|^7.0"
@@ -2221,7 +2221,7 @@
                 "livewire",
                 "ui"
             ],
-            "time": "2025-11-21T07:19:39+00:00"
+            "time": "2025-11-24T12:52:29+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -2404,11 +2404,17 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-edge-refactor",
+            "version": "dev-vika",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:NativePHP/mobile.git",
+                "reference": "ec1f29e963e1b3708396ae9010da9681b9c97cd3"
+            },
             "dist": {
-                "type": "path",
-                "url": "../mobile",
-                "reference": "49e074ac0546765c48a85ab556e87a5164320283"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/ec1f29e963e1b3708396ae9010da9681b9c97cd3",
+                "reference": "ec1f29e963e1b3708396ae9010da9681b9c97cd3",
+                "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
@@ -2496,9 +2502,11 @@
                 "laravel",
                 "nativephp"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/mobile/tree/vika",
+                "issues": "https://github.com/NativePHP/mobile/issues"
+            },
+            "time": "2025-11-24T05:54:06+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2672,16 +2680,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.8",
+            "version": "v4.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "c930ca4e3cf4f17dcfb03037703679d2396d2ede"
+                "reference": "505a30ad386daa5211f08a318e47015b501cad30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/c930ca4e3cf4f17dcfb03037703679d2396d2ede",
-                "reference": "c930ca4e3cf4f17dcfb03037703679d2396d2ede",
+                "url": "https://api.github.com/repos/nette/utils/zipball/505a30ad386daa5211f08a318e47015b501cad30",
+                "reference": "505a30ad386daa5211f08a318e47015b501cad30",
                 "shasum": ""
             },
             "require": {
@@ -2755,9 +2763,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.8"
+                "source": "https://github.com/nette/utils/tree/v4.0.9"
             },
-            "time": "2025-08-06T21:43:34+00:00"
+            "time": "2025-10-31T00:45:47+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -9917,7 +9925,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "nativephp/mobile": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
