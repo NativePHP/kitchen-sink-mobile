@@ -251,28 +251,16 @@ return [
         'microphone' => true,
         'nfc' => false,
         'push_notifications' => true,
-        'location' => true,
+        'location' => 'This is it!!!',
         'vibrate' => true,
         'storage_read' => false,
         'storage_write' => false,
-        'qr-code' => true,
+        'scanner' => true,
         'network_state' => true,
-        'microphone' => true,
+        'microphone_background' => true,
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Plugins
-    |--------------------------------------------------------------------------
-    |
-    | Register custom NativePHP plugins here. Plugins allow you to extend
-    | native functionality by implementing the Plugin contract and handling
-    | god method calls within a specific namespace.
-    |
-    */
-    'plugins' => [
-        \App\Plugins\TestPlugin::class,
-    ],
+    'ipad' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -291,21 +279,15 @@ return [
     'orientation' => [
         'iPhone' => [
             'portrait' => true,
-            'upside_down' => true,
-            'landscape_left' => true,
-            'landscape_right' => true,
-        ],
-        'iPad' => [
-            'portrait' => true,
-            'upside_down' => true,
-            'landscape_left' => true,
-            'landscape_right' => true,
+            'upside_down' => false,
+            'landscape_left' => false,
+            'landscape_right' => false,
         ],
         'android' => [
             'portrait' => true,
-            'upside_down' => true,
-            'landscape_left' => true,
-            'landscape_right' => true,
+            'upside_down' => false,
+            'landscape_left' => false,
+            'landscape_right' => false,
         ],
     ],
 ];

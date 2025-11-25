@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\HasQuote;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 use Native\Mobile\Facades\Device as DeviceFacade;
 
 class Device extends Component
 {
+    use HasQuote;
     public string $device_id = '';
     public string $device_info = '';
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\HasQuote;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Geolocation\LocationReceived;
@@ -11,6 +12,7 @@ use Native\Mobile\Facades\Geolocation as GeolocationFacade;
 
 class Geolocation extends Component
 {
+    use HasQuote;
     public string $result = '';
 
     public function checkPermissions()

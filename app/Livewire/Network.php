@@ -2,11 +2,13 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\HasQuote;
 use Livewire\Component;
 use Native\Mobile\Facades\Network as NetworkFacade;
 
 class Network extends Component
 {
+    use HasQuote;
     public $status = '';
 
     public $connected = false;

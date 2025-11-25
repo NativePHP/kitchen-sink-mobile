@@ -1,6 +1,6 @@
 <div class="space-y-6">
     <!-- Header with Gradient -->
-    <div class="bg-gradient-to-br from-orange-500 to-amber-500 dark:from-orange-600 dark:to-amber-600 text-white border-0 pb-8 pt-[var(--inset-top)] px-6">
+    <div class="bg-gradient-to-br from-orange-500 to-amber-500  text-white border-0 pb-8 pt-[var(--inset-top)] px-6">
         <div class="space-y-3">
             <div class="flex items-start gap-4">
                 <div class="space-y-3">
@@ -49,7 +49,7 @@
                         <flux:button
                             wire:click="recordAudio"
                             icon="microphone"
-                            class="col-span-2 py-6 bg-gradient-to-br from-red-500 to-pink-500 !text-white border-0 shadow-lg transition-all text-xl font-semibold [&>span]:!text-white"
+                            class="col-span-2 py-6 bg-gradient-to-br from-orange-500 to-amber-500 !text-white border-0 shadow-lg transition-all text-xl font-semibold [&>span]:!text-white"
                         >
                             Record
                         </flux:button>
@@ -59,7 +59,7 @@
                         <flux:button
                             wire:click="pauseAudio"
                             icon="pause"
-                            class="w-full py-6 bg-gradient-to-br from-yellow-500 to-orange-500 !text-white border-0 shadow-lg transition-all [&>span]:!text-white"
+                            class="py-6 bg-gradient-to-br from-yellow-500 to-orange-500  text-white shadow-lg"
                         >
                             Pause
                         </flux:button>
@@ -89,7 +89,7 @@
         </flux:card>
 
         @if($currentlyPlayingPath)
-            <flux:card class="bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 border-2 border-indigo-200 dark:border-indigo-700">
+            <flux:card class="bg-gradient-to-br from-slate-100 to-gray-100 dark:from-slate-800 dark:to-gray-900 border-2 border-orange-200 dark:border-orange-800">
                 <div class="space-y-4">
                     <flux:heading size="lg" icon="play" class="text-indigo-900 dark:text-indigo-100">Now Playing</flux:heading>
                     <flux:subheading class="text-indigo-700 dark:text-indigo-300">{{ basename($currentlyPlayingPath) }}</flux:subheading>
@@ -112,8 +112,8 @@
         @endif
 
         @if($this->audioFiles->isNotEmpty())
-            <flux:card class="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 border-2 border-purple-200 dark:border-purple-700">
-                <flux:heading size="lg" icon="play" class="text-purple-900 dark:text-purple-100 mb-4">My Recordings ({{ $this->audioFiles->count() }})</flux:heading>
+            <flux:card class="bg-gradient-to-br from-slate-100 to-gray-100 dark:from-slate-800 dark:to-gray-900 border-2 border-orange-200 dark:border-orange-800">
+                <flux:heading size="lg" icon="play" class="text-white mb-4">My Recordings ({{ $this->audioFiles->count() }})</flux:heading>
 
                 <div class="grid grid-cols-1 gap-3">
                     @foreach($this->audioFiles as $audio)
@@ -122,6 +122,8 @@
                 </div>
             </flux:card>
         @endif
+
+        <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         <div class="pb-32"></div>
     </div>
 </div>

@@ -2,12 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\HasQuote;
 use Livewire\Component;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\SecureStorage as SecureStorageFacade;
 
 class SecureStorage extends Component
 {
+    use HasQuote;
     public $key = '';
 
     public $value = '';

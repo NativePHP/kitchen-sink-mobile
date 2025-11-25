@@ -65,6 +65,8 @@
                 </div>
             </div>
         </flux:card>
+
+        <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         <div class="pb-32"></div>
     </div>
 </div>

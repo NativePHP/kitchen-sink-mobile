@@ -37,6 +37,8 @@
                 <img src="{{ $photoDataUrl }}" class="w-full rounded-lg shadow-2xl border-2 border-white/50" alt="Captured photo" />
             </flux:card>
         @endif
+
+        <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
     </div>
     <div class="pb-32"></div>
 </div>

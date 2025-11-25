@@ -46,6 +46,8 @@
                     </flux:callout.text>
                 </flux:callout>
             @endif
+
+            <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         </div>
     </div>
 </div>

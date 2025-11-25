@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Camera;
 
+use App\Livewire\Concerns\HasQuote;
 use App\Livewire\NativeEdge;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
@@ -17,6 +18,7 @@ use Native\Mobile\Facades\Share;
 
 class Video extends Component
 {
+    use HasQuote;
     public string $currentlyPlayingPath = '';
 
     public ?int $maxDuration = null;

@@ -2,11 +2,13 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\HasQuote;
 use Livewire\Component;
 use Native\Mobile\Facades\Browser as BrowserFacade;
 
 class Browser extends Component
 {
+    use HasQuote;
     public function openInApp()
     {
         BrowserFacade::inApp('https://nativephp.com/mobile');

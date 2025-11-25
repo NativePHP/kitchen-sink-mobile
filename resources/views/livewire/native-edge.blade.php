@@ -1,6 +1,6 @@
 <div>
     <native:top-bar
-        title=""
+        title="{{\Native\Mobile\Facades\System::isAndroid() ? $title ?? 'Home' : ''}}"
         show-navigation-icon="{{\Native\Mobile\Facades\System::isAndroid()}}"
     >
         <native:top-bar-action

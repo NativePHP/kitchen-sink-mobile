@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Events\MyAudioRecordedEvent;
+use App\Livewire\Concerns\HasQuote;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
@@ -15,6 +16,7 @@ use Native\Mobile\Facades\Share;
 
 class Microphone extends Component
 {
+    use HasQuote;
     public string $currentlyPlayingPath = '';
 
     public function recordAudio()

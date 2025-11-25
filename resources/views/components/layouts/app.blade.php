@@ -18,7 +18,13 @@
 <body class="min-h-screen bg-zinc-50 dark:bg-zinc-900">
 <livewire:native-edge :title="$title ?? 'Dashboard'" />
 
-<flux:main class="!p-0">
+<flux:main class="!p-0"
+           x-data="{ show: false }"
+           x-init="setTimeout(() => show = true, 100)"
+           x-show="show"
+           x-transition:enter="transition ease-out duration-500"
+           x-transition:enter-start="opacity-0 translate-x-10"
+           x-transition:enter-end="opacity-100 translate-x-0">
     {{ $slot }}
 </flux:main>
 

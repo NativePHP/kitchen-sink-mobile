@@ -30,9 +30,9 @@
 
         <!-- Connection Status Alert -->
         @if($connected)
-            <flux:callout icon="sparkles" class="border-purple-400 dark:border-purple-600 bg-gradient-to-br from-purple-100 to-fuchsia-100 dark:from-purple-900/30 dark:to-fuchsia-900/30 border-2 shadow-lg">
-                <flux:callout.heading class="text-purple-900 dark:text-purple-100 text-lg font-bold">You are connected!</flux:callout.heading>
-                <flux:callout.text class="text-purple-700 dark:text-purple-300 text-base font-semibold">
+            <flux:callout icon="sparkles" class="border-teal-400 dark:border-teal-600 bg-gradient-to-br from-teal-100 to-teal-100 dark:from-teal-800/70 dark:to-blue-600/40 border-2 shadow-lg">
+                <flux:callout.heading class="text-teal-900 dark:text-teal-100 text-lg font-bold">You are connected!</flux:callout.heading>
+                <flux:callout.text class="text-teal-700 dark:text-teal-300 text-base font-semibold">
                     Looks like you are connected via: {{str($status)->upper()}} - You're all set!
                 </flux:callout.text>
             </flux:callout>
@@ -44,6 +44,8 @@
                 </flux:callout.text>
             </flux:callout>
         @endif
+
+        <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         <div class="pb-32"></div>
     </div>
 </div>

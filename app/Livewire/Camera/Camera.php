@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Camera;
 
+use App\Livewire\Concerns\HasQuote;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
@@ -11,6 +12,7 @@ use Native\Mobile\Facades\File;
 
 class Camera extends Component
 {
+    use HasQuote;
     public string $photoDataUrl = '';
 
     public function camera()

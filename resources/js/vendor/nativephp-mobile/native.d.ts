@@ -1062,12 +1062,6 @@ export function openInAppBrowser(url: string): Promise<{ success: boolean }>;
  */
 export function openAuthSession(url: string): Promise<{ success: boolean }>;
 
-export const browser: {
-    open: typeof openInBrowser;
-    inApp: typeof openInAppBrowser;
-    auth: typeof openAuthSession;
-};
-
 // ============================================================================
 // Edge Functions
 // ============================================================================
