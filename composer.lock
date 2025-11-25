@@ -2408,12 +2408,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:NativePHP/mobile.git",
-                "reference": "9e6d2404e6b7d0142fe39b8b8608800d86bfe916"
+                "reference": "a3c364a126979230afc67de72a0f2ec36804b677"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/9e6d2404e6b7d0142fe39b8b8608800d86bfe916",
-                "reference": "9e6d2404e6b7d0142fe39b8b8608800d86bfe916",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/a3c364a126979230afc67de72a0f2ec36804b677",
+                "reference": "a3c364a126979230afc67de72a0f2ec36804b677",
                 "shasum": ""
             },
             "require": {
@@ -2506,7 +2506,7 @@
                 "source": "https://github.com/NativePHP/mobile/tree/vika",
                 "issues": "https://github.com/NativePHP/mobile/issues"
             },
-            "time": "2025-11-25T01:42:19+00:00"
+            "time": "2025-11-25T02:33:09+00:00"
         },
         {
             "name": "nesbot/carbon",
