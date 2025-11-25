@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "107249b37bd6696404a0f62bdd04851e",
+    "content-hash": "3fb876ad0900752b4342701647aaa0dd",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2404,11 +2404,17 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-android-hmr-two",
+            "version": "dev-vika",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:NativePHP/mobile.git",
+                "reference": "ec1f29e963e1b3708396ae9010da9681b9c97cd3"
+            },
             "dist": {
-                "type": "path",
-                "url": "../mobile",
-                "reference": "b9aba5891f5c534dd562143f9b7482cd7a5becbb"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/ec1f29e963e1b3708396ae9010da9681b9c97cd3",
+                "reference": "ec1f29e963e1b3708396ae9010da9681b9c97cd3",
+                "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
@@ -2496,9 +2502,11 @@
                 "laravel",
                 "nativephp"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/mobile/tree/vika",
+                "issues": "https://github.com/NativePHP/mobile/issues"
+            },
+            "time": "2025-11-24T05:54:06+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -8086,16 +8094,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.11.1",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "f626740b38009078de0dc8b2b9dc4e7f749c6eba"
+                "reference": "92a98ada2b93d9b201a613cb5a33584dde25f195"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/f626740b38009078de0dc8b2b9dc4e7f749c6eba",
-                "reference": "f626740b38009078de0dc8b2b9dc4e7f749c6eba",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/92a98ada2b93d9b201a613cb5a33584dde25f195",
+                "reference": "92a98ada2b93d9b201a613cb5a33584dde25f195",
                 "shasum": ""
             },
             "require": {
@@ -8138,9 +8146,9 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.11.1"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.12.0"
             },
-            "time": "2025-11-21T11:31:57+00:00"
+            "time": "2025-11-21T15:09:14+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -9917,7 +9925,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "nativephp/mobile": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
