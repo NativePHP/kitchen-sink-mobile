@@ -15,10 +15,10 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-zinc-50 dark:bg-zinc-900  nativephp-safe-area">
+<body class="min-h-screen bg-zinc-50 dark:bg-zinc-900">
 <livewire:native-edge :title="$title ?? 'Dashboard'" />
 
-<flux:main class="!p-2">
+<flux:main class="!p-0">
     {{ $slot }}
 </flux:main>
 

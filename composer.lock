@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fb876ad0900752b4342701647aaa0dd",
+    "content-hash": "107249b37bd6696404a0f62bdd04851e",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2404,17 +2404,11 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-vika",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:NativePHP/mobile.git",
-                "reference": "ec1f29e963e1b3708396ae9010da9681b9c97cd3"
-            },
+            "version": "dev-android-hmr-two",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/ec1f29e963e1b3708396ae9010da9681b9c97cd3",
-                "reference": "ec1f29e963e1b3708396ae9010da9681b9c97cd3",
-                "shasum": ""
+                "type": "path",
+                "url": "../mobile",
+                "reference": "b9aba5891f5c534dd562143f9b7482cd7a5becbb"
             },
             "require": {
                 "ext-dom": "*",
@@ -2502,11 +2496,9 @@
                 "laravel",
                 "nativephp"
             ],
-            "support": {
-                "source": "https://github.com/NativePHP/mobile/tree/vika",
-                "issues": "https://github.com/NativePHP/mobile/issues"
-            },
-            "time": "2025-11-24T05:54:06+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nesbot/carbon",
@@ -9925,9 +9917,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "nativephp/mobile": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
