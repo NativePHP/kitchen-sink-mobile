@@ -97,7 +97,7 @@
                     <audio
                         data-title="{{ config('app.name') }}"
                         data-artist="{{ now() }}"
-                        src="{{ Storage::disk('public')->url($currentlyPlayingPath) }}"
+                        src="{{ Storage::url($currentlyPlayingPath) }}"
                         controls
                         class="w-full flex-1"
                     >

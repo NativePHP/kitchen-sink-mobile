@@ -16,16 +16,16 @@ class NativeEdge extends Component
 
     public function mount()
     {
-        $this->audioCount = collect(Storage::disk('public')->files('audio'))->count();
-        $this->videoCount = collect(Storage::disk('public')->files('videos'))->count();
+        $this->audioCount = collect(Storage::files('audio'))->count();
+        $this->videoCount = collect(Storage::files('videos'))->count();
     }
 
     #[On('media-recorded')]
     #[On('media-delete')]
     public function refreshCounts(): void
     {
-        $this->audioCount = collect(Storage::disk('public')->files('audio'))->count();
-        $this->videoCount = collect(Storage::disk('public')->files('videos'))->count();
+        $this->audioCount = collect(Storage::files('audio'))->count();
+        $this->videoCount = collect(Storage::files('videos'))->count();
         logger(print_r($this, true));
     }
 

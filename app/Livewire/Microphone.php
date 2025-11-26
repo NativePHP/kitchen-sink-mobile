@@ -45,7 +45,7 @@ class Microphone extends Component
     public function handleAudioRecorded($path, $mimeType = null, $id = null)
     {
         $filename = 'audio/recording_'.time().'_'.uniqid().'.m4a';
-        File::move($path, Storage::disk('public')->path($filename));
+        File::move($path, Storage::path($filename));
         Dialog::toast('Audio recorded successfully!');
         $this->dispatch('media-recorded')->to(NativeEdge::class);
     }
@@ -53,15 +53,15 @@ class Microphone extends Component
     #[Computed]
     public function audioFiles()
     {
-        $files = Storage::disk('public')->files('audio');
+        $files = Storage::files('audio');
 
         return collect($files)->map(function ($file) {
             return [
                 'path' => $file,
                 'name' => basename($file),
-                'size' => Storage::disk('public')->size($file),
-                'url' => Storage::disk('public')->url($file),
-                'date' => Storage::disk('public')->lastModified($file),
+                'size' => Storage::size($file),
+                'url' => Storage::url($file),
+                'date' => Storage::lastModified($file),
             ];
         })->sortByDesc('date')->values();
     }
@@ -75,7 +75,7 @@ class Microphone extends Component
     #[On('media-share')]
     public function shareAudio(string $path): void
     {
-        Share::file('@nativephp #forever', '@nativephp #forever', Storage::disk('public')->path($path));
+        Share::file('@nativephp #forever', '@nativephp #forever', Storage::path($path));
     }
 
     #[On('media-delete')]
@@ -85,7 +85,7 @@ class Microphone extends Component
             $this->currentlyPlayingPath = '';
         }
 
-        Storage::disk('public')->delete($path);
+        Storage::delete($path);
         Dialog::toast('Audio deleted successfully');
     }
 

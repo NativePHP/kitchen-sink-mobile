@@ -38,7 +38,7 @@ class Video extends Component
     public function handleVideoRecorded($path, $mimeType = null, $id = null)
     {
         $filename = 'videos/video_'.time().'_'.uniqid().'.mp4';
-        File::move($path, Storage::disk('public')->path($filename));
+        File::move($path, Storage::path($filename));
         Dialog::toast('Video recorded successfully!');
         $this->dispatch('media-recorded')->to(NativeEdge::class);
     }
@@ -46,15 +46,15 @@ class Video extends Component
     #[Computed]
     public function videos()
     {
-        $files = Storage::disk('public')->files('videos');
+        $files = Storage::files('videos');
 
         return collect($files)->map(function ($file) {
             return [
                 'path' => $file,
                 'name' => basename($file),
-                'size' => Storage::disk('public')->size($file),
-                'url' => Storage::disk('public')->url($file),
-                'date' => Storage::disk('public')->lastModified($file),
+                'size' => Storage::size($file),
+                'url' => Storage::url($file),
+                'date' => Storage::lastModified($file),
             ];
         })->sortByDesc('date')->values();
     }
@@ -68,7 +68,7 @@ class Video extends Component
     #[On('media-share')]
     public function shareVideo(string $path): void
     {
-        Share::file('Check this out!', 'Check this out!', Storage::disk('public')->path($path));
+        Share::file('Check this out!', 'Check this out!', Storage::path($path));
     }
 
     #[On('media-delete')]
@@ -78,7 +78,7 @@ class Video extends Component
             $this->currentlyPlayingPath = '';
         }
 
-        Storage::disk('public')->delete($path);
+        Storage::delete($path);
         Dialog::toast('Video deleted successfully');
     }
 

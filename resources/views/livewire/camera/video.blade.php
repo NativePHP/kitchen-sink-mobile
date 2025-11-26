@@ -52,7 +52,7 @@
                     </div>
 
                     <video
-                        src="{{ Storage::disk('public')->url($currentlyPlayingPath) }}"
+                        src="{{ Storage::url($currentlyPlayingPath) }}"
                         poster="{{ asset('splash.png') }}"
                         controls
                         class="rounded-lg shadow-2xl w-full h-auto border-2 border-white/50"

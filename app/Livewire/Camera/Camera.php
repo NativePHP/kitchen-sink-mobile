@@ -25,9 +25,9 @@ class Camera extends Component
     {
         $filename = 'photos/photo_'.time().'.jpg';
 
-        File::move($path, Storage::disk('public')->path($filename));
+        File::move($path, Storage::path($filename));
 
-        $this->photoDataUrl = Storage::disk('public')->url($filename);
+        $this->photoDataUrl = Storage::url($filename);
     }
 
     public function render()

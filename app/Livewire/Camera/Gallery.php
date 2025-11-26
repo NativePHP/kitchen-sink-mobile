@@ -36,9 +36,9 @@ class Gallery extends Component
                 // Save photos to storage like camera photos
                 $filename = 'photos/photo_'.time().'_'.uniqid().'.jpg';
 
-                File::move($file['path'], Storage::disk('public')->path($filename));
+                File::move($file['path'], Storage::path($filename));
 
-                $this->photos[] = Storage::disk('public')->url($filename);
+                $this->photos[] = Storage::url($filename);
             }
         }
 
