@@ -2102,16 +2102,16 @@
         },
         {
             "name": "livewire/flux",
-            "version": "v2.8.0",
+            "version": "v2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/flux.git",
-                "reference": "f975c58a53ef1a45246b244438e213050e1e8aab"
+                "reference": "d961ba5512ecfa38f8b759133ceec0fb295c4e16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/flux/zipball/f975c58a53ef1a45246b244438e213050e1e8aab",
-                "reference": "f975c58a53ef1a45246b244438e213050e1e8aab",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/d961ba5512ecfa38f8b759133ceec0fb295c4e16",
+                "reference": "d961ba5512ecfa38f8b759133ceec0fb295c4e16",
                 "shasum": ""
             },
             "require": {
@@ -2162,25 +2162,25 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
-                "source": "https://github.com/livewire/flux/tree/v2.8.0"
+                "source": "https://github.com/livewire/flux/tree/v2.9.0"
             },
-            "time": "2025-11-25T07:08:06+00:00"
+            "time": "2025-11-26T00:32:54+00:00"
         },
         {
             "name": "livewire/flux-pro",
-            "version": "2.8.0",
+            "version": "2.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.fluxui.dev/download/a0709992-4ac0-4467-9195-4f1178430e7d/flux-pro-2.8.0.zip",
-                "reference": "b13d932aa1e2824c0f7d71dd5f044f3eff788724",
-                "shasum": "3b8062c72fa34fda96f799609ae7be99f6a9539f"
+                "url": "https://composer.fluxui.dev/download/a0720fc1-891f-4fdd-8618-036c2875ec68/flux-pro-2.9.0.zip",
+                "reference": "8c9cb10318331a30111c6c61c6d601f077d5a538",
+                "shasum": "c260feba3f5ae44d3ad4859e759cbbef56d1795e"
             },
             "require": {
                 "illuminate/console": "^10.0|^11.0|^12.0",
                 "illuminate/support": "^10.0|^11.0|^12.0",
                 "illuminate/view": "^10.0|^11.0|^12.0",
                 "laravel/prompts": "^0.1.24|^0.2|^0.3",
-                "livewire/flux": "2.8.0|dev-main",
+                "livewire/flux": "2.9.0|dev-main",
                 "livewire/livewire": "^3.7.0|^4.0",
                 "php": "^8.1",
                 "symfony/console": "^6.0|^7.0"
@@ -2221,7 +2221,7 @@
                 "livewire",
                 "ui"
             ],
-            "time": "2025-11-25T07:12:13+00:00"
+            "time": "2025-11-26T00:38:31+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -2408,7 +2408,7 @@
             "dist": {
                 "type": "path",
                 "url": "../mobile",
-                "reference": "5c7556a2f5aab852250647f7694a9982871e1175"
+                "reference": "67592f2cda1e773c7236bcee271e65ad94fd402e"
             },
             "require": {
                 "ext-dom": "*",
@@ -6745,16 +6745,16 @@
         },
         {
             "name": "laravel/boost",
-            "version": "v1.8.2",
+            "version": "v1.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/boost.git",
-                "reference": "cf57ba510df44e0d4ed2c1c91360477e92d7d644"
+                "reference": "26572e858e67334952779c0110ca4c378a44d28d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/boost/zipball/cf57ba510df44e0d4ed2c1c91360477e92d7d644",
-                "reference": "cf57ba510df44e0d4ed2c1c91360477e92d7d644",
+                "url": "https://api.github.com/repos/laravel/boost/zipball/26572e858e67334952779c0110ca4c378a44d28d",
+                "reference": "26572e858e67334952779c0110ca4c378a44d28d",
                 "shasum": ""
             },
             "require": {
@@ -6807,7 +6807,7 @@
                 "issues": "https://github.com/laravel/boost/issues",
                 "source": "https://github.com/laravel/boost"
             },
-            "time": "2025-11-20T18:13:17+00:00"
+            "time": "2025-11-26T14:12:52+00:00"
         },
         {
             "name": "laravel/mcp",

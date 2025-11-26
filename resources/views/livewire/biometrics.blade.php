@@ -28,7 +28,7 @@
             </flux:button>
         </flux:card>
 
-        <div class="w-full pb-32">
+        <div class="w-full">
             <!-- Success State -->
             @if ($secure)
                 <flux:callout icon="check-circle" class="border-green-400 dark:border-green-600 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 border-2 shadow-lg">
@@ -47,7 +47,8 @@
                 </flux:callout>
             @endif
 
-            <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         </div>
+        <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
     </div>
+    <div class="pb-32"></div>
 </div>

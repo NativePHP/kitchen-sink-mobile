@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Concerns\HasQuote;
 use App\Services\KitchenSinkService;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
@@ -11,6 +12,7 @@ use Native\Mobile\Facades\PushNotifications;
 
 class PushNotification extends Component
 {
+    use HasQuote;
     public $token = '';
 
     public function promptForPushNotifications()

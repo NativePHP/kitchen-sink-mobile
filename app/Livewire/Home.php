@@ -2,14 +2,15 @@
 
 namespace App\Livewire;
 
-use App\Data\Quotes;
+use App\Livewire\Concerns\HasQuote;
 use Livewire\Component;
 
 class Home extends Component
 {
+    use HasQuote;
+
     public function render(): \Illuminate\View\View
     {
-        $randomQuote = Quotes::random();
 
         $featuredDemos = [
             [
@@ -62,7 +63,7 @@ class Home extends Component
             ],
         ];
 
-        return view('livewire.home', compact('featuredDemos', 'randomQuote'))
+        return view('livewire.home', compact('featuredDemos'))
             ->layout('components.layouts.app', [
                 'title' => 'Home',
             ]);

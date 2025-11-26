@@ -22,7 +22,6 @@
         <native:side-nav-header
             title="NativePHP"
             subtitle="Kitchen Sink App"
-            icon="home"
             :show-close-button="true"
             :pinned="true"
         />

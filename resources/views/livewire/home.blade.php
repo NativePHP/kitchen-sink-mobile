@@ -1,8 +1,8 @@
 <div
-    class="space-y-4 bg-white">
+    class="space-y-4 bg-white  min-h-screen">
     <div
         class="bg-gradient-to-br from-teal-500 to-purple-600 text-white pt-[var(--inset-top)] rounded-none border-none ">
-        <div class="flex items-start gap-4 px-6">
+        <div class="px-4">
             <div class="space-y-3">
                 <h1 size="xl" class="text-white text-3xl pt-2 font-black flex items-center">
                     NativePHP v2
@@ -15,12 +15,10 @@
         </div>
     </div>
 
-    <div class="px-4">
-        <div class="space-y-1 border border-black rounded-lg p-4 relative">
-            <div class="absolute top-0 right-0 -mt-4 -mr-4">
-                <div class="size-12 bg-white shadow-lg rounded-full flex items-center justify-center">
-                    <flux:icon.mountain class="size-8 text-black"/>
-                </div>
+    <div class="px-4 relative w-full">
+        <div class="space-y-1 ">
+            <div class="absolute top-0 right-0 -mt-5">
+                <flux:icon.light-bulb class="size-40 text-yellow-400/10"/>
             </div>
             <p class="font-bold text-xl text-black ">
                 E.D.G.E
@@ -29,19 +27,30 @@
                 Introducing Element Definition and Generation Engine, NativePHP's innovative rendering engine that transforms Blade components into native UI elements.
             </p>
         </div>
-        <div class="space-y-4 mt-4">
-            <div class="grid grid-cols-2 gap-3">
+        <div class="space-y-4">
+            <div
+                x-data
+                x-init="
+                    setInterval(() => {
+                        if ($el.scrollLeft >= $el.scrollWidth - $el.clientWidth) {
+                            $el.scrollLeft = 0;
+                        } else {
+                            $el.scrollLeft += 1;
+                        }
+                    }, 50);
+                "
+                class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide -mr-4 pl-0 pr-4 my-10">
                 @foreach($featuredDemos as $demo)
-                    <a href="{{route($demo['route'])}}" wire:key="demo-{{ $loop->index }}">
+                    <a href="{{route($demo['route'])}}" wire:key="demo-{{ $loop->index }}" class="snap-start shrink-0">
                         <flux:card
-                            class="bg-gradient-to-br {{ $demo['gradient'] }} hover:shadow-lg transition-shadow cursor-pointer">
-                            <div class="flex flex-col items-center text-center gap-3 p-3">
+                            class="bg-gradient-to-br {{ $demo['gradient'] }} hover:shadow-lg transition-shadow cursor-pointer size-40 rounded-lg">
+                            <div class="flex flex-col items-center justify-center text-center gap-1.5 h-full p-2">
                                 <div
-                                    class="size-10 rounded-full bg-white/30 flex items-center justify-center">
-                                    <flux:icon icon="{{$demo['icon']}}" class="size-6 text-white"/>
+                                    class="size-16 rounded-full bg-white/30 flex items-center justify-center">
+                                    <flux:icon icon="{{$demo['icon']}}" class="size-12 text-white"/>
                                 </div>
                                 <div>
-                                    <flux:heading class="text-xl text-white">{{ $demo['title'] }}</flux:heading>
+                                    <h1 class="text-sm font-bold text-white leading-tight">{{ $demo['title'] }}</h1>
                                 </div>
                             </div>
                         </flux:card>
@@ -49,8 +58,8 @@
                 @endforeach
             </div>
 
-            <x-quote :quote="$randomQuote['quote']" :author="$randomQuote['author']" />
+            <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         </div>
     </div>
-    <div class="pb-[var(--inset-bottom)]"></div>
+    <div class="pb-32"></div>
 </div>
