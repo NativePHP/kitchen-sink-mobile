@@ -53,6 +53,10 @@ class Quotes
             'quote' => "I'm not a funny guy!",
             'author' => 'TJ Miller',
         ],
+        [
+            'quote' => "Life is all about one thing, finding excuses to eat more whipped cream",
+            'author' => 'Shane Rosenthal',
+        ],
     ];
 
     public static function random(): array

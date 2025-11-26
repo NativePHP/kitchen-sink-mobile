@@ -27,7 +27,7 @@
                 Introducing Element Definition and Generation Engine, NativePHP's innovative rendering engine that transforms Blade components into native UI elements.
             </p>
         </div>
-        <div class="space-y-4">
+        <div class="space-y-4 -mx-4">
             <div
                 x-data
                 x-init="
@@ -39,9 +39,9 @@
                         }
                     }, 50);
                 "
-                class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide -mr-4 pl-0 pr-4 my-10">
+                class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide -pl-4 pl-0 pr-4 my-10">
                 @foreach($featuredDemos as $demo)
-                    <a href="{{route($demo['route'])}}" wire:key="demo-{{ $loop->index }}" class="snap-start shrink-0">
+                    <a href="{{route($demo['route'])}}" wire:key="demo-{{ $loop->index }}" class="snap-start shrink-0 {{$loop->first ? 'pl-4': ''}}">
                         <flux:card
                             class="bg-gradient-to-br {{ $demo['gradient'] }} hover:shadow-lg transition-shadow cursor-pointer size-40 rounded-lg">
                             <div class="flex flex-col items-center justify-center text-center gap-1.5 h-full p-2">
@@ -58,8 +58,8 @@
                 @endforeach
             </div>
 
-            <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
         </div>
+        <x-quote lightmode :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
     </div>
     <div class="pb-32"></div>
 </div>

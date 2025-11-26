@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "107249b37bd6696404a0f62bdd04851e",
+    "content-hash": "3fb876ad0900752b4342701647aaa0dd",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -1204,16 +1204,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.40.1",
+            "version": "v12.40.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2e986acbf9acf62cba13400bc23c4d639bf188b9"
+                "reference": "1ccd99220b474500e672b373f32bd709ec38de50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2e986acbf9acf62cba13400bc23c4d639bf188b9",
-                "reference": "2e986acbf9acf62cba13400bc23c4d639bf188b9",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1ccd99220b474500e672b373f32bd709ec38de50",
+                "reference": "1ccd99220b474500e672b373f32bd709ec38de50",
                 "shasum": ""
             },
             "require": {
@@ -1419,7 +1419,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-11-25T16:16:33+00:00"
+            "time": "2025-11-26T19:24:25+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2405,10 +2405,16 @@
         {
             "name": "nativephp/mobile",
             "version": "dev-vika",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:NativePHP/mobile.git",
+                "reference": "e2110f56462b613f371440a73b9dae723a644170"
+            },
             "dist": {
-                "type": "path",
-                "url": "../mobile",
-                "reference": "67592f2cda1e773c7236bcee271e65ad94fd402e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/e2110f56462b613f371440a73b9dae723a644170",
+                "reference": "e2110f56462b613f371440a73b9dae723a644170",
+                "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
@@ -2496,9 +2502,11 @@
                 "laravel",
                 "nativephp"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/NativePHP/mobile/tree/vika",
+                "issues": "https://github.com/NativePHP/mobile/issues"
+            },
+            "time": "2025-11-26T20:35:50+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -9918,7 +9926,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "nativephp/mobile": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
