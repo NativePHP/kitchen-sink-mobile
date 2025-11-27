@@ -82,19 +82,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Native App Service Provider
-    |--------------------------------------------------------------------------
-    |
-    | This is the main service provider used to configure your native app.
-    | It is where you can define hotkeys, menus, native windows, and
-    | other boot logic that runs inside the NativePHP runtime.
-    |
-    */
-
-    'provider' => \App\Providers\NativeAppServiceProvider::class,
-
-    /*
-    |--------------------------------------------------------------------------
     | Environment Keys to Clean Up
     |--------------------------------------------------------------------------
     |
@@ -198,6 +185,8 @@ return [
         ],
 
         'exclude_patterns' => [
+            'credentials',
+            '*\.sqlite',
             '\.git',
             'storage/logs',
             'storage/framework',
