@@ -28,22 +28,11 @@
             </p>
         </div>
         <div class="space-y-4 -mx-4">
-            <div
-                x-data
-                x-init="
-                    setInterval(() => {
-                        if ($el.scrollLeft >= $el.scrollWidth - $el.clientWidth) {
-                            $el.scrollLeft = 0;
-                        } else {
-                            $el.scrollLeft += 1;
-                        }
-                    }, 50);
-                "
-                class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide -pl-4 pl-0 pr-4 my-10">
+            <div class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide pl-4 pr-4 my-10 snap-x snap-mandatory scroll-smooth">
                 @foreach($featuredDemos as $demo)
-                    <a href="{{route($demo['route'])}}" wire:key="demo-{{ $loop->index }}" class="snap-start shrink-0 {{$loop->first ? 'pl-4': ''}}">
+                    <a href="{{route($demo['route'])}}" wire:key="demo-{{ $loop->index }}" class=" shrink-0">
                         <flux:card
-                            class="bg-gradient-to-br {{ $demo['gradient'] }} hover:shadow-lg transition-shadow cursor-pointer size-40 rounded-lg">
+                            class="bg-gradient-to-br {{ $demo['gradient'] }} hover:shadow-lg snap-center snap-always transition-shadow cursor-pointer size-40 rounded-lg">
                             <div class="flex flex-col items-center justify-center text-center gap-1.5 h-full p-2">
                                 <div
                                     class="size-16 rounded-full bg-white/30 flex items-center justify-center">
