@@ -23,11 +23,11 @@
             title="NativePHP"
             subtitle="Kitchen Sink App"
             :show-close-button="true"
-            :pinned="true"
+            pinned
         />
         <native:side-nav-group heading="Camera" :expanded="request()->routeIs('camera.*')">
             <native:side-nav-item active="{{ request()->routeIs('camera.camera') }}" id="camera-get-photo" icon="camera" url="{{ route('camera.camera') }}" label="Camera"/>
-            <native:side-nav-item active="{{ request()->routeIs('camera.galler') }}" id="camera-pick-images" icon="image-plus" url="{{ route('camera.gallery') }}" label="Gallery"/>
+            <native:side-nav-item active="{{ request()->routeIs('camera.gallery') }}" id="camera-pick-images" icon="image-plus" url="{{ route('camera.gallery') }}" label="Gallery"/>
             <native:side-nav-item active="{{ request()->routeIs('camera.video') }}" id="camera-video" icon="video" url="{{ route('camera.video') }}" label="Video Recorder" badge="New!" badge-color="blue"/>
         </native:side-nav-group>
         <native:side-nav-group heading="Dialog" :expanded="request()->routeIs('dialog.*')">

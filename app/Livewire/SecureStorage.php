@@ -46,7 +46,7 @@ class SecureStorage extends Component
         }
 
         try {
-            $this->retrievedValue = SecureStorage::get($this->retrieveKey);
+            $this->retrievedValue = SecureStorageFacade::get($this->retrieveKey);
             $this->retrievedValue
                 ? Dialog::alert('Decrypted', "Successfully retrieved value for {$this->retrieveKey}: {$this->retrievedValue}")
                 : Dialog::alert("Error retrieving '{$this->retrieveKey}'", 'No value found.');
