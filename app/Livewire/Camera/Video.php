@@ -68,6 +68,7 @@ class Video extends Component
     #[On('media-share')]
     public function shareVideo(string $path): void
     {
+        dd(Storage::path($path), Storage::url($path), Storage::getConfig(), config('filesystems'));
         Share::file('Check this out!', 'Check this out!', Storage::path($path));
     }
 
