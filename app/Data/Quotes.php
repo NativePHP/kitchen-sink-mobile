@@ -57,6 +57,18 @@ class Quotes
             'quote' => "Life is all about one thing, finding excuses to eat more whipped cream",
             'author' => 'Shane Rosenthal',
         ],
+        [
+            'quote' => "It's all about the community!",
+            'author' => 'Caneco',
+        ],
+        [
+            'quote' => "The Laravel community is the framework that supports the framework",
+            'author' => 'Kasper Hartwich',
+        ],
+        [
+            'quote' => "From now on, I'm only deploying changes directly to production… using FTP… on hotel Wi-Fi.",
+            'author' => 'James Brooks',
+        ],
     ];
 
     public static function random(): array
