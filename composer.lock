@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fb876ad0900752b4342701647aaa0dd",
+    "content-hash": "76aa041062ada642b008e620ceb82ebf",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2404,17 +2404,12 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "dev-vika",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:NativePHP/mobile.git",
-                "reference": "e7367a7f4015dbeaa6ee7bd5e45a1581b339917e"
-            },
+            "version": "2.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/e7367a7f4015dbeaa6ee7bd5e45a1581b339917e",
-                "reference": "e7367a7f4015dbeaa6ee7bd5e45a1581b339917e",
-                "shasum": ""
+                "url": "https://nativephp.composer.sh/download/a07db726-b0f6-4839-a15d-17980cb346b3/nativephp-2.0.1.zip",
+                "reference": "cd3d308657fe6d79c3219b19fb7dba905445d231",
+                "shasum": "1762a0fe49c25c76da0e885c57340b8cfe8415ab"
             },
             "require": {
                 "ext-dom": "*",
@@ -2463,20 +2458,20 @@
                     "@composer analyse",
                     "@composer test"
                 ],
-                "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "format": [
+                    "vendor/bin/pint"
                 ],
                 "analyse": [
                     "vendor/bin/phpstan analyse"
                 ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
                 "test-coverage": [
                     "vendor/bin/pest --coverage"
                 ],
-                "format": [
-                    "vendor/bin/pint"
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
                 ]
             },
             "license": [
@@ -2485,13 +2480,13 @@
             "authors": [
                 {
                     "name": "Simon Hamp",
-                    "email": "simon@nativephp.com",
-                    "role": "Co-founder"
+                    "role": "Co-founder",
+                    "email": "simon@nativephp.com"
                 },
                 {
                     "name": "Shane Rosenthal",
-                    "email": "shane@nativephp.com",
-                    "role": "Co-founder"
+                    "role": "Co-founder",
+                    "email": "shane@nativephp.com"
                 }
             ],
             "description": "NativePHP for Mobile",
@@ -2502,11 +2497,7 @@
                 "laravel",
                 "nativephp"
             ],
-            "support": {
-                "source": "https://github.com/NativePHP/mobile/tree/vika",
-                "issues": "https://github.com/NativePHP/mobile/issues"
-            },
-            "time": "2025-11-28T01:26:43+00:00"
+            "time": "2025-12-01T19:40:43+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2680,20 +2671,20 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.9",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "505a30ad386daa5211f08a318e47015b501cad30"
+                "reference": "fa1f0b8261ed150447979eb22e373b7b7ad5a8e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/505a30ad386daa5211f08a318e47015b501cad30",
-                "reference": "505a30ad386daa5211f08a318e47015b501cad30",
+                "url": "https://api.github.com/repos/nette/utils/zipball/fa1f0b8261ed150447979eb22e373b7b7ad5a8e0",
+                "reference": "fa1f0b8261ed150447979eb22e373b7b7ad5a8e0",
                 "shasum": ""
             },
             "require": {
-                "php": "8.0 - 8.5"
+                "php": "8.2 - 8.5"
             },
             "conflict": {
                 "nette/finder": "<3",
@@ -2716,7 +2707,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -2763,9 +2754,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.9"
+                "source": "https://github.com/nette/utils/tree/v4.1.0"
             },
-            "time": "2025-10-31T00:45:47+00:00"
+            "time": "2025-12-01T17:49:23+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -9938,9 +9929,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "nativephp/mobile": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
