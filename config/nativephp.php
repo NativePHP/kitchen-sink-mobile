@@ -238,9 +238,9 @@ return [
         'biometric' => true,
         'camera' => true,
         'microphone' => true,
-        'nfc' => false,
+        'nfc' => true,
         'push_notifications' => true,
-        'location' => 'This is it!!!',
+        'location' => true,
         'vibrate' => true,
         'storage_read' => false,
         'storage_write' => false,
@@ -249,7 +249,7 @@ return [
         'microphone_background' => true,
     ],
 
-    'ipad' => true,
+    'ipad' => false,
 
     /*
     |--------------------------------------------------------------------------
