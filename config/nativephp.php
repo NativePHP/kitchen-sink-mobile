@@ -238,7 +238,7 @@ return [
         'biometric' => true,
         'camera' => true,
         'microphone' => true,
-        'nfc' => true,
+        'nfc' => false,
         'push_notifications' => true,
         'location' => true,
         'vibrate' => true,
