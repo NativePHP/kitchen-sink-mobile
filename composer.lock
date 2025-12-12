@@ -2481,12 +2481,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:NativePHP/mobile.git",
-                "reference": "2024e8e599b682f6c0a44e62d7df7d8b72bb78de"
+                "reference": "a598b581b49fae38c91d0525501e1b0890e85533"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/2024e8e599b682f6c0a44e62d7df7d8b72bb78de",
-                "reference": "2024e8e599b682f6c0a44e62d7df7d8b72bb78de",
+                "url": "https://api.github.com/repos/NativePHP/mobile/zipball/a598b581b49fae38c91d0525501e1b0890e85533",
+                "reference": "a598b581b49fae38c91d0525501e1b0890e85533",
                 "shasum": ""
             },
             "require": {
@@ -2579,7 +2579,7 @@
                 "source": "https://github.com/NativePHP/mobile/tree/more-verbose-logging-for-ios-packaging",
                 "issues": "https://github.com/NativePHP/mobile/issues"
             },
-            "time": "2025-12-12T22:24:06+00:00"
+            "time": "2025-12-12T22:43:09+00:00"
         },
         {
             "name": "nesbot/carbon",
