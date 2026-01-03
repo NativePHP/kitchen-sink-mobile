@@ -16,7 +16,7 @@
     </div>
 
     <!-- Main Content Area with Horizontal Padding -->
-    <div class="space-y-4 px-4">
+    <div class="space-y-4 px-4" >
         <!-- Main Recording Card -->
         <flux:card class="bg-gradient-to-br from-slate-100 to-gray-100 dark:from-slate-800 dark:to-gray-900 border-2 border-orange-200 dark:border-orange-800">
             <div class="space-y-4">

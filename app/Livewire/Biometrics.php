@@ -11,6 +11,7 @@ use Native\Mobile\Facades\Biometrics as BiometricsFacade;
 class Biometrics extends Component
 {
     use HasQuote;
+
     public $secure = false;
 
     #[OnNative(Completed::class)]
@@ -21,7 +22,7 @@ class Biometrics extends Component
 
     public function promptForBiometricID(): void
     {
-        BiometricsFacade::promptForBiometricID();
+        BiometricsFacade::prompt();
     }
 
     public function render()

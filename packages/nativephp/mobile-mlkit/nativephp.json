@@ -1,0 +1,92 @@
+{
+    "namespace": "MobileMlkit",
+
+    "bridge_functions": [
+        {
+            "name": "MobileMlkit.LoadModel",
+            "android": "com.nativephp.plugins.mobilemlkit.MobileMlkitFunctions.LoadModel",
+            "ios": "MobileMlkitFunctions.LoadModel",
+            "description": "Load a TensorFlow Lite model for inference"
+        },
+        {
+            "name": "MobileMlkit.DetectFromCamera",
+            "android": "com.nativephp.plugins.mobilemlkit.MobileMlkitFunctions.DetectFromCamera",
+            "ios": "MobileMlkitFunctions.DetectFromCamera",
+            "description": "Start real-time detection from camera feed"
+        },
+        {
+            "name": "MobileMlkit.DetectFromImage",
+            "android": "com.nativephp.plugins.mobilemlkit.MobileMlkitFunctions.DetectFromImage",
+            "ios": "MobileMlkitFunctions.DetectFromImage",
+            "description": "Run detection on a static image"
+        },
+        {
+            "name": "MobileMlkit.StopDetection",
+            "android": "com.nativephp.plugins.mobilemlkit.MobileMlkitFunctions.StopDetection",
+            "ios": "MobileMlkitFunctions.StopDetection",
+            "description": "Stop real-time detection"
+        },
+        {
+            "name": "MobileMlkit.GetStatus",
+            "android": "com.nativephp.plugins.mobilemlkit.MobileMlkitFunctions.GetStatus",
+            "ios": "MobileMlkitFunctions.GetStatus",
+            "description": "Get current detection status and loaded model info"
+        }
+    ],
+
+    "android": {
+        "permissions": [
+            "android.permission.CAMERA"
+        ],
+        "uses_features": [
+            {
+                "name": "android.hardware.camera",
+                "required": true
+            },
+            {
+                "name": "android.hardware.camera.autofocus",
+                "required": false
+            }
+        ],
+        "dependencies": {
+            "implementation": [
+                "org.tensorflow:tensorflow-lite:2.14.0",
+                "org.tensorflow:tensorflow-lite-support:0.4.4",
+                "org.tensorflow:tensorflow-lite-gpu:2.14.0",
+                "androidx.camera:camera-core:1.3.1",
+                "androidx.camera:camera-camera2:1.3.1",
+                "androidx.camera:camera-lifecycle:1.3.1",
+                "androidx.camera:camera-view:1.3.1"
+            ]
+        },
+        "activities": [],
+        "services": [],
+        "receivers": [],
+        "providers": []
+    },
+
+    "ios": {
+        "info_plist": {
+            "NSCameraUsageDescription": "This app uses the camera to detect and identify shark teeth"
+        },
+        "dependencies": {
+            "swift_packages": [],
+            "pods": [
+                {
+                    "name": "TensorFlowLiteSwift",
+                    "version": "~> 2.14.0"
+                }
+            ]
+        }
+    },
+
+    "events": [
+        "NativePHP\\MobileMlkit\\Events\\SharkToothDetected",
+        "NativePHP\\MobileMlkit\\Events\\DetectionCompleted",
+        "NativePHP\\MobileMlkit\\Events\\ModelLoaded"
+    ],
+
+    "hooks": {
+        "copy_assets": "nativephp:mobile-mlkit:copy-assets"
+    }
+}

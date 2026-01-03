@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplinksController;
+use App\Http\Controllers\StripeController;
 use App\Livewire\Biometrics;
 use App\Livewire\Browser;
 use App\Livewire\Camera\Camera;
@@ -18,9 +19,17 @@ use App\Livewire\Network;
 use App\Livewire\PushNotification;
 use App\Livewire\Scanner;
 use App\Livewire\SecureStorage;
+use App\Livewire\Wallet;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
+// Route::get('/', function(){
+// //    ob_start();
+//    phpinfo();
+// //    $content = ob_get_clean();
+// //    dd($content);
+// //    return response($content)->header('Content-Type', 'text/html');
+// });
 
 Route::group(['prefix' => 'camera'], function () {
     Route::get('/gallery', Gallery::class)->name('camera.gallery');
@@ -44,5 +53,7 @@ Route::get('/haptics', Haptics::class)->name('haptics.vibrate');
 Route::get('/geolocation', Geolocation::class)->name('geolocation.getCurrent');
 Route::get('/device', Device::class)->name('device');
 Route::get('/microphone', Microphone::class)->name('microphone');
+Route::get('/wallet', Wallet::class)->name('wallet');
+Route::post('/stripe/create-intent', [StripeController::class, 'createPaymentIntent'])->name('stripe.create-intent');
 Route::get('.well-known/assetlinks.json', [ApplinksController::class, 'assetLinks']);
 Route::get('.well-known/apple-app-site-association', [ApplinksController::class, 'appSiteAssociation']);

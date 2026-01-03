@@ -171,6 +171,50 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Development Server Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for the NativePHP development server that allows hot
+    | reloading of mobile applications during development.
+    |
+    */
+
+    'server' => [
+        // HTTP server port for serving the app
+        'http_port' => env('NATIVEPHP_HTTP_PORT', 3000),
+
+        // WebSocket server port for hot reload communication
+        'ws_port' => env('NATIVEPHP_WS_PORT', 8081),
+
+        // Service name advertised on the network
+        'service_name' => env('NATIVEPHP_SERVICE_NAME', 'NativePHP Server'),
+
+        // Service type for mDNS advertisement
+        'service_type' => '_http._tcp',
+
+        // Public directory to serve (relative to Laravel root)
+        'public_path' => env('NATIVEPHP_PUBLIC_PATH', 'public'),
+
+        // Build output directory (where the ZIP will be created)
+        'build_path' => env('NATIVEPHP_BUILD_PATH', 'storage/app/native-build'),
+
+        // Automatically open browser with QR code when server starts
+        'open_browser' => env('NATIVEPHP_OPEN_BROWSER', true),
+
+        // Watch these directories for changes
+        'watch_paths' => [
+            'app',
+            'resources',
+            'routes',
+            'public',
+        ],
+
+        // File extensions to watch for changes
+        'watch_extensions' => ['php', 'blade.php', 'js', 'css', 'vue', 'html'],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Hot Reload Configuration
     |--------------------------------------------------------------------------
     */
@@ -235,18 +279,8 @@ return [
     */
 
     'permissions' => [
-        'biometric' => true,
-        'camera' => true,
-        'microphone' => true,
-        'nfc' => false,
         'push_notifications' => true,
-        'location' => true,
         'vibrate' => true,
-        'storage_read' => false,
-        'storage_write' => false,
-        'scanner' => true,
-        'network_state' => true,
-        'microphone_background' => true,
     ],
 
     'ipad' => false,

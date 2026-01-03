@@ -50,6 +50,12 @@ return [
     'apple' => [
         'app_id' => env('APPLE_ID_APP_ID'),
         'webcredentials' => env('WEBCREDENTIALS'),
-    ]
+    ],
+
+    'stripe' => [
+        'secret' => env('STRIPE_SECRET_KEY'),
+        'publishable' => env('STRIPE_PUBLISHABLE_KEY'),
+        'apple_merchant_id' => env('APPLE_PAY_MERCHANT_ID'),
+    ],
 
 ];

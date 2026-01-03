@@ -6,13 +6,14 @@ use App\Livewire\Concerns\HasQuote;
 use App\Services\KitchenSinkService;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
-use Native\Mobile\Events\PushNotification\TokenGenerated;
+use Native\Mobile\Events\PushNotifications\TokenGenerated;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\PushNotifications;
 
 class PushNotification extends Component
 {
     use HasQuote;
+
     public $token = '';
 
     public function promptForPushNotifications()

@@ -11,7 +11,7 @@ use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
 use Native\Mobile\Events\Camera\VideoCancelled;
 use Native\Mobile\Events\Camera\VideoRecorded;
-use Native\Mobile\Facades\Camera;
+use Native\Mobile\Facades\Camera as CameraFacade;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\File;
 use Native\Mobile\Facades\Share;
@@ -19,6 +19,7 @@ use Native\Mobile\Facades\Share;
 class Video extends Component
 {
     use HasQuote;
+
     public string $currentlyPlayingPath = '';
 
     public ?int $maxDuration = null;
@@ -27,7 +28,7 @@ class Video extends Component
 
     public function recordVideo()
     {
-        $recorder = Camera::recordVideo();
+        $recorder = CameraFacade::recordVideo();
 
         if ($this->maxDuration) {
             $recorder->maxDuration($this->maxDuration);

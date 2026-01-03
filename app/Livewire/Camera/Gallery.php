@@ -6,21 +6,22 @@ use App\Livewire\Concerns\HasQuote;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
-use Native\Mobile\Events\Gallery\MediaSelected;
-use Native\Mobile\Facades\Camera;
+use Native\Mobile\Events\Camera\MediaSelected;
+use Native\Mobile\Facades\Camera as CameraFacade;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\File;
 
 class Gallery extends Component
 {
     use HasQuote;
+
     public array $photos = [];
 
     public array $videos = [];
 
     public function gallery(string $media_type = 'all', bool $multiple = false, int $max_items = 5)
     {
-        Camera::pickImages($media_type, $multiple, $max_items);
+        CameraFacade::pickImages($media_type, $multiple, $max_items);
     }
 
     #[OnNative(MediaSelected::class)]

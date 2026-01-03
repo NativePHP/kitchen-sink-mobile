@@ -1,0 +1,7 @@
+/vendor/
+/node_modules/
+.DS_Store
+*.log
+.phpunit.result.cache
+.idea/
+.vscode/

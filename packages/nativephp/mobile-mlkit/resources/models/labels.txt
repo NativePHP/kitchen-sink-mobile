@@ -1,0 +1,15 @@
+megalodon
+great_white
+mako
+tiger_shark
+bull_shark
+hammerhead
+thresher
+lemon_shark
+nurse_shark
+blacktip
+whale_shark
+sand_tiger
+goblin_shark
+basking_shark
+blue_shark

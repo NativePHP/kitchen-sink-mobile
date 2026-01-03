@@ -14,19 +14,57 @@
             "url": "https://composer.fluxui.dev"
         },
         "nativephp": {
-            "type": "vcs",
-            "url": "https://github.com/NativePHP/mobile.git"
+            "type": "path",
+            "url": "../mobile"
+        },
+        "nativephp-geolocation": {
+            "type": "path",
+            "url": "../Plugins/nativephp/geolocation"
+        },
+        "nativephp-microphone": {
+            "type": "path",
+            "url": "../Plugins/nativephp/microphone"
+        },
+        "nativephp-scanner": {
+            "type": "path",
+            "url": "../Plugins/nativephp/scanner"
+        },
+        "nativephp-biometrics": {
+            "type": "path",
+            "url": "../Plugins/nativephp/biometrics"
+        },
+        "nativephp-camera": {
+            "type": "path",
+            "url": "../Plugins/nativephp/camera"
+        },
+        "nativephp-push": {
+            "type": "path",
+            "url": "../Plugins/nativephp/firebase"
+        },
+        "nativephp-browser": {
+            "type": "path",
+            "url": "../Plugins/nativephp/browser"
+        },
+        "nativephp-wallet": {
+            "type": "path",
+            "url": "../Plugins/nativephp/wallet"
         }
     },
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
-        "livewire/blaze": "^1.0@beta",
-        "livewire/flux": "^2.0",
-        "livewire/flux-pro": "^2.0",
-        "livewire/livewire": "^4.0@beta",
-        "nativephp/mobile": "dev-more-verbose-logging-for-ios-packaging"
+        "livewire/flux-pro": "^2.10",
+        "livewire/livewire": "^3.7",
+        "nativephp/mobile": "*",
+        "nativephp/mobile-biometrics": "dev-main",
+        "nativephp/mobile-browser": "dev-main",
+        "nativephp/mobile-camera": "dev-main",
+        "nativephp/mobile-firebase": "dev-main",
+        "nativephp/mobile-geolocation": "*",
+        "nativephp/mobile-microphone": "*",
+        "nativephp/mobile-scanner": "dev-main",
+        "nativephp/mobile-wallet": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

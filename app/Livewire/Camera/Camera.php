@@ -13,6 +13,7 @@ use Native\Mobile\Facades\File;
 class Camera extends Component
 {
     use HasQuote;
+
     public string $photoDataUrl = '';
 
     public function camera()

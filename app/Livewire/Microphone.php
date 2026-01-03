@@ -17,6 +17,7 @@ use Native\Mobile\Facades\Share;
 class Microphone extends Component
 {
     use HasQuote;
+
     public string $currentlyPlayingPath = '';
 
     public function recordAudio()

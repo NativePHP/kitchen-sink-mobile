@@ -21,7 +21,6 @@
     {{ $slot }}
 </flux:main>
 
-@vite('resources/js/app.js')
 @fluxScripts
 </body>
 </html>
