@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "activeProfile": "android-debug-8aSUCd",
+    "profiles": [
+        {
+            "id": "android-debug-8aSUCd",
+            "name": "Android Debug",
+            "platform": "android",
+            "devicePattern": null,
+            "buildType": "debug"
+        },
+        {
+            "id": "ios-debug-1s0KCk",
+            "name": "iOS Debug",
+            "platform": "ios",
+            "devicePattern": null,
+            "buildType": "debug"
+        }
+    ]
+}

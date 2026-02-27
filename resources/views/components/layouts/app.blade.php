@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
 
     <title>Laravel</title>
+{{--    <script src="https://cdn.tailwindcss.com/3.2.1"></script>--}}
 
-    @vite('resources/css/app.css')
+        @vite('resources/css/app.css')
     @fluxAppearance
+
     <style>
         [x-cloak] {
             display: none !important;

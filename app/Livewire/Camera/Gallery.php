@@ -6,7 +6,7 @@ use App\Livewire\Concerns\HasQuote;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Native\Mobile\Attributes\OnNative;
-use Native\Mobile\Events\Camera\MediaSelected;
+use Native\Mobile\Events\Gallery\MediaSelected;
 use Native\Mobile\Facades\Camera as CameraFacade;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\File;

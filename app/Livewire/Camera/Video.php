@@ -26,6 +26,10 @@ class Video extends Component
 
     public bool $processing = false;
 
+    public bool $isSubscriber = false;
+
+
+
     public function recordVideo()
     {
         $recorder = CameraFacade::recordVideo();

@@ -21,15 +21,10 @@ use App\Livewire\Scanner;
 use App\Livewire\SecureStorage;
 use App\Livewire\Wallet;
 use Illuminate\Support\Facades\Route;
+use Native\Mobile\Edge\BenchmarkComponent;
+
 
 Route::get('/', Home::class)->name('home');
-// Route::get('/', function(){
-// //    ob_start();
-//    phpinfo();
-// //    $content = ob_get_clean();
-// //    dd($content);
-// //    return response($content)->header('Content-Type', 'text/html');
-// });
 
 Route::group(['prefix' => 'camera'], function () {
     Route::get('/gallery', Gallery::class)->name('camera.gallery');
@@ -57,3 +52,27 @@ Route::get('/wallet', Wallet::class)->name('wallet');
 Route::post('/stripe/create-intent', [StripeController::class, 'createPaymentIntent'])->name('stripe.create-intent');
 Route::get('.well-known/assetlinks.json', [ApplinksController::class, 'assetLinks']);
 Route::get('.well-known/apple-app-site-association', [ApplinksController::class, 'appSiteAssociation']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::native('/', \App\NativeComponents\Counter::class);
+Route::native('/demo', \App\NativeComponents\Demo::class);
+Route::native('/detail/{id}', \App\NativeComponents\Detail::class);
+Route::native('/edit', \App\NativeComponents\Edit::class);
+Route::native('/settings', \App\NativeComponents\Settings::class);
+Route::native('/items', \App\NativeComponents\ItemList::class);
+Route::native('/wizard/1', \App\NativeComponents\WizardStep1::class);
+Route::native('/wizard/2', \App\NativeComponents\WizardStep2::class);
+Route::native('/wizard/3', \App\NativeComponents\WizardStep3::class);
+Route::native('/benchmark', BenchmarkComponent::class);

@@ -33,3 +33,4 @@ output
 /credentials/
 GoogleService-Info.plist
 service.json
+.crucible
