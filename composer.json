@@ -13,41 +13,9 @@
             "type": "composer",
             "url": "https://composer.fluxui.dev"
         },
-        "nativephp": {
-            "type": "path",
-            "url": "../mobile"
-        },
-        "nativephp-geolocation": {
-            "type": "path",
-            "url": "../Plugins/nativephp/geolocation"
-        },
-        "nativephp-microphone": {
-            "type": "path",
-            "url": "../Plugins/nativephp/microphone"
-        },
-        "nativephp-scanner": {
-            "type": "path",
-            "url": "../Plugins/nativephp/scanner"
-        },
-        "nativephp-biometrics": {
-            "type": "path",
-            "url": "../Plugins/nativephp/biometrics"
-        },
-        "nativephp-camera": {
-            "type": "path",
-            "url": "../Plugins/nativephp/camera"
-        },
-        "nativephp-push": {
-            "type": "path",
-            "url": "../Plugins/nativephp/firebase"
-        },
-        "nativephp-browser": {
-            "type": "path",
-            "url": "../Plugins/nativephp/browser"
-        },
-        "nativephp-wallet": {
-            "type": "path",
-            "url": "../Plugins/nativephp/wallet"
+        "plugins": {
+            "type": "composer",
+            "url": "https://plugins.nativephp.com"
         }
     },
     "require": {
@@ -61,10 +29,9 @@
         "nativephp/mobile-browser": "dev-main",
         "nativephp/mobile-camera": "dev-main",
         "nativephp/mobile-firebase": "dev-main",
-        "nativephp/mobile-geolocation": "*",
-        "nativephp/mobile-microphone": "*",
-        "nativephp/mobile-scanner": "dev-main",
-        "nativephp/mobile-wallet": "dev-main"
+        "nativephp/mobile-geolocation": "dev-main",
+        "nativephp/mobile-microphone": "dev-main",
+        "nativephp/mobile-scanner": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
