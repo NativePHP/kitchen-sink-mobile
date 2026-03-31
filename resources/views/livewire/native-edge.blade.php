@@ -46,13 +46,15 @@
         <x-native-side-nav-item :active="request()->routeIs('microphone')" id="microphone-demo" :icon="!$android ? 'microphone.circle' : 'app_shortcut'" :url="route('microphone')" label="Microphone" badge="New!" badge-color="blue"/>
         <x-native-side-nav-item :active="request()->routeIs('network')" id="network-demo" :icon="!$android ? 'globe' : 'network_check'" :url="route('network')" label="Network" badge="New!" badge-color="blue"/>
         <x-native-side-nav-item :active="request()->routeIs('local-notifications')" id="local-notifications-demo" :icon="!$android ? 'bell.badge' : 'notifications_active'" :url="route('local-notifications')" label="Local Notifications" badge="New!" badge-color="blue"/>
-        <x-native-side-nav-item :active="request()->routeIs('push-notifications')" id="push-notifications-demo" :icon="!$android ? 'bell' : 'circle_notifications'" :url="route('push-notifications')" label="Push Notifications"/>
-        <x-native-side-nav-item :active="request()->routeIs('data-messages')" id="data-messages-demo" :icon="!$android ? 'envelope' : 'mail'" :url="route('data-messages')" label="Data Messages" badge="New!" badge-color="blue"/>
-        <x-native-side-nav-item :active="request()->routeIs('nfc')" id="nfc-demo" :icon="!$android ? 'wave.3.right' : 'nfc'" :url="route('nfc')" label="NFC" badge="New!" badge-color="blue"/>
         <x-native-side-nav-item :active="request()->routeIs('scanner')" id="scanner-demo" :icon="!$android ? 'qrcode' : 'qr_code_scanner'" :url="route('scanner')" label="Scanner" badge="New!" badge-color="blue"/>
         <x-native-side-nav-item :active="request()->routeIs('secure-storage')" id="secure-storage-demo" icon="lock" :url="route('secure-storage')" label="Secure Storage"/>
         <x-native-side-nav-item :active="request()->routeIs('sleep-demo')" id="sleep-demo" :icon="!$android ? 'moon.zzz' : 'bedtime'" :url="route('sleep-demo')" label="Sleep Demo"/>
         <x-native-horizontal-divider />
+        @if(app()->environment('local'))
+            <x-native-side-nav-item :active="request()->routeIs('push-notifications')" id="push-notifications-demo" :icon="!$android ? 'bell' : 'circle_notifications'" :url="route('push-notifications')" label="Push Notifications"/>
+            <x-native-side-nav-item :active="request()->routeIs('data-messages')" id="data-messages-demo" :icon="!$android ? 'envelope' : 'mail'" :url="route('data-messages')" label="Data Messages" badge="New!" badge-color="blue"/>
+            <x-native-horizontal-divider />
+        @endif
         <x-native-side-nav-group heading="Resources" :expanded="false">
             <x-native-side-nav-item id="docs" icon="book-open" url="https://nativephp.com/docs/mobile/1/getting-started/introduction" label="Docs"/>
             <x-native-side-nav-item id="learn-more" icon="information-circle" url="https://nativephp.com/mobile" label="Learn More"/>
