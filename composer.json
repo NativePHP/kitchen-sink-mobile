@@ -19,19 +19,25 @@
         }
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8.5",
         "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
         "livewire/flux-pro": "^2.10",
-        "livewire/livewire": "^3.7",
+        "livewire/livewire": "^4.0",
         "nativephp/mobile": "*",
         "nativephp/mobile-biometrics": "dev-main",
         "nativephp/mobile-browser": "dev-main",
         "nativephp/mobile-camera": "dev-main",
+        "nativephp/mobile-device": "^1.0",
+        "nativephp/mobile-dialog": "^1.0",
+        "nativephp/mobile-file": "^1.0",
         "nativephp/mobile-firebase": "dev-main",
         "nativephp/mobile-geolocation": "dev-main",
         "nativephp/mobile-microphone": "dev-main",
-        "nativephp/mobile-scanner": "dev-main"
+        "nativephp/mobile-network": "^1.0",
+        "nativephp/mobile-scanner": "dev-main",
+        "nativephp/mobile-share": "^1.0",
+        "nativephp/mobile-system": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

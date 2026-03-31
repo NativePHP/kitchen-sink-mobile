@@ -45,7 +45,6 @@
         <native:side-nav-item active="{{ request()->routeIs('push-notifications') }}" id="push-notifications-demo" icon="{{\Native\Mobile\Facades\System::isIos() ? 'bell' : 'circle_notifications'}}" url="{{ route('push-notifications') }}" label="Push Notifications"/>
         <native:side-nav-item active="{{ request()->routeIs('scanner') }}" id="scanner-demo" icon="{{\Native\Mobile\Facades\System::isIos() ? 'qrcode' : 'qr_code_scanner'}}" url="{{ route('scanner') }}" label="Scanner" badge="New!" badge-color="blue"/>
         <native:side-nav-item active="{{ request()->routeIs('secure-storage') }}" id="secure-storage-demo" icon="lock" url="{{ route('secure-storage') }}" label="Secure Storage"/>
-        <native:side-nav-item active="{{ request()->routeIs('wallet') }}" id="wallet-demo" icon="{{\Native\Mobile\Facades\System::isIos() ? 'creditcard' : 'credit_card'}}" url="{{ route('wallet') }}" label="Wallet" badge="New!" badge-color="green"/>
         <native:horizontal-divider />
         <native:side-nav-group heading="Resources" :expanded="false">
             <native:side-nav-item id="docs" icon="book-open" url="https://nativephp.com/docs/mobile/1/getting-started/introduction" label="Docs"/>
