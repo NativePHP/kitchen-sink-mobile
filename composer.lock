@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce9bac721e55dfa72b5debe828b174e7",
+    "content-hash": "e89237152f9cdf0a43eef9aa23d4e086",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2648,16 +2648,16 @@
         },
         {
             "name": "nativephp/mobile",
-            "version": "3.1.1",
+            "version": "dev-test/release-combined-66-68-71",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NativePHP/mobile-air.git",
-                "reference": "8633539a5318066d5d2fd83e829e26d4ebff9b7d"
+                "reference": "5e12dcbddb0245d4e5515d44f9541f73567ebce4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/8633539a5318066d5d2fd83e829e26d4ebff9b7d",
-                "reference": "8633539a5318066d5d2fd83e829e26d4ebff9b7d",
+                "url": "https://api.github.com/repos/NativePHP/mobile-air/zipball/5e12dcbddb0245d4e5515d44f9541f73567ebce4",
+                "reference": "5e12dcbddb0245d4e5515d44f9541f73567ebce4",
                 "shasum": ""
             },
             "require": {
@@ -2699,7 +2699,33 @@
                     "Native\\Mobile\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "qa": [
+                    "@composer format",
+                    "@composer analyse",
+                    "@composer test"
+                ],
+                "post-autoload-dump": [
+                    "@php ./vendor/bin/testbench package:discover --ansi"
+                ],
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "test-coverage": [
+                    "vendor/bin/pest --coverage"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -2724,10 +2750,10 @@
                 "nativephp"
             ],
             "support": {
-                "issues": "https://github.com/NativePHP/mobile-air/issues",
-                "source": "https://github.com/NativePHP/mobile-air/tree/3.1.1"
+                "source": "https://github.com/NativePHP/mobile-air/tree/test/release-combined-66-68-71",
+                "issues": "https://github.com/NativePHP/mobile-air/issues"
             },
-            "time": "2026-03-23T15:29:06+00:00"
+            "time": "2026-03-31T21:38:04+00:00"
         },
         {
             "name": "nativephp/mobile-background-tasks",
@@ -11392,6 +11418,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "nativephp/mobile": 20,
         "nativephp/mobile-background-tasks": 20,
         "nativephp/mobile-firebase": 20,
         "nativephp/mobile-local-notifications": 20

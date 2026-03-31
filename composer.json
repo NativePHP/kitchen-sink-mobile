@@ -26,6 +26,10 @@
             "url": "https://github.com/NativePHP/mobile-firebase.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/NativePHP/mobile-air.git"
+        },
+        {
             "type": "composer",
             "url": "https://plugins.nativephp.com"
         }
@@ -37,7 +41,7 @@
         "laravel/framework": "^12.0",
         "livewire/flux-pro": "^2.10",
         "livewire/livewire": "^4.0",
-        "nativephp/mobile": "*",
+        "nativephp/mobile": "dev-test/release-combined-66-68-71",
         "nativephp/mobile-background-tasks": "dev-main",
         "nativephp/mobile-biometrics": "^1.0",
         "nativephp/mobile-browser": "^1.0",
