@@ -3,14 +3,14 @@
 namespace App\NativeComponents;
 
 use Native\Mobile\Edge\Element;
-use Native\Mobile\Edge\Elements\Button;
 use Native\Mobile\Edge\Elements\Column;
-use Native\Mobile\Edge\Elements\Divider;
 use Native\Mobile\Edge\Elements\Row;
 use Native\Mobile\Edge\Elements\ScrollView;
-use Native\Mobile\Edge\Elements\Spacer;
-use Native\Mobile\Edge\Elements\Text;
 use Native\Mobile\Edge\NativeComponent;
+use Nativephp\ComposeUi\Elements\Button;
+use Nativephp\ComposeUi\Elements\Divider;
+use Nativephp\ComposeUi\Elements\Spacer;
+use Nativephp\ComposeUi\Elements\Text;
 
 class WizardStep2 extends NativeComponent
 {

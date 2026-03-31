@@ -15,6 +15,11 @@ class Browser extends Component
         BrowserFacade::inApp('https://nativephp.com/mobile');
     }
 
+    public function openAuth()
+    {
+        BrowserFacade::auth('https://nativephp.com/mobile');
+    }
+
     public function openSystem()
     {
         BrowserFacade::open('https://nativephp.com');

@@ -51,6 +51,22 @@
             </flux:button>
         </flux:card>
 
+        <flux:card class="bg-gradient-to-br from-slate-100 to-gray-100 dark:from-slate-800 dark:to-gray-900 border-2 border-blue-200 dark:border-blue-800">
+            <flux:heading size="base" icon="arrow-top-right-on-square" class="text-blue-900 dark:text-blue-100 mb-2">
+                System Browser
+            </flux:heading>
+            <flux:text class="mb-4 text-blue-700 dark:text-blue-300 font-medium">
+                Opens URLs in the device's default browser app. This completely leaves your app and switches to the external browser. Useful when you want users to have the full browser experience or when the content requires it.
+            </flux:text>
+            <flux:button
+                wire:click="openAuth"
+                icon="arrow-top-right-on-square"
+                class="py-4 w-full bg-gradient-to-br from-blue-500 to-indigo-500 !text-white border-0 shadow-lg transition-all text-lg font-semibold [&>span]:!text-white"
+            >
+                Open Auth
+            </flux:button>
+        </flux:card>
+
         <x-quote :quote="$this->randomQuote['quote']" :author="$this->randomQuote['author']" />
 
         <div class="pb-32"></div>

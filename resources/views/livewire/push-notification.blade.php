@@ -29,6 +29,9 @@
         </flux:card>
 
         @if($token)
+            <pre>
+                {{$token}}
+            </pre>
             <!-- Send Test Notification Card -->
             <flux:card class="bg-gradient-to-br from-slate-100 to-gray-100 dark:from-slate-800 dark:to-gray-900 border-2 border-fuchsia-200 dark:border-fuchsia-800">
                 <flux:button

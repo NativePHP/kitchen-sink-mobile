@@ -305,6 +305,16 @@ class Demo extends NativeComponent
         $this->exitToWeb('/flashlight');
     }
 
+    public function fireDd()
+    {
+        dd('Hey Laracon 🔥', now()->format('F j, Y H:i'));
+    }
+
+    public function fireException()
+    {
+        throw new \Exception('We EFFED UP 💩');
+    }
+
     public function onResume(): void
     {
         // Called when returning via back() — state is preserved

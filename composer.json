@@ -14,73 +14,46 @@
             "url": "https://composer.fluxui.dev"
         },
         {
-            "type": "path",
-            "url": "../mobile-air"
+            "type": "vcs",
+            "url": "https://github.com/NativePHP/mobile-local-notifications.git"
         },
         {
-            "type": "path",
-            "url": "../Plugins/nativephp/geolocation"
+            "type": "vcs",
+            "url": "https://github.com/NativePHP/mobile-background-tasks.git"
         },
         {
-            "type": "path",
-            "url": "../Plugins/nativephp/microphone"
+            "type": "vcs",
+            "url": "https://github.com/NativePHP/mobile-firebase.git"
         },
         {
-            "type": "path",
-            "url": "../Plugins/nativephp/scanner"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/biometrics"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/camera"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/firebase"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/browser"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/wallet"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/secure-storage"
-        },
-        {
-            "type": "path",
-            "url": "../Plugins/nativephp/compose-ui"
+            "type": "composer",
+            "url": "https://plugins.nativephp.com"
         }
     ],
+
     "require": {
         "php": "^8.5",
         "blade-ui-kit/blade-heroicons": "^2.6",
         "laravel/framework": "^12.0",
         "livewire/flux-pro": "^2.10",
-        "livewire/livewire": "^3.7",
-        "nativephp/compose-ui": "dev-main",
+        "livewire/livewire": "^4.0",
         "nativephp/mobile": "*",
-        "nativephp/mobile-biometrics": "*",
-        "nativephp/mobile-browser": "*",
-        "nativephp/mobile-camera": "*",
-        "nativephp/mobile-device": "*",
-        "nativephp/mobile-dialog": "*",
-        "nativephp/mobile-file": "*",
-        "nativephp/mobile-firebase": "*",
+        "nativephp/mobile-background-tasks": "dev-main",
+        "nativephp/mobile-biometrics": "^1.0",
+        "nativephp/mobile-browser": "^1.0",
+        "nativephp/mobile-camera": "^1.0",
+        "nativephp/mobile-device": "^1.0",
+        "nativephp/mobile-dialog": "^1.0",
+        "nativephp/mobile-file": "^1.0",
+        "nativephp/mobile-firebase": "dev-feature/push-deep-links-and-data-messages",
         "nativephp/mobile-geolocation": "*",
-        "nativephp/mobile-microphone": "*",
-        "nativephp/mobile-network": "*",
-        "nativephp/mobile-scanner": "*",
-        "nativephp/mobile-secure-storage": "*",
-        "nativephp/mobile-share": "*",
-        "nativephp/mobile-system": "*",
-        "nativephp/mobile-wallet": "*"
+        "nativephp/mobile-local-notifications": "dev-main",
+        "nativephp/mobile-microphone": "^1.0",
+        "nativephp/mobile-network": "^1.0",
+        "nativephp/mobile-scanner": "^1.0",
+        "nativephp/mobile-secure-storage": "^1.0",
+        "nativephp/mobile-share": "^1.0",
+        "nativephp/mobile-system": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

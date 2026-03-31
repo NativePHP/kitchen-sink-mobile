@@ -1,7 +1,7 @@
 <div
     class="space-y-4 bg-white  min-h-screen">
     <div
-        class="bg-gradient-to-br from-green-200 to-purple-600 text-white pt-[var(--inset-top)] rounded-none border-none ">
+        class="bg-gradient-to-br from-green-500  to-purple-500 text-white pt-[var(--inset-top)] rounded-none border-none ">
         <div class="px-4">
             <div class="space-y-3">
                 <h1 size="xl" class="text-white text-3xl pt-2 font-black flex items-center">
@@ -11,6 +11,7 @@
                 <flux:subheading class="text-white text-xl pb-4">
                     Explore the full power of native mobile capabilities built with Laravel and PHP.
                 </flux:subheading>
+
             </div>
         </div>
     </div>
